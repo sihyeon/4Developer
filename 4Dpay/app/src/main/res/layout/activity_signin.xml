@@ -1,4 +1,5 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scroll"
     android:layout_width="match_parent"
@@ -6,8 +7,8 @@
     android:fillViewport="true">
 
 <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="#ffe6fbfb"
     android:gravity="center_vertical"
     android:orientation="vertical"
@@ -83,29 +84,37 @@
         </LinearLayout>
     </LinearLayout>
 
-    <CheckBox 
-        android:id="@+id/signin_check01"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="자동 로그인"
-        android:layout_alignLeft="@id/signin_line01"
-        android:layout_below="@id/signin_line01"
-                android:layout_marginTop="15dp"
-        android:textSize="25dp"
-        />
-    
-    
-    <TextView
-        android:id="@+id/signin_signuptext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@id/signin_line01"
-        android:layout_alignTop="@id/signin_check01"
-        android:layout_marginRight="15dp"
-        android:text=" 회원가입"
-        android:textSize="25dp"
-                android:padding="4dp"
-        android:textStyle="bold" />
+        android:layout_below="@+id/signin_line01"
+        android:weightSum="1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/signin_line01">
+
+        <CheckBox
+            android:id="@+id/signin_check01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자동 로그인"
+            android:layout_alignLeft="@id/signin_line01"
+            android:layout_below="@id/signin_line01"
+            android:textSize="25dp"
+            />
+
+        <TextView
+            android:id="@+id/signin_signuptext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/signin_line01"
+            android:layout_alignTop="@id/signin_check01"
+            android:text=" 회원가입"
+            android:textSize="25dp"
+                    android:padding="4dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 
 </RelativeLayout>
 </ScrollView>
