@@ -30,7 +30,7 @@ public class SignInActivity extends Activity {
 				String id = vu.text(vu.editText(R.id.signin_id));
 				char[] pw = vu.text(vu.editText(R.id.signin_password)).toCharArray();
 				try {
-					signin(id,pw);
+					signIn(id, pw);
 				} catch (JSONException e) {e.printStackTrace();}
 			}
 		});
@@ -53,7 +53,7 @@ public class SignInActivity extends Activity {
 	}
 
 
-	private void signin(String id, char[] pw) throws JSONException {
+	private void signIn(String id, char[] pw) throws JSONException {
 		if (id.length() < 4 || pw.length < 4) {
 			return;
 		}

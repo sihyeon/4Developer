@@ -30,12 +30,12 @@ public class SignUpActivity extends Activity {
 				char[] pw = vu.text(vu.editText(R.id.signup_password)).toCharArray();
 				String email = vu.text(vu.editText(R.id.signup_email));
 				String phone = vu.text(vu.editText(R.id.signup_phonenumber));
-				signup(id,pw,email,phone);
+				signUp(id, pw, email, phone);
 			}
 		});
 	}
 	
-	private void signup(String id, char[] pw, String email, String phone) {
+	private void signUp(String id, char[] pw, String email, String phone) {
 		User u = new UserBuilder().setID(id).setPW(pw).setEmail(email).setPhone(phone).build();
 		//TODO request Later;
 		//requestSignup(u);
