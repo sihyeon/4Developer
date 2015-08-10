@@ -17,7 +17,7 @@ import com.project4D.fdpay.util.ViewUtil.Finder;
 
 import org.json.JSONException;
 
-public class SigninActivity extends Activity {
+public class SignInActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,7 +38,7 @@ public class SigninActivity extends Activity {
 		vu.textView(R.id.signin_signuptext).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(SigninActivity.this, SignupActivity.class));
+				startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
 			}
 		});
 	}
@@ -63,11 +63,11 @@ public class SigninActivity extends Activity {
 			@Override
 			public void onSuccess(String response) {
 				//TODO CardActivity
-				startActivity(new Intent(SigninActivity.this, CardActivity.class));
+				startActivity(new Intent(SignInActivity.this, CardActivity.class));
 			}
 			@Override
 			public void onError(Throwable error) {
-				AlertDialogHelper.showErrorDialog(SigninActivity.this, error);
+				AlertDialogHelper.showErrorDialog(SignInActivity.this, error);
 			}
 		});
 	}

@@ -48,7 +48,7 @@ public class SplashActivity extends Activity {
 							.setPositiveButton("확인", new OnClickListener() {
 								@Override
 								public void onClick(DialogInterface dialog, int which) {
-									startActivity(new Intent(SplashActivity.this, SigninActivity.class));
+									startActivity(new Intent(SplashActivity.this, SignInActivity.class));
 								}
 							}).build();
 					}

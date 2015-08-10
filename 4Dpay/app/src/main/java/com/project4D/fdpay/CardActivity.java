@@ -26,7 +26,7 @@ import com.project4D.fdpay.view.Drawer;
 
 public class CardActivity extends ActionBarActivity {
     private Drawer drawer;
-    private Fragment pointCardFrag,creditCardFrag;
+    private Fragment pointCardFrag, creditCardFrag;
     private BroadcastReceiver broadcastReceiver;
 
     @Override
@@ -46,7 +46,7 @@ public class CardActivity extends ActionBarActivity {
                     @Override
                     public void onReceive(Context context, Intent intent) {
                         String f = intent.getStringExtra("fragment");
-                        if(f == null) return;
+                        if (f == null) return;
                         if (f.equals(pointCardFrag.getClass().getName()))
                             transactFragment(pointCardFrag);
                         else
@@ -80,7 +80,9 @@ public class CardActivity extends ActionBarActivity {
     }
 
     private long backKeyPressedTime = 0;
-    @Override public void onBackPressed() {
+
+    @Override
+    public void onBackPressed() {
         // Handle Drawer
         if (drawer != null && drawer.isDrawerOpen()) {
             drawer.closeDrawer();

@@ -16,7 +16,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.project4D.fdpay.SignupActivity" >
+        tools:context="com.project4D.fdpay.SignUpActivity" >
 
         <ImageView
             android:layout_width="match_parent"

@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.project4D.fdpay.SignupActivity" >
+    tools:context="com.project4D.fdpay.SignUpActivity" >
 
     <item
         android:id="@+id/action_settings"

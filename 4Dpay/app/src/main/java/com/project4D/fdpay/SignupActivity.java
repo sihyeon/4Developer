@@ -15,7 +15,7 @@ import com.project4D.fdpay.util.HttpPosterCallBack;
 import com.project4D.fdpay.util.ViewUtil;
 import com.project4D.fdpay.util.ViewUtil.Finder;
 
-public class SignupActivity extends Activity {
+public class SignUpActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class SignupActivity extends Activity {
 		//TODO request Later;
 		//requestSignup(u);
 		//////////////////////////////////////////////////////////////////////////////////////////////TODO CardActivity
-		startActivity(new Intent(SignupActivity.this, CardActivity.class));
+		startActivity(new Intent(SignUpActivity.this, CardActivity.class));
 	}
 	
 	private void requestSignup(User u){
@@ -48,9 +48,9 @@ public class SignupActivity extends Activity {
 			@Override
 			public void onSuccess(String response) {
 				if (response.equals(Constant.signUpOK)) {
-					startActivity(new Intent(SignupActivity.this, SigninActivity.class));
+					startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
 				} else if (response.equals(Constant.idDuplicated)) {
-					new AlertDialogHelper(SignupActivity.this)
+					new AlertDialogHelper(SignUpActivity.this)
 							.setTitle("아이디 중복")
 							.setMessage("다시 시도해 주세요")
 							.setPositiveButton("확인", null)
@@ -59,7 +59,7 @@ public class SignupActivity extends Activity {
 			}
 			@Override
 			public void onError(final Throwable error) {
-				AlertDialogHelper.showErrorDialog(SignupActivity.this, error);
+				AlertDialogHelper.showErrorDialog(SignUpActivity.this, error);
 			}
 		});
 	}
