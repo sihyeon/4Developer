@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.project4D.fdpay"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/title_activity_splash"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SigninActivity"
+            android:label="@string/title_activity_signin"
+            android:windowSoftInputMode="adjustResize|stateVisible"
+            android:noHistory="true">
+        </activity>
+        <activity
+            android:name=".SignupActivity"
+            android:label="회원가입"
+            android:noHistory="true">
+        </activity>
+        <activity
+            android:name=".AccountActivity"
+            android:label="가계부" >
+
+            <!-- TODO: 드로우어 아이콘을 나타내는 액션바와 toolbar가 충돌이 날 것임 -->
+        </activity>
+        <activity
+            android:name=".CardActivity"
+            android:label="신용카드"
+            android:theme="@style/Theme.AppCompat.Light" >
+
+            <!-- TODO: do we have to change logo? android:logo option doesn't work -->
+        </activity>
+        <activity
+            android:name=".ShowCardInfoActivity"
+            android:label="@string/title_activity_card_info" >
+        </activity>
+        <activity
+            android:name=".AddCreditCardInfoActivity"
+            android:label="@string/title_activity_add_card_info" >
+        </activity>
+    </application>
+
+</manifest>
