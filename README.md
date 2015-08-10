@@ -8,10 +8,12 @@ Project 4D is a software for simple payment with Gear smart watch.
 
 # Members
 
-Project Manager & Tizen Develope : Park Si Hyeon
+Project Manager & 
+          Tizen Developer :  Park Si Hyeon
 
-Android Develope : Lee So Min
+Android Developers :
+                     Lee So Min
 
-                   Choi Jae Ung
+                     Choi Jae Ung
 
-                   Choi Su Jeong
+                     Choi Su Jeong
