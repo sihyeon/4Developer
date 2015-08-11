@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<title>Section changer</title>
+	<link rel="stylesheet"  href="../../lib/tau/wearable/theme/default/tau.css">
+	<link rel="stylesheet"  href="css/style.css">
+</head>
+
+<body>
+	<div id="tabsectionchangerPage" class="ui-page">
+		<header class="ui-header">
+			<h2 class="ui-title" id="tab">My Wallet</h2>
+		</header>
+
+	<div id="tabsectionchanger" class="ui-content">
+		<div>
+				<section style="text-align:center">
+					<h3> Setting </h3>
+					<ul class="ui-listview">
+						<li class="li-has-multiline li-has-next-depth">
+						<a href="#">
+							Notice
+						<span class="li-text-sub">이번 업데이트 진행 후 변경된 사항에 대한~</span>
+						</a>
+						</li>
+					
+						<li class="li-has-multiline li-has-next-depth">
+						<a href="#">
+							Version Info
+							<span class="li-text-sub">Ver 1.0.1 </span>
+							<span class="li-text-sub">최신 버전입니다. </span>
+						</a>
+						</li>	
+					
+						<li class="li-has-multiline li-has-next-depth">
+						<a href="#">
+							1:1 문의
+						<span class="li-text-sub">4DPAY 바로 문의</span>
+						</a>
+						</li>
+				</ul>
+				</section>
+				
+				<section class="ui-section-active" style="text-align:center">
+					<h3> Credit card </h3>
+						<ul class="ui-listview">
+						<a href="#popupToast" class="ui-btn" data-rel="popup">Credit card 1</a>
+						<a href="#popupToast" class="ui-btn" data-rel="popup">Credit card 2</a>
+						<a href="#popupToast" class="ui-btn" data-rel="popup">Credit card 3</a>
+					</ul>
+				</section>
+				
+					<section style="text-align:center">
+					<h3> Point Card </h3>
+						<ul class="ui-listview">
+						<a href="#popupToast" class="ui-btn" data-rel="popup">Point card 1</a>
+						<a href="#popupToast" class="ui-btn" data-rel="popup">Point card 2</a>
+						<a href="#popupToast" class="ui-btn" data-rel="popup">Point card 3</a>
+					</ul>
+				</section>
+			</div>
+		</div>
+			<div id="popupToast" class="ui-popup ui-popup-toast">
+				<div class="ui-popup-content">
+				 <img src="images/bacode.PNG">
+				</div>
+			</div>
+		<script src="./tab.js"></script>
+	</div>
+	 <script type="text/javascript" src="lib/tau/wearable/js/tau.js" data-build-remove="false"></script>
+	<script src="app.js"></script>
+	<script type="text/javascript" src="../../lib/tau/wearable/js/tau.js"></script>
+</body>
+</html>
