@@ -27,15 +27,15 @@ body {
 
 .ui-page img {
 	position : absolute;
-	margin : 135px 135px 0 135px ;
-	width : 80px;
-	height : 80px;
+	margin : 100px 110px 0 115px ;
+	width : 90px;
+	height : 90px;
 }
 
 .ui-page p {
 	position : absolute;
-	margin-left : 110px;
-	margin-top : 225px;
+	margin-left : 90px;
+	margin-top : 200px;
 	color: rgba(95,69,22,1);
 }
 
@@ -53,9 +53,9 @@ body {
 }
 
 .ui-page .input-btn {
-	margin-left: 50px;
-	margin-top : 250px;
-	margin-bottom : 30px;
+	margin-left: 30px;
+	margin-top : 90px;
+	margin-bottom : 10px;
 }
 
 /***************************PASSCODE************************************/
@@ -147,9 +147,9 @@ body {
 }
 
 .ui-section-active h3{
-	color :#404040; 
+	color:#5c3d14; 
 	margin-top : 15px;
-	margin-botton:5px;
+	margin-bottom:15px;
 	position: relative;
 }
 
@@ -177,11 +177,12 @@ body {
 ***************************************************************************/
 .ui-listview li .li-text-sub {
         display: block;
-        color: rgb(189, 167, 146);
+        color: #918d88;
         font-size: 20px;
         text-overflow: ellipsis;
         overflow: hidden;
         line-height: 30px;
+        position: right center;
 }
 .ui-listview li.li-has-multiline {
         padding-top: 5px;
@@ -194,6 +195,7 @@ body {
         margin-bottom: -6px;
         padding-top: 11px;
         padding-bottom: 12px;
+		color : #5e5d5c;
 }
 .ui-listview li.li-has-multiline.2lines > a {
         margin-bottom: -62px;
@@ -218,7 +220,7 @@ body {
 /* ------------------------------------------------------------------------------ */
 /* -----------------------------------  NEXT DEPTH------------------------------------ */
 .ui-listview li.li-has-next-depth {
-        padding-right: 60px;
+        padding-right: 10px;
 }
 .ui-listview li.li-has-next-depth a,
 .ui-listview li.li-has-next-depth.disabled {
@@ -245,7 +247,7 @@ body {
 	content: "";
 	width: 50px;
 	height: 50px;
-	top: 50%;
+	top: 20%;
 	margin-top: -25px;
     background-repeat: no-repeat;
     background-size: 50px 50px;
