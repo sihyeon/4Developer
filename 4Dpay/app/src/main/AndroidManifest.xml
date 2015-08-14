@@ -44,16 +44,23 @@
 
             <!-- TODO: 드로우어 아이콘을 나타내는 액션바와 toolbar가 충돌이 날 것임 -->
         </activity>
+
         <activity
             android:name=".CardActivity"
             android:label="신용카드"
+<<<<<<< HEAD
             android:theme="@style/Theme.AppCompat.Light">
             <intent-filter>
                 <action android:name="com.project4D.fdpay.CardActivity.CHECK_FRAGMENT"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <!-- TODO: do we have to change logo? android:logo option doesn't work -->
+=======
+            android:theme="@style/Theme.AppCompat.Light" >
+>>>>>>> 18877bf3c79e2908352aa89111c83af1b75acafa
         </activity>
+        <!-- TODO: do we have to change logo? android:logo option doesn't work-->
+
         <activity
             android:name=".ShowCardInfoActivity"
             android:label="@string/title_activity_card_info" >

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no"/>
+	<title>My Card List</title>
+	<link rel="stylesheet"  href="../../lib/tau/wearable/theme/changeable/tau.css">
+	<link rel="stylesheet"  href="../../css/style.css">
+</head>
+
+<body>
+<div class="ui-page" id="popupPage">
+	<header class="ui-header">
+		<h2 class="ui-title">My Card</h2>
+	</header>
+	
+<div class="ui-card-padding">
+		<div class="ui-grid-row">
+		<a href="#2btnPopup" class="ui-btn" data-rel="popup">Card 1</a>
+		<a href="#2btnPopup" class="ui-btn" data-rel="popup">Card 2</a>
+		<a href="#2btnPopup" class="ui-btn" data-rel="popup">Card 3</a>
+		<a href="#2btnPopup" class="ui-btn" data-rel="popup">Card 4</a>
+		<a href="#2btnPopup" class="ui-btn" data-rel="popup">Card 5</a>
+		</div>
+	</div>
+<!-- 등록된 카드이름 불러와야함. 현재 바코드 이미지로 대체 -->
+	<div id="2btnPopup" class="ui-popup">
+		<div class="ui-popup-header">Card Name</div>
+		<div class="ui-popup-content">
+			<img src="images/sample.png">
+		</div>
+		<div class="ui-popup-footer">
+			<a id="1btnPopup-ok" href="basic/Card.html" class="ui-btn" data-rel="back">OK</a>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	(function() {
+		var cancel = document.getElementById("popupDismissible-cancel");
+		cancel.addEventListener("click", function() {
+			tau.closePopup();
+		}, false);
+	}());
+	</script>
+</div>
+<script type="text/javascript" src="../basic/popup/popup.js"></script>
+<script type="text/javascript" src="../../lib/tau/wearable/js/tau.js"></script>
+</body>
+</html>
