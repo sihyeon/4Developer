@@ -51,8 +51,6 @@ public class CategorizeFragment extends DemoBase implements OnSeekBarChangeListe
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-      //  Log.d(this.getClass().getSimpleName(), "onCreateView()");
-
         View categorizeView = inflater.inflate(R.layout.categorize_view, null);
 
         tvX = (TextView) categorizeView.findViewById(R.id.tvXMax);
