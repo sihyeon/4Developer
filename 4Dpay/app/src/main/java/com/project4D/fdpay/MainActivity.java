@@ -143,9 +143,9 @@ public class MainActivity extends ActionBarActivity {
                             new DividerDrawerItem(),
                             new PrimaryDrawerItem().withName("가계부").withIcon(FontAwesome.Icon.faw_area_chart).withIdentifier(3),
                             new DividerDrawerItem(),
-                            new SecondaryDrawerItem().withName("월별보기").withIcon(FontAwesome.Icon.faw_list_ol),
-                            new SecondaryDrawerItem().withName("연별보기").withIcon(FontAwesome.Icon.faw_list_ol),
-                            new SecondaryDrawerItem().withName("분류별보기").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(4),
+                            new SecondaryDrawerItem().withName("월별보기").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(4),
+                            new SecondaryDrawerItem().withName("연별보기").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(5),
+                            new SecondaryDrawerItem().withName("분류별보기").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(6),
                             new DividerDrawerItem(),
                             new PrimaryDrawerItem().withName("환경설정").withIcon(FontAwesome.Icon.faw_edit)
                     )
@@ -167,6 +167,16 @@ public class MainActivity extends ActionBarActivity {
                                     break;
                                 case 4:
                                     transactFragment(new CategorizeFragment(), "Category"); lastDrawerSelectedItem = 4; break;
+                                    lastDrawerSelectedItem = 4;
+                                    break;
+                                case 5:
+                                    transactFragment(new YearsFragment());
+                                    lastDrawerSelectedItem = 5;
+                                    break;
+                                case 6:
+                                    transactFragment(new CategorizeFragment());
+                                    lastDrawerSelectedItem = 6;
+                                    break;
                             }
                             return false;
                         }
