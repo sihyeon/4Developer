@@ -136,7 +136,7 @@ public class MainActivity extends ActionBarActivity {
                     .withActionBarDrawerToggle(false)
                     .withSelectedItem(-1)
                     .addDrawerItems(
-                            new PrimaryDrawerItem().withName("카드").withIcon(FontAwesome.Icon.faw_credit_card).withEnabled(false).withCheckable(false),
+                            new PrimaryDrawerItem().withName("카드").withIcon(FontAwesome.Icon.faw_credit_card).withEnabled(false).withCheckable(false).withTextColor(R.color.hintColor),
                             new DividerDrawerItem(),
                             //TODO make Setting List Later..
                             new SecondaryDrawerItem().withName("신용 카드").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(1),
