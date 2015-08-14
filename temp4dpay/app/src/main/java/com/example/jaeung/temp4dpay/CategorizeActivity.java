@@ -4,8 +4,9 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -35,39 +36,45 @@ public class CategorizeActivity extends DemoBase implements OnSeekBarChangeListe
     private TextView categorizeMonth;
     private Typeface tf;
 
-    private int categorizeMonthNumber = ((CalendarActivity)CalendarActivity.calendarContext).getSetMonth();
-    private int categorizeYearsNumber = ((CalendarActivity)CalendarActivity.calendarContext).getSetYear();
+  //  private int categorizeMonthNumber = ((CalendarActivity)CalendarActivity.calendarContext).getSetMonth();
+ //   private int categorizeYearsNumber = ((CalendarActivity)CalendarActivity.calendarContext).getSetYear();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+     /*   getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN); */
         //사용할 xml
-        setContentView(R.layout.categorize_view);
 
 
+    }
 
-        tvX = (TextView) findViewById(R.id.tvXMax);
-        tvY = (TextView) findViewById(R.id.tvYMax);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+      //  Log.d(this.getClass().getSimpleName(), "onCreateView()");
 
-        mSeekBarX = (SeekBar) findViewById(R.id.seekBar1);
-        mSeekBarY = (SeekBar) findViewById(R.id.seekBar2);
+        View categorizeView = inflater.inflate(R.layout.categorize_view, null);
+
+        tvX = (TextView) categorizeView.findViewById(R.id.tvXMax);
+        tvY = (TextView) categorizeView.findViewById(R.id.tvYMax);
+
+        mSeekBarX = (SeekBar) categorizeView.findViewById(R.id.seekBar1);
+        mSeekBarY = (SeekBar) categorizeView.findViewById(R.id.seekBar2);
 
         mSeekBarY.setProgress(10);
 
         mSeekBarX.setOnSeekBarChangeListener(this);
         mSeekBarY.setOnSeekBarChangeListener(this);
 
-        mChart = (PieChart) findViewById(R.id.chart1);
+        mChart = (PieChart) categorizeView.findViewById(R.id.chart1);
         mChart.setUsePercentValues(true);
         mChart.setDescription("");
 
         mChart.setDragDecelerationFrictionCoef(0.95f);
 
-        tf = Typeface.createFromAsset(getAssets(), "OpenSans-Regular.ttf");
+        tf = Typeface.createFromAsset(getActivity().getAssets(), "OpenSans-Regular.ttf");
 
-        mChart.setCenterTextTypeface(Typeface.createFromAsset(getAssets(), "OpenSans-Light.ttf"));
+        mChart.setCenterTextTypeface(Typeface.createFromAsset(getActivity().getAssets(), "OpenSans-Light.ttf"));
 
         mChart.setDrawHoleEnabled(true);
         mChart.setHoleColorTransparent(true);
@@ -103,19 +110,23 @@ public class CategorizeActivity extends DemoBase implements OnSeekBarChangeListe
         l.setYOffset(0f);
 
         //몇월인지 텍스트 등록
-        categorizeMonth = (TextView) findViewById(R.id.categorizeMonth);
-        categorizeMonth.setText(categorizeYearsNumber + "년 " + categorizeMonthNumber + "월");
+    //    categorizeMonth = (TextView) categorizeView.findViewById(R.id.categorizeMonth);
+    //    categorizeMonth.setText(categorizeYearsNumber + "년 " + categorizeMonthNumber + "월");
         //버튼 생성 및 버튼 리스너 등록
-        ImageView leftMonthButton = (ImageView) findViewById(R.id.leftMonthButton);
+        ImageView leftMonthButton = (ImageView) categorizeView.findViewById(R.id.leftMonthButton);
         leftMonthButton.setOnClickListener(this);
-        ImageView rightMonthButton = (ImageView) findViewById(R.id.rightMonthButton);
+        ImageView rightMonthButton = (ImageView) categorizeView.findViewById(R.id.rightMonthButton);
         rightMonthButton.setOnClickListener(this);
+
+        return categorizeView;
     }
 
     //버튼 이벤트
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+
+    }
+    /*    switch (v.getId()) {
             case R.id.leftMonthButton:
                 if(categorizeMonthNumber != 1) {
                     categorizeMonthNumber--;
@@ -136,7 +147,7 @@ public class CategorizeActivity extends DemoBase implements OnSeekBarChangeListe
                 break;
         }
     }
-
+*/
     /*
         //메뉴 생성
         @Override
@@ -203,6 +214,7 @@ public class CategorizeActivity extends DemoBase implements OnSeekBarChangeListe
             return true;
         }
     */
+
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
@@ -221,8 +233,11 @@ public class CategorizeActivity extends DemoBase implements OnSeekBarChangeListe
         // IMPORTANT: In a PieChart, no values (Entry) should have the same
         // xIndex (even if from different DataSets), since no values can be
         // drawn above each other.
+
+        //몇퍼인지 정하는 구문
         for (int i = 0; i < count + 1; i++) {
-            yVals1.add(new Entry((float) (Math.random() * mult) + mult / 5, i));
+            yVals1.add(
+                    new Entry((float) (Math.random() * mult) + mult / 5, i));
         }
 
         ArrayList<String> xVals = new ArrayList<String>();
