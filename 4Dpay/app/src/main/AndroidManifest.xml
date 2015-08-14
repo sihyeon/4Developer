@@ -28,13 +28,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Sin"
+            android:name=".SignInActivity"
             android:label="@string/title_activity_signin"
             android:windowSoftInputMode="adjustResize|stateVisible"
             android:noHistory="true">
         </activity>
         <activity
-            android:name=".Sup"
+            android:name=".SignUpActivity"
             android:label="회원가입"
             android:noHistory="true">
         </activity>
