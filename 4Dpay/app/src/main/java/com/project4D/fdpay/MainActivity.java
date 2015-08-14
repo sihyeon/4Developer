@@ -166,17 +166,11 @@ public class MainActivity extends ActionBarActivity {
                                     lastDrawerSelectedItem = 3;
                                     break;
                                 case 4:
-                                    transactFragment(new CategorizeFragment(), "Category"); lastDrawerSelectedItem = 4; break;
-                                    lastDrawerSelectedItem = 4;
-                                    break;
+                                    transactFragment(new CalendarFragment(), "Calendar"); lastDrawerSelectedItem = 4; break;
                                 case 5:
-                                    transactFragment(new YearsFragment());
-                                    lastDrawerSelectedItem = 5;
-                                    break;
+                                    transactFragment(new YearsFragment(), "Year"); lastDrawerSelectedItem = 5; break;
                                 case 6:
-                                    transactFragment(new CategorizeFragment());
-                                    lastDrawerSelectedItem = 6;
-                                    break;
+                                    transactFragment(new CategorizeFragment(), "Category"); lastDrawerSelectedItem = 6; break;
                             }
                             return false;
                         }
