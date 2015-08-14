@@ -22,7 +22,6 @@ import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
-import com.project4D.fdpay.util.IntentUtil;
 
 
 /**
@@ -142,11 +141,11 @@ public class MainActivity extends ActionBarActivity {
                             new SecondaryDrawerItem().withName("신용 카드").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(1),
                             new SecondaryDrawerItem().withName("포인트 카드").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(2),
                             new DividerDrawerItem(),
-                            new PrimaryDrawerItem().withName("가계부").withIcon(FontAwesome.Icon.faw_area_chart).withIdentifier(3).withTag(AccountActivity.class.getName()),
+                            new PrimaryDrawerItem().withName("가계부").withIcon(FontAwesome.Icon.faw_area_chart).withIdentifier(3),
                             new DividerDrawerItem(),
-                            new SecondaryDrawerItem().withName("1").withIcon(FontAwesome.Icon.faw_list_ol),
-                            new SecondaryDrawerItem().withName("2").withIcon(FontAwesome.Icon.faw_list_ol),
-                            new SecondaryDrawerItem().withName("3").withIcon(FontAwesome.Icon.faw_list_ol),
+                            new SecondaryDrawerItem().withName("월별보기").withIcon(FontAwesome.Icon.faw_list_ol),
+                            new SecondaryDrawerItem().withName("연별보기").withIcon(FontAwesome.Icon.faw_list_ol),
+                            new SecondaryDrawerItem().withName("분류별보기").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(4),
                             new DividerDrawerItem(),
                             new PrimaryDrawerItem().withName("환경설정").withIcon(FontAwesome.Icon.faw_edit)
                     )
@@ -163,7 +162,14 @@ public class MainActivity extends ActionBarActivity {
                                     transactFragment(new CreditCardFragment());lastDrawerSelectedItem = 1; break;
                                 case 2:
                                     transactFragment(new PointCardFragment()); lastDrawerSelectedItem = 2; break;
-                                case 3: IntentUtil.pullActivity(activity, AccountActivity.class); lastDrawerSelectedItem = 3; break;
+                                case 3:
+                                    lastDrawerSelectedItem = 3;
+                                    break;
+                                case 4:
+                                    transactFragment(new CategorizeFragment());
+                                    lastDrawerSelectedItem = 4;
+                                    break;
+
                             }
                             return false;
                         }
