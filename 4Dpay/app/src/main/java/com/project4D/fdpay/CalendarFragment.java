@@ -34,6 +34,56 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
 
     public static Context calendarContext;
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View calendarView = inflater.inflate(R.layout.fragment_calendar_view, container, false);
+        calendar = (CalendarView) calendarView.findViewById(R.id.calendarView);
+
+        //액션바 이름 변경
+        setActivityTitle("월별 보기");
+
+        //옆에 주 숫자 안보이게하기
+        calendar.setShowWeekNumber(false);
+
+        //버튼 등록 및 리스너 등록
+        Button leftMonthButton = (Button) calendarView.findViewById(R.id.leftButton);
+        leftMonthButton.setOnClickListener(this);
+        Button rightMonthButton = (Button) calendarView.findViewById(R.id.rightButton);
+        rightMonthButton.setOnClickListener(this);
+
+        //현재 날짜
+        initdate = dateFormat.format(calendar.getDate());
+        setYearMonth(initdate);     //년도와 달 설정
+        setMinMaxDate();    //캘린더 맨처음 날짜와 맨 끝 날짜 설정
+
+        //날짜 선택이 변경될때마다 불리는 리스너너
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month,
+                                            int dayOfMonth) {
+                // TODO Auto-generated method stub
+                //         setYear = year;
+                //         setMonth = month;
+                //         setDay = dayOfMonth;
+            }
+        });
+
+        //리스트 부분
+        //어댑터 생성
+        calendarListAdapter = new CalendarListAdapter();
+        //리스트뷰 연결
+        calendarListView = (ListView) calendarView.findViewById(R.id.dayHouseHold);
+        //어댑터 연결
+        calendarListView.setAdapter(calendarListAdapter);
+
+        //어댑터 추가
+        calendarListAdapter.add("오천원");
+        calendarListAdapter.add("육천원");
+        calendarListAdapter.add("칠천원");
+        calendarListAdapter.add("팔천원");
+        return calendarView;
+    }
+
     //달력 몇일부터 몇일까지 할건지 정하기
     public void setMinMaxDate() {
         String closeingDay = null;
@@ -92,51 +142,14 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         setMonth = Integer.parseInt(stringDate.substring(4, 6));
     }
 
+    private void setActivityTitle(String title) {
+        ((MainActivity) getActivity()).setActionBarTitle(title);
+    }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View calendarView = inflater.inflate(R.layout.calendar_view, null);
-        calendar = (CalendarView) calendarView.findViewById(R.id.calendarView);
-
-        //옆에 주 숫자 안보이게하기
-        calendar.setShowWeekNumber(false);
-
-        //버튼 등록 및 리스너 등록
-        Button leftMonthButton = (Button) calendarView.findViewById(R.id.leftButton);
-        leftMonthButton.setOnClickListener(this);
-        Button rightMonthButton = (Button) calendarView.findViewById(R.id.rightButton);
-        rightMonthButton.setOnClickListener(this);
-
-        //현재 날짜
-        initdate = dateFormat.format(calendar.getDate());
-        setYearMonth(initdate);     //년도와 달 설정
-        setMinMaxDate();    //캘린더 맨처음 날짜와 맨 끝 날짜 설정
-
-        //날짜 선택이 변경될때마다 불리는 리스너너
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month,
-                                            int dayOfMonth) {
-                // TODO Auto-generated method stub
-                //         setYear = year;
-                //         setMonth = month;
-                //         setDay = dayOfMonth;
-            }
-        });
-
-        //리스트 부분
-        //어댑터 생성
-        calendarListAdapter = new CalendarListAdapter();
-        //리스트뷰 연결
-        calendarListView = (ListView) calendarView.findViewById(R.id.dayHouseHold);
-        //어댑터 연결
-        calendarListView.setAdapter(calendarListAdapter);
-
-        //어댑터 추가
-        calendarListAdapter.add("오천원");
-        calendarListAdapter.add("육천원");
-        calendarListAdapter.add("칠천원");
-        calendarListAdapter.add("팔천원");
-        return calendarView;
+    public void onResume() {
+        super.onResume();
+        setActivityTitle("월별 보기");
     }
 
     @Override

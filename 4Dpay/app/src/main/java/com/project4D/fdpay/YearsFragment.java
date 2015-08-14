@@ -25,8 +25,9 @@ public class YearsFragment extends Fragment implements OnClickListener {
 //    private int listYearsNumber = ((CalendarActivity)CalendarActivity.calendarContext).getSetYear();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View yearsView = inflater.inflate(R.layout.years_view, null);
-
+        View yearsView = inflater.inflate(R.layout.fragment_years_view, container, false);
+        //액션바 이름 변경
+        setActivityTitle("연별 보기");
         //어댑터 생성
         yearsListAdapter = new YearsListAdapter();
         //리스트뷰 연결
@@ -51,6 +52,16 @@ public class YearsFragment extends Fragment implements OnClickListener {
         rightMonthButton.setOnClickListener(this);
 
         return yearsView;
+    }
+
+    private void setActivityTitle(String title) {
+        ((MainActivity) getActivity()).setActionBarTitle(title);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        setActivityTitle("연별 보기");
     }
 
     @Override

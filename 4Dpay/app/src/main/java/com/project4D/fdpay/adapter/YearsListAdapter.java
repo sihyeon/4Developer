@@ -54,7 +54,7 @@ public class YearsListAdapter extends BaseAdapter{
         if (convertView == null) {
             // view가 null일 경우 커스텀 레이아웃을 얻어 옴
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.years_list_adapter, parent, false);
+            convertView = inflater.inflate(R.layout.adapter_years_list, parent, false);
 
             text = (TextView) convertView.findViewById(R.id.listMonth);
 
