@@ -10,8 +10,10 @@ android {
 
     defaultConfig {
         applicationId "com.project4D.fdpay"
-        minSdkVersion 19
-        targetSdkVersion 21
+        minSdkVersion 11
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
