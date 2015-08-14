@@ -48,16 +48,14 @@
         <activity
             android:name=".CardActivity"
             android:label="신용카드"
-<<<<<<< HEAD
+
             android:theme="@style/Theme.AppCompat.Light">
             <intent-filter>
                 <action android:name="com.project4D.fdpay.CardActivity.CHECK_FRAGMENT"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <!-- TODO: do we have to change logo? android:logo option doesn't work -->
-=======
-            android:theme="@style/Theme.AppCompat.Light" >
->>>>>>> 18877bf3c79e2908352aa89111c83af1b75acafa
+
         </activity>
         <!-- TODO: do we have to change logo? android:logo option doesn't work-->
 
