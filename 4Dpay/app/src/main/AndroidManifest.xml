@@ -39,12 +39,6 @@
             android:noHistory="true">
         </activity>
         <activity
-            android:name=".AccountActivity"
-            android:label="가계부" >
-
-            <!-- TODO: 드로우어 아이콘을 나타내는 액션바와 toolbar가 충돌이 날 것임 -->
-        </activity>
-        <activity
             android:name=".MainActivity"
             android:label="신용카드"
             android:theme="@style/Theme.AppCompat.Light">

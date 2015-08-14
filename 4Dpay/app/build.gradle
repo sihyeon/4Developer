@@ -29,12 +29,17 @@ repositories {
     maven {
         url "http://dl.bintray.com/glomadrian/maven"
     }
+    maven{
+        url "https://jitpack.io"
+    }
 }
 
 dependencies {
+    compile 'com.github.PhilJay:MPAndroidChart:v2.1.2'
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.android.support:support-v4:22.2.1'
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile('com.mikepenz:materialdrawer:3.1.2@aar') { transitive = true }
     compile 'com.github.glomadrian:CodeInput:1.1@aar'
 }
+
