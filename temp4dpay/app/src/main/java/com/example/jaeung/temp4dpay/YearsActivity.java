@@ -36,6 +36,8 @@ public class YearsActivity extends Activity implements OnClickListener {
         yearsListAdapter.add("11");
         yearsListAdapter.add("10");
         yearsListAdapter.add("9");
+        yearsListAdapter.add("8");
+        yearsListAdapter.add("7");
 
         //텍스트뷰 등록
         listYears = (TextView) findViewById(R.id.yearsText);

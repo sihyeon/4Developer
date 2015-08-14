@@ -118,9 +118,9 @@ public class CalendarActivity extends Activity implements View.OnClickListener {
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
                 // TODO Auto-generated method stub
-                setYear = year;
-                setMonth = month;
-                setDay = dayOfMonth;
+       //         setYear = year;
+       //         setMonth = month;
+       //         setDay = dayOfMonth;
                 Toast.makeText(getBaseContext(), "year: " + year + " month: " + month + " day: " + dayOfMonth,
                         Toast.LENGTH_LONG).show();
             }

@@ -1,26 +1,23 @@
 package com.example.jaeung.temp4dpay;
 
-import android.app.ActivityGroup;
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
-import android.widget.TabHost.TabSpec;
 
 
-public class MainActivity extends ActivityGroup {
+public class MainActivity extends Activity {
     public static TabHost tab_host;
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.test);
+        /*
         setContentView(R.layout.house_hold_tab);
 
         tab_host = (TabHost) findViewById(R.id.HouseHoldTab);
         tab_host.setup(this.getLocalActivityManager());
-
-
 
         TabSpec calendarViewTab = tab_host.newTabSpec("TAB2");
         calendarViewTab.setIndicator("달력");
@@ -49,6 +46,7 @@ public class MainActivity extends ActivityGroup {
 
         //실행시 탭을 달력으로 전환
         tab_host.setCurrentTab(0);
+        */
     }
 
     @Override
