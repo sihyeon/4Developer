@@ -62,8 +62,8 @@ public class SignInActivity extends Activity {
 		HttpPoster.executePOST(u, new HttpPosterCallBack() {
 			@Override
 			public void onSuccess(String response) {
-				//TODO CardActivity
-				startActivity(new Intent(SignInActivity.this, CardActivity.class));
+				//TODO MainActivity
+				startActivity(new Intent(SignInActivity.this, MainActivity.class));
 			}
 			@Override
 			public void onError(Throwable error) {

@@ -14,6 +14,6 @@ public class Constant {
 	public static final String callPoint = "callPoint";
 	public static final String iamCredit = "신용카드";
 	public static final String iamPoint = "포인트카드";
-	public static final String checkcalling = "com.project4D.fdpay.CardActivity.CHECK_FRAGMENT";
+	public static final String checkcalling = "com.project4D.fdpay.MainActivity.CHECK_FRAGMENT";
 
 }

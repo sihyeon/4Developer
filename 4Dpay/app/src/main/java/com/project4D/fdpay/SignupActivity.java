@@ -39,8 +39,8 @@ public class SignUpActivity extends Activity {
 		User u = new UserBuilder().setID(id).setPW(pw).setEmail(email).setPhone(phone).build();
 		//TODO request Later;
 		//requestSignup(u);
-		//////////////////////////////////////////////////////////////////////////////////////////////TODO CardActivity
-		startActivity(new Intent(SignUpActivity.this, CardActivity.class));
+		//////////////////////////////////////////////////////////////////////////////////////////////TODO MainActivity
+		startActivity(new Intent(SignUpActivity.this, MainActivity.class));
 	}
 	
 	private void requestSignup(User u){
