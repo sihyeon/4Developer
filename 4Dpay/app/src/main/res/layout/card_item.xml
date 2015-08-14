@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:id="@+id/card_mainlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/card_shadow">
 
     <ImageView
-        android:layout_width="match_parent"
         android:id="@+id/card_item_img"
-        android:src="@drawable/card_hot_pink"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitStart"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:adjustViewBounds="true"
-        android:background="@drawable/card"/>
+        android:background="@drawable/card"
+        android:scaleType="fitStart"
+        android:src="@drawable/card_hot_pink" />
 
     <TextView
+        android:id="@+id/card_item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="TEST1"
-        android:id="@+id/card_item_text"
+        android:elevation="2dp"
         android:padding="15dp"
-        android:elevation="2dp"/>
+        android:text="TEST1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

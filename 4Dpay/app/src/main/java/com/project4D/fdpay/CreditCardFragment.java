@@ -54,11 +54,7 @@ public class CreditCardFragment extends Fragment {
 
     //listview의 아이템 이벤트 등록
     private void setOnClickItemListView(AdapterView<?> parent,int position){
-        if (parent.getLastVisiblePosition() == position) {
-            //Intent i = new Intent(MainActivity.this, ShowCardInfoActivity.class).putExtra(Constant.cardName, /*TODO later; send card name*/);
-            startActivity(new Intent(getActivity(), AddCreditCardInfoActivity.class));
-            return;
-        }
+        //TODO hp..
         startActivity(new Intent(getActivity(), ShowCardInfoActivity.class));
     }
 
