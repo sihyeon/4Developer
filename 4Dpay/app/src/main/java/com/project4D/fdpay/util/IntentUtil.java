@@ -14,4 +14,11 @@ public class IntentUtil {
         i.putExtras(extra[0]);
         from.startActivity(i);
     }
+
+    public static void pullBroadCastActivity(Context from, String action, Bundle... extra) {
+        Intent i = new Intent(action);
+        i.setFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+        i.putExtras(extra[0]);
+        from.sendBroadcast(i);
+    }
 }

@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.project4D.fdpay.internal.Constant;
 import com.project4D.fdpay.view.Drawer;
 
 
@@ -36,11 +37,12 @@ public class CardActivity extends ActionBarActivity {
         drawer = Drawer.newInstance(this);
         pointCardFrag = new PointCardFragment().offerDrawer(drawer, Drawer.POINT_CARD_POSITION);
         creditCardFrag = new CreditCardFragment().offerDrawer(drawer, Drawer.CREDIT_CARD_POSITION);
+        IntentFilter intentFilter = new IntentFilter("com.project4D.fdpay.CardActivity.CHECK_FRAGMENT");
 
         transactFragment(creditCardFrag);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);
-        IntentFilter i = new IntentFilter();
+
         registerReceiver(
                 broadcastReceiver = new BroadcastReceiver() {
                     @Override
@@ -52,13 +54,13 @@ public class CardActivity extends ActionBarActivity {
                         else
                             transactFragment(creditCardFrag);
                     }
-                }, i);
+                }, intentFilter);
     }
 
     @Override
     protected void onDestroy() {
-        unregisterReceiver(broadcastReceiver);
-        super.onDestroy();
+            unregisterReceiver(broadcastReceiver);
+            super.onDestroy();
     }
 
     private void transactFragment(Fragment fragment) {
@@ -107,6 +109,6 @@ public class CardActivity extends ActionBarActivity {
 
 
     public void setActionBarTitle(String myname) {
-        setActionBarTitle(myname);
+        super.getSupportActionBar().setTitle(myname);
     }
 }

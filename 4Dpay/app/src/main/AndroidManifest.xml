@@ -24,7 +24,6 @@
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -48,8 +47,11 @@
         <activity
             android:name=".CardActivity"
             android:label="신용카드"
-            android:theme="@style/Theme.AppCompat.Light" >
-
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="com.project4D.fdpay.CardActivity.CHECK_FRAGMENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
             <!-- TODO: do we have to change logo? android:logo option doesn't work -->
         </activity>
         <activity

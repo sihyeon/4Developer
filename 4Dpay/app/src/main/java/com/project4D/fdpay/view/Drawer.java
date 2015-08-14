@@ -22,6 +22,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.project4D.fdpay.AccountActivity;
 import com.project4D.fdpay.CardActivity;
 import com.project4D.fdpay.R;
+import com.project4D.fdpay.internal.Constant;
 import com.project4D.fdpay.util.IntentUtil;
 
 /**
@@ -99,9 +100,9 @@ public class Drawer {
                         Bundle b = new Bundle();
                         switch (drawerItem.getIdentifier()) {
                             case 1: b.putString("fragment", "CreditCardFragment");
-                                IntentUtil.pullActivity(activity, CardActivity.class, b); lastDrawerSelectedItem = 2; break;
+                                IntentUtil.pullBroadCastActivity(activity, Constant.checkcalling, b); lastDrawerSelectedItem = 2; break;
                             case 2: b.putString("fragment", "PointCardFragment");
-                                IntentUtil.pullActivity(activity, CardActivity.class); lastDrawerSelectedItem = 3; break;
+                                IntentUtil.pullBroadCastActivity(activity, Constant.checkcalling, b); lastDrawerSelectedItem = 3; break;
                             case 3: IntentUtil.pullActivity(activity, AccountActivity.class); lastDrawerSelectedItem = 4; break;
                         }
                         return false;
