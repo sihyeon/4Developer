@@ -170,6 +170,7 @@ public class MainActivity extends ActionBarActivity {
                                     lastDrawerSelectedItem = 4;
                                     break;
                                 case 5:
+                                    transactFragment(new YearsFragment());
                                     lastDrawerSelectedItem = 5;
                                     break;
                                 case 6:
