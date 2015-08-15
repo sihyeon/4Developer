@@ -2,7 +2,6 @@ package com.project4D.fdpay;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
@@ -163,6 +162,7 @@ public class MainActivity extends ActionBarActivity {
                                 case 2:
                                     transactFragment(new PointCardFragment(), "Point"); lastDrawerSelectedItem = 2; break;
                                 case 3:
+                                    transactFragment(new WritingFragment(), "Writing");
                                     lastDrawerSelectedItem = 3;
                                     break;
                                 case 4:
