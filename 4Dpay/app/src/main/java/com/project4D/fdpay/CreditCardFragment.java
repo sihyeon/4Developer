@@ -13,7 +13,6 @@ import com.project4D.fdpay.adapter.CardListAdapter;
 
 public class CreditCardFragment extends Fragment {
     private ListView listview;
-
     private CardListAdapter adapter;
     private String myname;
 
@@ -33,7 +32,16 @@ public class CreditCardFragment extends Fragment {
                 setOnClickItemListView(parent, position);
             }
         });
+
+        view.findViewById(R.id.credit_fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), AddCreditCardInfoActivity.class));
+            }
+        });
         return view;
+
+
     }
 
     @Override

@@ -44,6 +44,13 @@ public class PointCardFragment extends Fragment {
                 setOnClickItemListView(parent, position);
             }
         });
+
+        view.findViewById(R.id.point_fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), AddCreditCardInfoActivity.class));
+            }
+        });
         return view;
     }
 
