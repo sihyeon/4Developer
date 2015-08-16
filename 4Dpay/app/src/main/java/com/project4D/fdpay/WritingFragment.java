@@ -6,16 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
  * Created by Jaeung on 2015-08-04.
  */
 public class WritingFragment extends Fragment implements View.OnClickListener {
+    private View writingView;
+    EditText moneyEdit;
+    EditText breakdownEdit;
+    EditText categorizeEdit;
+    EditText memoEdit;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View writingView = inflater.inflate(R.layout.fragment_writing_view, container, false);
+        writingView = inflater.inflate(R.layout.fragment_writing_view, container, false);
         setActivityTitle("쓰기");
 
         //텍스트뷰 등록
@@ -36,6 +42,11 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
         Button buttonSaveAndEnd = (Button) writingView.findViewById(R.id.button_SaveAndEnd);
         buttonSaveAndEnd.setOnClickListener(this);
 
+        moneyEdit = (EditText)writingView.findViewById(R.id.moneyEdit);
+        breakdownEdit = (EditText)writingView.findViewById(R.id.breakdownEdit);
+        categorizeEdit = (EditText)writingView.findViewById(R.id.categorizeEdit);
+        memoEdit = (EditText)writingView.findViewById(R.id.memoEdit);
+
         return writingView;
     }
 
@@ -50,7 +61,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onClick(View v) {/*
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_Income:
                 break;
@@ -60,8 +71,12 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
             case R.id.button_SaveAndContinue:
                 break;
             case R.id.button_SaveAndEnd:
-                MainActivity.tab_host.setCurrentTab(0);
-                break;*/
+                moneyEdit.getText().toString();
+                breakdownEdit.getText().toString();
+                categorizeEdit.getText().toString();
+                memoEdit.getText().toString();
+                break;
+        }
     }
 }
 
