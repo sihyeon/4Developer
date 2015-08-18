@@ -1,7 +1,6 @@
 package com.project4D.fdpay;
 
 import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,11 +19,9 @@ public class YearsFragment extends Fragment implements OnClickListener {
     private ListView mListView = null;
     private YearsListAdapter yearsListAdapter = null;
     private TextView listYears;
-    public static Context yearsContext;
-    public void YearsFragment(){
 
-    }
-//    private int listYearsNumber = ((CalendarActivity)CalendarActivity.calendarContext).getSetYear();
+    private int listYearsNumber;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View yearsView = inflater.inflate(R.layout.fragment_years_view, container, false);
@@ -43,10 +40,10 @@ public class YearsFragment extends Fragment implements OnClickListener {
         yearsListAdapter.add("9");
         yearsListAdapter.add("8");
         yearsListAdapter.add("7");
-     //   ((MainActivity)CalendarFragment.calendarContext).getFragmentManager().findFragmentByTag("Calendar");
+
         //텍스트뷰 등록
-//        listYears = (TextView) findViewById(R.id.yearsText);
-//        listYears.setText(listYearsNumber + "년");
+        listYears = (TextView) yearsView.findViewById(R.id.yearsText);
+        listYears.setText(listYearsNumber + "년");
         //이미지 버튼 등록
         ImageView leftMonthButton = (ImageView) yearsView.findViewById(R.id.leftyearsButton);
         leftMonthButton.setOnClickListener(this);
@@ -67,22 +64,20 @@ public class YearsFragment extends Fragment implements OnClickListener {
     }
 
     @Override
-    public void onClick(View v) {/*
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.leftyearsButton:
                 if(listYearsNumber != 1) {
                     listYearsNumber--;
                     listYears.setText(listYearsNumber + "년");
+                    yearsListAdapter.setYear(listYearsNumber);
                 }
                 break;
             case R.id.rightyearsButton:
                 listYearsNumber++;
                 listYears.setText(listYearsNumber + "년");
+                yearsListAdapter.setYear(listYearsNumber);
                 break;
-        }*/
+        }
     }
-    /*
-    public int getListYearsNumber(){
-        return listYearsNumber;
-    }*/
 }

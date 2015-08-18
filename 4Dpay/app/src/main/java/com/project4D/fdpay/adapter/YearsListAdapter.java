@@ -15,9 +15,10 @@ import java.util.ArrayList;
  * Created by Jaeung on 2015-07-28.
  */
 public class YearsListAdapter extends BaseAdapter{
-
     private ArrayList<String> m_List;
 
+    private int year;
+    private int month;
     // 생성자
     public YearsListAdapter() {
         m_List = new ArrayList<String>();
@@ -67,16 +68,8 @@ public class YearsListAdapter extends BaseAdapter{
 
                 @Override
                 public void onClick(View v) {
-/*
-                    int setYearsNumber = ((YearsActivity)YearsActivity.yearsContext).getListYearsNumber();
-                    //터치시 해당 년 월로 이동
-                    ((CalendarActivity)CalendarActivity.calendarContext).setSetYear(setYearsNumber);
-                    ((CalendarActivity)CalendarActivity.calendarContext).setSetMonth(Integer.parseInt(m_List.get(pos)));
-                    ((CalendarActivity)CalendarActivity.calendarContext).setMinMaxDate();
+//                    transactFragment(new CalendarFragment(), "Calendar");
 
-                    //탭을 달력탭으로 변경함
-                   MainActivity.tab_host.setCurrentTab(0);
-                   */
                 }
             });
         } else {
@@ -102,5 +95,9 @@ public class YearsListAdapter extends BaseAdapter{
     // 외부에서 아이템 삭제 요청 시 사용
     public void remove(int _position) {
         m_List.remove(_position);
+    }
+
+    public void  setYear(int year){
+        this.year = year;
     }
 }

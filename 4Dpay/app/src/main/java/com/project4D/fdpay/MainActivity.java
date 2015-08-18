@@ -2,6 +2,7 @@ package com.project4D.fdpay;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -37,11 +38,14 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 public class MainActivity extends AppCompatActivity {
     private Drawer drawer;
-
+    public Context mainActivityContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mainActivityContext = this;
+
         drawer = new Drawer(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);
@@ -66,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private long backKeyPressedTime = 0;
+
     @Override
     public void onBackPressed() {
         // Handle Drawer
@@ -89,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
     public void setActionBarTitle(String myname) {
         super.getSupportActionBar().setTitle(myname);
     }
@@ -158,25 +164,36 @@ public class MainActivity extends AppCompatActivity {
                             Bundle b = new Bundle();
                             switch (drawerItem.getIdentifier()) {
                                 case 1:
-                                    transactFragment(new CreditCardFragment(), "Credit");lastDrawerSelectedItem = 1; break;
+                                    transactFragment(new CreditCardFragment(), "Credit");
+                                    lastDrawerSelectedItem = 1;
+                                    break;
                                 case 2:
-                                    transactFragment(new PointCardFragment(), "Point"); lastDrawerSelectedItem = 2; break;
+                                    transactFragment(new PointCardFragment(), "Point");
+                                    lastDrawerSelectedItem = 2;
+                                    break;
                                 case 3:
                                     transactFragment(new WritingFragment(), "Writing");
                                     lastDrawerSelectedItem = 3;
                                     break;
                                 case 4:
-                                    transactFragment(new CalendarFragment(), "Calendar"); lastDrawerSelectedItem = 4; break;
+                                    transactFragment(new CalendarFragment(), "Calendar");
+                                    lastDrawerSelectedItem = 4;
+                                    break;
                                 case 5:
-                                    transactFragment(new YearsFragment(), "Year"); lastDrawerSelectedItem = 5; break;
+                                    transactFragment(new YearsFragment(), "Year");
+                                    lastDrawerSelectedItem = 5;
+                                    break;
                                 case 6:
-                                    transactFragment(new CategorizeFragment(), "Category"); lastDrawerSelectedItem = 6; break;
+                                    transactFragment(new CategorizeFragment(), "Category");
+                                    lastDrawerSelectedItem = 6;
+                                    break;
                             }
                             return false;
                         }
                     })
                     .build();
         }
+
 
         public void openDrawer() {
             drawer.openDrawer();
