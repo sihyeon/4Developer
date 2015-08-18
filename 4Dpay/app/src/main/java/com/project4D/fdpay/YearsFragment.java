@@ -21,7 +21,9 @@ public class YearsFragment extends Fragment implements OnClickListener {
     private YearsListAdapter yearsListAdapter = null;
     private TextView listYears;
     public static Context yearsContext;
+    public void YearsFragment(){
 
+    }
 //    private int listYearsNumber = ((CalendarActivity)CalendarActivity.calendarContext).getSetYear();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,7 +43,7 @@ public class YearsFragment extends Fragment implements OnClickListener {
         yearsListAdapter.add("9");
         yearsListAdapter.add("8");
         yearsListAdapter.add("7");
-
+     //   ((MainActivity)CalendarFragment.calendarContext).getFragmentManager().findFragmentByTag("Calendar");
         //텍스트뷰 등록
 //        listYears = (TextView) findViewById(R.id.yearsText);
 //        listYears.setText(listYearsNumber + "년");

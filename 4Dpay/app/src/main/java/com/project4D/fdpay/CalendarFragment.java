@@ -39,6 +39,7 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         View calendarView = inflater.inflate(R.layout.fragment_calendar_view, container, false);
         calendar = (CalendarView) calendarView.findViewById(R.id.calendarView);
 
+        calendarContext = getActivity();
         //액션바 이름 변경
         setActivityTitle("월별 보기");
 

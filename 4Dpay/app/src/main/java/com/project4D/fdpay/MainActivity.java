@@ -3,7 +3,7 @@ package com.project4D.fdpay;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,7 +35,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
  * @see this Activity is the main Activity - card in this app, and I am fucking crazy to make.
  */
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
     private Drawer drawer;
 
     @Override
