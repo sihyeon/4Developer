@@ -26,7 +26,7 @@ import com.github.mikephil.charting.utils.PercentFormatter;
 
 import java.util.ArrayList;
 
-
+//test
 public class CategorizeFragment extends DemoBase implements OnSeekBarChangeListener,
         OnChartValueSelectedListener, View.OnClickListener{
 
