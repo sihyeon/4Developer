@@ -40,7 +40,7 @@ public class SignUpActivity extends Activity {
 		//TODO request Later;
 		//requestSignup(u);
 		//////////////////////////////////////////////////////////////////////////////////////////////TODO MainActivity
-		startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+		startActivity(new Intent(SignUpActivity.this, CertificationActivity.class));
 	}
 	
 	private void requestSignup(User u){

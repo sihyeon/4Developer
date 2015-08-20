@@ -12,7 +12,6 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -21,30 +20,32 @@
         <activity
             android:name=".SplashActivity"
             android:label="@string/title_activity_splash"
-            android:noHistory="true">
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".SignInActivity"
             android:label="@string/title_activity_signin"
-            android:windowSoftInputMode="adjustResize|stateVisible"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
         <activity
             android:name=".SignUpActivity"
             android:label="회원가입"
-            android:noHistory="true">
+            android:noHistory="true" >
         </activity>
         <activity
             android:name=".MainActivity"
             android:label="신용카드"
-            android:theme="@style/Theme.AppCompat.Light">
+            android:theme="@style/Theme.AppCompat.Light" >
             <intent-filter>
-                <action android:name="com.project4D.fdpay.CardActivity.CHECK_FRAGMENT"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.project4D.fdpay.CardActivity.CHECK_FRAGMENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- TODO: do we have to change logo? android:logo option doesn't work -->
         </activity>
@@ -55,6 +56,10 @@
         <activity
             android:name=".AddCreditCardInfoActivity"
             android:label="@string/title_activity_add_card_info" >
+        </activity>
+        <activity
+            android:name=".CertificationActivity"
+            android:label="@string/title_activity_certification" >
         </activity>
     </application>
 

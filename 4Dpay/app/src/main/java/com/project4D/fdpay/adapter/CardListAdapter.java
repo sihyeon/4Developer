@@ -3,6 +3,7 @@ package com.project4D.fdpay.adapter;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,8 +69,11 @@ public class CardListAdapter extends BaseAdapter {
 
             holder.layout = (RelativeLayout) convertView.findViewById(R.id.card_mainlayout);
             holder.card = (ImageView) convertView.findViewById(R.id.card_item_img);
+            if(position%2==0)
+                holder.card.setImageResource(R.drawable.card_white_pink_gradation);
             holder.cardText = (TextView) convertView.findViewById(R.id.card_item_text);
             holder.cardText.setText(c.getText());
+            Log.i("Tag", "getView title:"+c.getText()+" position:"+position);
 
             convertView.setTag(holder);
         } else {

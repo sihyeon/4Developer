@@ -3,6 +3,7 @@ package com.project4D.fdpay;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +38,7 @@ public class PointCardFragment extends Fragment {
         adapter = new CardListAdapter(getActivity());
         listview = (ListView) view.findViewById(R.id.pointcard_listView);
         listview.setAdapter(adapter);
-        setAdapterItem();
+        setAdapterItem("title1");
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -48,10 +49,18 @@ public class PointCardFragment extends Fragment {
         view.findViewById(R.id.point_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), AddCreditCardInfoActivity.class));
+                startActivityForResult(new Intent(getActivity(), AddCreditCardInfoActivity.class), 1);
             }
         });
         return view;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode==1&&resultCode==1){
+            setAdapterItem(data.getStringExtra("cardName"));
+            Log.i("To show data", "onActivityResult "+data.getStringExtra("cardName"));
+        }
     }
 
     @Override
@@ -64,19 +73,18 @@ public class PointCardFragment extends Fragment {
         ((MainActivity) getActivity()).setActionBarTitle(title);
     }
 
-    private void setAdapterItem(){
+    private void setAdapterItem(String name){
         //for example
-        adapter.addItem("title1");
-        adapter.addItem("title2");
+        adapter.addItem(name);
+        ((MainActivity)getActivity()).runOnUiThread(new Runnable() {
+            public void run() {
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 
     //listview의 아이템 이벤트 등록
     private void setOnClickItemListView(AdapterView<?> parent,int position){
-//        if (parent.getLastVisiblePosition() == position) {
-//            //Intent i = new Intent(MainActivity.this, ShowCardInfoActivity.class).putExtra(Constant.cardName, /*TODO later; send card name*/);
-//            startActivity(new Intent(getActivity(), AddCreditCardInfoActivity.class));
-//            return;
-//        }
         //TODO hp..
         startActivity(new Intent(getActivity(), ShowCardInfoActivity.class));
     }
