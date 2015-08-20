@@ -57,7 +57,7 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
 
         setMinMaxDate();    //캘린더 맨처음 날짜와 맨 끝 날짜 설정
 
-        //날짜 선택이 변경될때마다 불리는 리스너너
+        //날짜 선택이 변경될때마다 불리는 리스너
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
@@ -150,6 +150,13 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
                "실행됨" + Date.TODAY_YEAR,
                 Toast.LENGTH_LONG);
         t.show();
+
+        if (((MainActivity) MainActivity.mainActivityContext).date.useState){
+            setYear = ((MainActivity) MainActivity.mainActivityContext).date.year;
+            setMonth = ((MainActivity) MainActivity.mainActivityContext).date.month;
+            ((MainActivity) MainActivity.mainActivityContext).date.useState = false;
+            setMinMaxDate();
+        }
     }
 
     @Override

@@ -37,8 +37,9 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
  */
 
 public class MainActivity extends AppCompatActivity {
-    private Drawer drawer;
-    public Context mainActivityContext;
+    public Drawer drawer;
+    public static Context mainActivityContext;
+    public Date date = new Date();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(false);
     }
 
-    private void transactFragment(Fragment fragment, String tag) {
+    public void transactFragment(Fragment fragment, String tag) {
         getFragmentManager().beginTransaction().replace(R.id.main_fragment, fragment, tag).addToBackStack(tag).commit();
     }
 
@@ -99,10 +100,14 @@ public class MainActivity extends AppCompatActivity {
         super.getSupportActionBar().setTitle(myname);
     }
 
+    public void setDrawerLastSelectedItem(int selectedItem){
+        drawer.lastDrawerSelectedItem = selectedItem;
+    }
+
     private class Drawer {
         private com.mikepenz.materialdrawer.Drawer drawer;
         private Activity activity;
-        private int lastDrawerSelectedItem = -1;
+        public int lastDrawerSelectedItem = -1;
 
         private Drawer(Activity activity) {
             this.activity = activity;

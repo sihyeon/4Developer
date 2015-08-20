@@ -14,11 +14,12 @@ public class Date {
     public static final int TODAY_Month = Integer.parseInt(Date.DATE_FORMAT.format(Calendar.getInstance().getTimeInMillis()).substring(4, 6));
     public static final int TODAY_DAY = Integer.parseInt(Date.DATE_FORMAT.format(Calendar.getInstance().getTimeInMillis()).substring(6, 8));
 
-    private static int year;
-    private static int month;
-    private static int day;
+    public static int year;
+    public static int month;
+    public static int day;
     //사용할 것인지
-    private static boolean useState;
+    public static boolean useState;
     public Date(){
     }
+
 }

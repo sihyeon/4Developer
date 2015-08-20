@@ -20,7 +20,9 @@ public class YearsFragment extends Fragment implements OnClickListener {
     private YearsListAdapter yearsListAdapter = null;
     private TextView listYears;
 
-    private int listYearsNumber;
+    private int listYearsNumber = Date.TODAY_YEAR;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,16 +36,17 @@ public class YearsFragment extends Fragment implements OnClickListener {
         //어댑터 연결
         mListView.setAdapter(yearsListAdapter);
 
-        yearsListAdapter.add("12");
-        yearsListAdapter.add("11");
-        yearsListAdapter.add("10");
-        yearsListAdapter.add("9");
-        yearsListAdapter.add("8");
-        yearsListAdapter.add("7");
+        yearsListAdapter.add(listYearsNumber, 12, 4000, 5000);
+        yearsListAdapter.add(listYearsNumber, 11, 4000, 5000);
+        yearsListAdapter.add(listYearsNumber, 10, 4000, 5000);
+        yearsListAdapter.add(listYearsNumber, 9, 4000, 5000);
+        yearsListAdapter.add(listYearsNumber, 8, 4000, 5000);
+        yearsListAdapter.add(listYearsNumber, 7, 4000, 5000);
 
         //텍스트뷰 등록
         listYears = (TextView) yearsView.findViewById(R.id.yearsText);
         listYears.setText(listYearsNumber + "년");
+
         //이미지 버튼 등록
         ImageView leftMonthButton = (ImageView) yearsView.findViewById(R.id.leftyearsButton);
         leftMonthButton.setOnClickListener(this);
@@ -67,10 +70,11 @@ public class YearsFragment extends Fragment implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.leftyearsButton:
-                if(listYearsNumber != 1) {
+                if(listYearsNumber >= 1) {
                     listYearsNumber--;
                     listYears.setText(listYearsNumber + "년");
                     yearsListAdapter.setYear(listYearsNumber);
+
                 }
                 break;
             case R.id.rightyearsButton:
