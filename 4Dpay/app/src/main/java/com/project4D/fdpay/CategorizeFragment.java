@@ -36,8 +36,8 @@ public class CategorizeFragment extends DemoBase implements OnSeekBarChangeListe
     private TextView categorizeMonth;
     private Typeface tf;
 
-  //  private int categorizeMonthNumber = ((CalendarActivity)CalendarActivity.calendarContext).getSetMonth();
- //   private int categorizeYearsNumber = ((CalendarActivity)CalendarActivity.calendarContext).getSetYear();
+    private int categorizeMonthNumber = Date.TODAY_Month;
+    private int categorizeYearsNumber = Date.TODAY_YEAR;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class CategorizeFragment extends DemoBase implements OnSeekBarChangeListe
 
         View categorizeView = inflater.inflate(R.layout.fragment_categorize_view, container, false);
         setActivityTitle("분류별 보기");
-
+/*
         tvX = (TextView) categorizeView.findViewById(R.id.tvXMax);
         tvY = (TextView) categorizeView.findViewById(R.id.tvYMax);
 
@@ -65,10 +65,11 @@ public class CategorizeFragment extends DemoBase implements OnSeekBarChangeListe
 
         mSeekBarX.setOnSeekBarChangeListener(this);
         mSeekBarY.setOnSeekBarChangeListener(this);
-
-        mChart = (PieChart) categorizeView.findViewById(R.id.chart1);
+*/
+        mChart = (PieChart) categorizeView.findViewById(R.id.pieChart);
         mChart.setUsePercentValues(true);
         mChart.setDescription("");
+
 
         mChart.setDragDecelerationFrictionCoef(0.95f);
 
@@ -96,7 +97,7 @@ public class CategorizeFragment extends DemoBase implements OnSeekBarChangeListe
         // add a selection listener
         mChart.setOnChartValueSelectedListener(this);
 
-        mChart.setCenterText("MPAndroidChart\nby Philipp Jahoda");
+        mChart.setCenterText("카테고리별\n원그래프");
 
         setData(3, 100);
 
@@ -110,8 +111,8 @@ public class CategorizeFragment extends DemoBase implements OnSeekBarChangeListe
         l.setYOffset(0f);
 
         //몇월인지 텍스트 등록
-    //    categorizeMonth = (TextView) categorizeView.findViewById(R.id.categorizeMonth);
-    //    categorizeMonth.setText(categorizeYearsNumber + "년 " + categorizeMonthNumber + "월");
+        categorizeMonth = (TextView) categorizeView.findViewById(R.id.categorizeMonth);
+        categorizeMonth.setText(categorizeYearsNumber + "년 " + categorizeMonthNumber + "월");
         //버튼 생성 및 버튼 리스너 등록
         ImageView leftMonthButton = (ImageView) categorizeView.findViewById(R.id.leftMonthButton);
         leftMonthButton.setOnClickListener(this);
@@ -134,9 +135,7 @@ public class CategorizeFragment extends DemoBase implements OnSeekBarChangeListe
     //버튼 이벤트
     @Override
     public void onClick(View v) {
-
-    }
-    /*    switch (v.getId()) {
+        switch (v.getId()) {
             case R.id.leftMonthButton:
                 if(categorizeMonthNumber != 1) {
                     categorizeMonthNumber--;
@@ -157,7 +156,7 @@ public class CategorizeFragment extends DemoBase implements OnSeekBarChangeListe
                 break;
         }
     }
-*/
+
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
