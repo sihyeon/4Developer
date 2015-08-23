@@ -29,19 +29,10 @@ public class YearsFragment extends Fragment implements OnClickListener {
         View yearsView = inflater.inflate(R.layout.fragment_years_view, container, false);
         //액션바 이름 변경
         setActivityTitle("연별 보기");
-        //어댑터 생성
-        yearsListAdapter = new YearsListAdapter();
         //리스트뷰 연결
         mListView = (ListView) yearsView.findViewById(R.id.listView);
-        //어댑터 연결
-        mListView.setAdapter(yearsListAdapter);
 
-        yearsListAdapter.add(listYearsNumber, 12, 4000, 5000);
-        yearsListAdapter.add(listYearsNumber, 11, 4000, 5000);
-        yearsListAdapter.add(listYearsNumber, 10, 4000, 5000);
-        yearsListAdapter.add(listYearsNumber, 9, 4000, 5000);
-        yearsListAdapter.add(listYearsNumber, 8, 4000, 5000);
-        yearsListAdapter.add(listYearsNumber, 7, 4000, 5000);
+        listAdd();
 
         //텍스트뷰 등록
         listYears = (TextView) yearsView.findViewById(R.id.yearsText);
@@ -60,6 +51,23 @@ public class YearsFragment extends Fragment implements OnClickListener {
         ((MainActivity) getActivity()).setActionBarTitle(title);
     }
 
+    private void listAdd(){
+        //어댑터 생성
+        yearsListAdapter = new YearsListAdapter();
+
+        //어댑터 연결
+        mListView.setAdapter(yearsListAdapter);
+        for (int i = 12; i >= 1; i--) {
+            yearsListAdapter.add(listYearsNumber, i, 4000, 5000);
+        }
+    }
+
+    private void listRefresh(){
+        yearsListAdapter.removeALL();
+        yearsListAdapter = null;
+        listAdd();
+    }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -74,13 +82,14 @@ public class YearsFragment extends Fragment implements OnClickListener {
                     listYearsNumber--;
                     listYears.setText(listYearsNumber + "년");
                     yearsListAdapter.setYear(listYearsNumber);
-
+                    listRefresh();
                 }
                 break;
             case R.id.rightyearsButton:
                 listYearsNumber++;
                 listYears.setText(listYearsNumber + "년");
                 yearsListAdapter.setYear(listYearsNumber);
+                listRefresh();
                 break;
         }
     }

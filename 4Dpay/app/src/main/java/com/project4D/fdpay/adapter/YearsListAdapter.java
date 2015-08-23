@@ -76,6 +76,8 @@ public class YearsListAdapter extends BaseAdapter {
             monthText.setText(adapterLayout.get(pos).month + "월");
             spendingText.setText(adapterLayout.get(pos).spending + "원");
             incomingText.setText(adapterLayout.get(pos).incoming + "원");
+
+            //클릭 이벤트 리스너
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -113,6 +115,13 @@ public class YearsListAdapter extends BaseAdapter {
     public void remove(int _position) {
         adapterLayout.remove(_position);
     }
+
+    public void removeALL(){
+        for (int i = 0; adapterLayout.size() > i; i++){
+            remove(i);
+        }
+    }
+
     public void setYear(int year){
         this.year = year;
     }
