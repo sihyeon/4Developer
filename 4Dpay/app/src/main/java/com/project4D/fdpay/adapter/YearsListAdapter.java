@@ -18,7 +18,6 @@ import java.util.ArrayList;
  */
 public class YearsListAdapter extends BaseAdapter {
     private ArrayList<AdapterLayout> adapterLayout;
-
     private int year;
 
     // 생성자
@@ -46,65 +45,45 @@ public class YearsListAdapter extends BaseAdapter {
 
     // 출력 될 아이템 관리
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        final int pos = position;
+    public View getView(final int position, View convertView, ViewGroup parent) {
         final Context context = parent.getContext();
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View item = inflater.inflate(R.layout.adapter_years_list, parent, false);
 
         TextView monthText = null;
         TextView spendingText = null;
         TextView incomingText = null;
-        CustomHolder holder = null;
 
-        // 리스트가 길어지면서 현재 화면에 보이지 않는 아이템은 converView가 null인 상태로 들어 옴
-        if (convertView == null) {
-            // view가 null일 경우 커스텀 레이아웃을 얻어 옴
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.adapter_years_list, parent, false);
+        //텍스트뷰 등록
+        monthText = (TextView) item.findViewById(R.id.listMonth);
+        spendingText = (TextView) item.findViewById(R.id.listTotalSpendResult);
+        incomingText = (TextView) item.findViewById(R.id.listTotalIncomeResult);
 
-            //텍스트뷰 등록
-            monthText = (TextView) convertView.findViewById(R.id.listMonth);
-            spendingText = (TextView) convertView.findViewById(R.id.listTotalSpendResult);
-            incomingText = (TextView) convertView.findViewById(R.id.listTotalIncomeResult);
+        monthText.setText(adapterLayout.get(position).month + "월");
+        spendingText.setText(adapterLayout.get(position).spending + "원");
+        incomingText.setText(adapterLayout.get(position).incoming + "원");
+        //클릭 이벤트 리스너
+        item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) MainActivity.mainActivityContext).date.useState = true;
+                ((MainActivity) MainActivity.mainActivityContext).date.year = year;
+                ((MainActivity) MainActivity.mainActivityContext).date.month = adapterLayout.get(position).month;
+                ((MainActivity) MainActivity.mainActivityContext).setDrawerLastSelectedItem(4);
+                ((MainActivity) MainActivity.mainActivityContext).transactFragment(new CalendarFragment(), "Calendar");
+            }
+        });
+        return item;
+    }
 
-            // 홀더 생성 및 Tag로 등록
-            holder = new CustomHolder();
-            holder.monthTextHolder = monthText;
-            holder.spendingTextHolder = spendingText;
-            holder.incomingTextHolder = incomingText;
-            convertView.setTag(holder);
-
-            monthText.setText(adapterLayout.get(pos).month + "월");
-            spendingText.setText(adapterLayout.get(pos).spending + "원");
-            incomingText.setText(adapterLayout.get(pos).incoming + "원");
-
-            //클릭 이벤트 리스너
-            convertView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ((MainActivity) MainActivity.mainActivityContext).date.useState = true;
-                    ((MainActivity) MainActivity.mainActivityContext).date.year = year;
-                    ((MainActivity) MainActivity.mainActivityContext).date.month = adapterLayout.get(pos).month;
-                    ((MainActivity) MainActivity.mainActivityContext).setDrawerLastSelectedItem(4);
-                    ((MainActivity) MainActivity.mainActivityContext).transactFragment(new CalendarFragment(), "Calendar");
-                }
-            });
-        } else {
-            holder = (CustomHolder) convertView.getTag();
-            monthText = holder.monthTextHolder;
-            spendingText = holder.spendingTextHolder;
-            incomingText = holder.incomingTextHolder;
+    /*
+        private class CustomHolder {
+            TextView monthTextHolder;
+            TextView spendingTextHolder;
+            TextView incomingTextHolder;
+            int position;
         }
-
-        return convertView;
-    }
-
-
-    private class CustomHolder {
-        TextView monthTextHolder;
-        TextView spendingTextHolder;
-        TextView incomingTextHolder;
-    }
-
+    */
     // 외부에서 아이템 추가 요청 시 사용
     public void add(int year, int month, int spending, int incoming) {
         this.year = year;
@@ -116,22 +95,23 @@ public class YearsListAdapter extends BaseAdapter {
         adapterLayout.remove(_position);
     }
 
-    public void removeALL(){
-        for (int i = 0; adapterLayout.size() > i; i++){
+    public void removeALL() {
+        for (int i = 0; adapterLayout.size() > i; i++) {
             remove(i);
         }
     }
 
-    public void setYear(int year){
+    public void setYear(int year) {
         this.year = year;
     }
 
-    private class AdapterLayout{
+    private class AdapterLayout {
         public int month;
         public int spending;
         public int incoming;
         public int balance;
-        public AdapterLayout(int month, int spending, int incoming){
+
+        public AdapterLayout(int month, int spending, int incoming) {
             this.month = month;
             this.spending = spending;
             this.incoming = incoming;
