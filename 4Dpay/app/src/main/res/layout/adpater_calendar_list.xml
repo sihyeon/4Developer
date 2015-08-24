@@ -16,14 +16,14 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="내역:  "
-            android:id="@+id/textView" />
+            android:id="@+id/breakdown" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="내용"
-            android:id="@+id/textView9" />
+            android:id="@+id/breakdownValue" />
 
     </LinearLayout>
 
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="카테고리:  "
-            android:id="@+id/textView8"
+            android:id="@+id/categorize"
             android:layout_gravity="center_horizontal"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="내용"
-            android:id="@+id/categorizeText" />
+            android:id="@+id/categorizeValue" />
     </LinearLayout>
 
     <LinearLayout
@@ -60,14 +60,14 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="수입/지출"
-            android:id="@+id/textView11" />
+            android:id="@+id/incomingOrSpending" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/textView12" />
+            android:id="@+id/incomingOrSpendingValue" />
     </LinearLayout>
 
 </LinearLayout>

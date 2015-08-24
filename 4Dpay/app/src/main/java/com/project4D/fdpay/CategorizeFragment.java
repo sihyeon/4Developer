@@ -144,6 +144,7 @@ public class CategorizeFragment extends DemoBase implements OnSeekBarChangeListe
                     categorizeMonthNumber = 12;
                 }
                 categorizeMonth.setText(categorizeYearsNumber + "년 " + categorizeMonthNumber + "월");
+                setData(3, 100);
                 break;
             case R.id.rightMonthButton:
                 if(categorizeMonthNumber != 12) {
@@ -153,6 +154,7 @@ public class CategorizeFragment extends DemoBase implements OnSeekBarChangeListe
                     categorizeMonthNumber = 1;
                 }
                 categorizeMonth.setText(categorizeYearsNumber + "년 " + categorizeMonthNumber + "월");
+                setData(3, 100);
                 break;
         }
     }
