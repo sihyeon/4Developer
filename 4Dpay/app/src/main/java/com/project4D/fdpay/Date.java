@@ -7,9 +7,9 @@ import java.util.Calendar;
  * Created by Jaeung on 2015-08-18.
  */
 public class Date {
-    //³¯Â¥ÀÇ µ¥ÀÌÅÍ Æ÷¸Ë¹æ½Ä
+    //ë°ì´íŠ¸ í˜•ì‹ì„ ì„¤ì •
     public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyyMMdd");
-    //ÇöÀç ³¯Â¥
+    //í˜„ì¬ ë‚ ì§œ ì„¤ì •
     public static final int TODAY_YEAR = Integer.parseInt(Date.DATE_FORMAT.format(Calendar.getInstance().getTimeInMillis()).substring(0, 4));
     public static final int TODAY_Month = Integer.parseInt(Date.DATE_FORMAT.format(Calendar.getInstance().getTimeInMillis()).substring(4, 6));
     public static final int TODAY_DAY = Integer.parseInt(Date.DATE_FORMAT.format(Calendar.getInstance().getTimeInMillis()).substring(6, 8));
@@ -17,7 +17,7 @@ public class Date {
     public static int year;
     public static int month;
     public static int day;
-    //»ç¿ëÇÒ °ÍÀÎÁö
+    //ì´ ë‚ ì§œë¥¼ ì“°ëŠ”ì§€ ì•„ë‹Œì§€ ìƒíƒœì„¤ì •
     public static boolean useState;
     public Date(){
     }
