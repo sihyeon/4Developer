@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.project4D.fdpay.R;
 
@@ -47,7 +48,13 @@ public class CalendarListAdapter extends BaseAdapter{
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View item = inflater.inflate(R.layout.adpater_calendar_list, parent, false);
 
+        TextView breakdown = (TextView) item.findViewById(R.id.breakdown);
+        TextView categorize = (TextView) item.findViewById(R.id.categorize);
+        TextView incomingOrSpending = (TextView) item.findViewById(R.id.incomingOrSpending);
 
+        breakdown.setText(calendarItemList.get(position).breakdown);
+        categorize.setText(calendarItemList.get(position).categorize);
+        incomingOrSpending.setText(calendarItemList.get(position).incoming + "");
 
         return item;
     }
@@ -57,6 +64,11 @@ public class CalendarListAdapter extends BaseAdapter{
         calendarItemList.add(new CalendarItem(breakdown, categorize, incoming, spending));
     }
 
+    public void removeALL(){
+        for(int i = 0; calendarItemList.size() > i; i++){
+            remove(i);
+        }
+    }
     // 외부에서 아이템 삭제 요청 시 사용
     public void remove(int _position) {
         calendarItemList.remove(_position);
