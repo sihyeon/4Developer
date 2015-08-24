@@ -1,0 +1,25 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    tools:context="com.project4D.fdpay.PointCardFragment"
+    android:background="?android:windowBackground">
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:dividerHeight="-200dp"
+        android:id="@+id/pointcard_listView"/>
+
+    <com.getbase.floatingactionbutton.AddFloatingActionButton
+        android:id="@+id/point_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        fab:fab_plusIconColor="@color/half_black"
+        fab:fab_colorNormal="@color/white"
+        fab:fab_colorPressed="@color/white_pressed"
+        android:layout_marginBottom="16dp"/>
+
+</FrameLayout>

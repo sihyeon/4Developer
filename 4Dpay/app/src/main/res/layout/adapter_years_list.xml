@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:background="?android:windowBackground"
+    android:clickable="true">
+
+    <FrameLayout
+        android:layout_width="80dp"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/listMonth"
+            android:text="몇월"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textSize="30sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="100dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="지출:"
+            android:textColor="#ff0000"
+            android:textSize="20sp"
+            android:id="@+id/listTotalSpend"
+            android:layout_gravity="center_horizontal|top" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="수입:"
+            android:textColor="#0000ff"
+            android:textSize="20sp"
+            android:id="@+id/listTotalIncome"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="잔액:"
+            android:textSize="20sp"
+            android:id="@+id/listTotalBalance"
+            android:layout_gravity="center_horizontal|bottom" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="금액"
+            android:textSize="20sp"
+            android:textColor="#FF0000"
+            android:id="@+id/listTotalSpendResult" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="금액"
+            android:textSize="20sp"
+            android:id="@+id/listTotalBalanceResult"
+            android:layout_gravity="left|bottom" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="금액"
+            android:textSize="20sp"
+            android:textColor="#0000ff"
+            android:id="@+id/listTotalIncomeResult"
+            android:layout_gravity="left|center_vertical" />
+    </FrameLayout>
+
+</LinearLayout>
