@@ -3,6 +3,7 @@ package com.project4D.fdpay;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import com.project4D.fdpay.adapter.CalendarListAdapter;
 
 import java.util.Calendar;
+import java.util.Random;
 
 /**
  * Created by Jaeung on 2015-08-05.
@@ -25,7 +27,7 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
     private CalendarListAdapter calendarListAdapter = null;
     private ListView calendarListView = null;
 
-
+    private Random random = new Random();
     private int setYear;
     private int setMonth;
     private int setDay;
@@ -57,17 +59,6 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
 
         setMinMaxDate();    //캘린더 맨처음 날짜와 맨 끝 날짜 설정
 
-        //날짜 선택이 변경될때마다 불리는 리스너
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month,
-                                            int dayOfMonth) {
-                // TODO Auto-generated method stub
-                //         setYear = year;
-                //         setMonth = month;
-                //         setDay = dayOfMonth;
-            }
-        });
 
         //리스트 부분
         //어댑터 생성
@@ -78,10 +69,32 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         calendarListView.setAdapter(calendarListAdapter);
 
         //어댑터 추가
-        calendarListAdapter.add("오천원");
-        calendarListAdapter.add("육천원");
-        calendarListAdapter.add("칠천원");
-        calendarListAdapter.add("팔천원");
+        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
+        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
+        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
+        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
+        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
+
+
+        //날짜 선택이 변경될때마다 불리는 리스너
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month,
+                                            int dayOfMonth) {
+                // TODO Auto-generated method stub
+                calendarListAdapter.removeALL();
+                calendarListAdapter = null;
+                calendarListAdapter = new CalendarListAdapter();
+                calendarListView.setAdapter(calendarListAdapter);
+                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
+                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
+                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
+                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
+                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
+                Log.d("test", random.nextInt(10000)+1 + "");
+            }
+        });
+
         return calendarView;
     }
 
