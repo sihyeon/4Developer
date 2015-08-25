@@ -19,11 +19,12 @@ public class CardDBManager extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createCard = "create CARD ( " +
-                "cardNum INTEGER PRIMARY KEY, " +
-                "cardValid INTEGER, " +
-                "password INTEGER, " +
-                "cardName TEXT, " +
-                "cvc INTEGER )";
+                "TYPE TEXT, "+
+                "NUMBER INTEGER PRIMARY KEY, " +
+                "VALID INTEGER, " +
+                "PASSWORD INTEGER, " +
+                "NAME TEXT, " +
+                "CVC INTEGER )";
         db.execSQL(createCard);
     }
 
@@ -33,16 +34,17 @@ public class CardDBManager extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void add(CardInfo card){
+    public void add(Context context, CardInfo card){
         //DO IT NEED?
-        SQLiteDatabase database = getWritableDatabase();
+        SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("cardNum", card.getCardNum());
-        contentValues.put("cardValid", card.getCardValid());
-        contentValues.put("password", card.getPassword());
-        contentValues.put("cardName", card.getCardName());
-        contentValues.put("cvc", card.getCvc());
-        database.insert("CARD", null, contentValues);
+        contentValues.put("TYPE", context.getClass().toString());
+        contentValues.put("NUMBER", card.getCardNum());
+        contentValues.put("VALID", card.getCardValid());
+        contentValues.put("PASSWORD", card.getPassword());
+        contentValues.put("NAME", card.getCardName());
+        contentValues.put("CVC", card.getCvc());
+        db.insert("CARD", null, contentValues);
     }
 
     //TODO { http://mainia.tistory.com/670 }

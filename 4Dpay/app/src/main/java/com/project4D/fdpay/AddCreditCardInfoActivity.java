@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.project4D.fdpay.model.CardModel;
 import com.project4D.fdpay.util.HttpPoster;
+import com.project4D.fdpay.util.ViewUtil;
 
 public class AddCreditCardInfoActivity extends Activity {
 
@@ -33,8 +34,9 @@ public class AddCreditCardInfoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 String cardnumber = cardnumber1.toString()+cardnumber2.toString()+cardnumber3.toString()+cardnumber4.toString();
+                //int password =
                 //TODO send data
-                //HttpPoster..
+                //HttpPoster.executePOST();
                 //TODO to show that this activity can attach card.
                 if(cardname.getText().toString().isEmpty()) {
                     Toast.makeText(AddCreditCardInfoActivity.this, "이름을 입력해 주세요", Toast.LENGTH_LONG).show();
