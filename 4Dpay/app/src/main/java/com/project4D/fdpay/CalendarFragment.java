@@ -21,7 +21,7 @@ import java.util.Random;
  * Created by Jaeung on 2015-08-05.
  */
 public class CalendarFragment extends Fragment implements View.OnClickListener {
-
+    private HouseHolderStatus houseHolderStatus;
     private CalendarView calendar;
     private Calendar setCal = Calendar.getInstance();   //Calendar는 추상클래스라 객체를 가져와야함
     private CalendarListAdapter calendarListAdapter = null;
@@ -53,9 +53,9 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         rightMonthButton.setOnClickListener(this);
 
         //현재 날짜
-        setYear = Date.TODAY_YEAR;
-        setMonth = Date.TODAY_Month;
-        setDay = Date.TODAY_DAY;
+        setYear = HouseHolderStatus.TODAY_YEAR;
+        setMonth = HouseHolderStatus.TODAY_Month;
+        setDay = HouseHolderStatus.TODAY_DAY;
 
         setMinMaxDate();    //캘린더 맨처음 날짜와 맨 끝 날짜 설정
 
@@ -103,8 +103,8 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         String closeingDay = null;
 
         //현재 설정되어있는 날짜
-        int nowYear = Integer.parseInt(Date.DATE_FORMAT.format(calendar.getDate()).substring(0, 4));
-        int nowMonth = Integer.parseInt(Date.DATE_FORMAT.format(calendar.getDate()).substring(4, 6));
+        int nowYear = Integer.parseInt(HouseHolderStatus.DATE_FORMAT.format(calendar.getDate()).substring(0, 4));
+        int nowMonth = Integer.parseInt(HouseHolderStatus.DATE_FORMAT.format(calendar.getDate()).substring(4, 6));
 
         //setYear, setMonth는 설정된 날짜. 즉, 변경될 날짜
 
@@ -160,14 +160,14 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         setActivityTitle("월별 보기");
 
         Toast t = Toast.makeText(getActivity(),
-               "실행됨" + Date.TODAY_YEAR,
+               "실행됨" + HouseHolderStatus.TODAY_YEAR,
                 Toast.LENGTH_LONG);
         t.show();
 
-        if (((MainActivity) MainActivity.mainActivityContext).date.useState){
-            setYear = ((MainActivity) MainActivity.mainActivityContext).date.year;
-            setMonth = ((MainActivity) MainActivity.mainActivityContext).date.month;
-            ((MainActivity) MainActivity.mainActivityContext).date.useState = false;
+        if (houseHolderStatus.dateUseStatus){
+            setYear = houseHolderStatus.year;
+            setMonth = houseHolderStatus.month;
+            houseHolderStatus.dateUseStatus = false;
             setMinMaxDate();
         }
     }

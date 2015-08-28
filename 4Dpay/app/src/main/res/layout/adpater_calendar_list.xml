@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="수입/지출"
-            android:id="@+id/incomingOrSpending" />
+            android:id="@+id/amount" />
 
     </LinearLayout>
 

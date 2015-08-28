@@ -39,7 +39,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 public class MainActivity extends AppCompatActivity {
     public Drawer drawer;
     public static Context mainActivityContext;
-    public Date date = new Date();
+    public HouseHolderStatus houseHolderStatus = new HouseHolderStatus();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                                     lastDrawerSelectedItem = 5;
                                     break;
                                 case 6:
-                                    transactFragment(new CategorizeFragment(), "Category");
+                                    transactFragment(new CategorizationFragment(), "Category");
                                     lastDrawerSelectedItem = 6;
                                     break;
                             }

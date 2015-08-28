@@ -16,14 +16,15 @@ import android.widget.TextView;
  * Created by Jaeung on 2015-08-04.
  */
 public class WritingFragment extends Fragment implements View.OnClickListener {
-    private int writingYear = Date.TODAY_YEAR;
-    private int writingMonth = Date.TODAY_Month;
-    private int writingDay = Date.TODAY_DAY;
+    private HouseHolderStatus houseHolderStatus;
+    private int writingYear = HouseHolderStatus.TODAY_YEAR;
+    private int writingMonth = HouseHolderStatus.TODAY_Month;
+    private int writingDay = HouseHolderStatus.TODAY_DAY;
 
     private View writingView;
     private EditText moneyEdit;
     private EditText breakdownEdit;
-    private EditText categorizeEdit;
+    private EditText categorizationEdit;
     private EditText memoEdit;
     private TextView writingDate;
     @Override
@@ -53,7 +54,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
 
         moneyEdit = (EditText)writingView.findViewById(R.id.moneyEdit);
         breakdownEdit = (EditText)writingView.findViewById(R.id.breakdownEdit);
-        categorizeEdit = (EditText)writingView.findViewById(R.id.categorizeEdit);
+        categorizationEdit = (EditText)writingView.findViewById(R.id.categorizeEdit);
         memoEdit = (EditText)writingView.findViewById(R.id.memoEdit);
 
 
@@ -86,6 +87,13 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     public void onResume() {
         super.onResume();
         setActivityTitle("쓰기");
+
+        if(houseHolderStatus.writingInfoUseStatus){
+            breakdownEdit.setText(houseHolderStatus.breakdown);
+            categorizationEdit.setText(houseHolderStatus.categorization);
+            moneyEdit.setText(houseHolderStatus.amount + "");
+            houseHolderStatus.writingInfoUseStatus = false;
+        }
     }
 
     @Override
@@ -101,7 +109,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
             case R.id.button_SaveAndEnd:
                 moneyEdit.getText().toString();
                 breakdownEdit.getText().toString();
-                categorizeEdit.getText().toString();
+                categorizationEdit.getText().toString();
                 memoEdit.getText().toString();
                 break;
             case R.id.writingDateSelector:

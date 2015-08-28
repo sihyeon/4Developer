@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.project4D.fdpay.CalendarFragment;
+import com.project4D.fdpay.HouseHolderStatus;
 import com.project4D.fdpay.MainActivity;
 import com.project4D.fdpay.R;
 
@@ -18,6 +19,7 @@ import java.util.ArrayList;
  */
 public class YearsListAdapter extends BaseAdapter {
     private ArrayList<AdapterLayout> adapterLayout;
+    private HouseHolderStatus houseHolderStatus;
     private int year;
 
     // 생성자
@@ -66,9 +68,9 @@ public class YearsListAdapter extends BaseAdapter {
         item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) MainActivity.mainActivityContext).date.useState = true;
-                ((MainActivity) MainActivity.mainActivityContext).date.year = year;
-                ((MainActivity) MainActivity.mainActivityContext).date.month = adapterLayout.get(position).month;
+                houseHolderStatus.year = year;
+                houseHolderStatus.dateUseStatus = true;
+                houseHolderStatus.month = adapterLayout.get(position).month;
                 ((MainActivity) MainActivity.mainActivityContext).setDrawerLastSelectedItem(4);
                 ((MainActivity) MainActivity.mainActivityContext).transactFragment(new CalendarFragment(), "Calendar");
             }

@@ -20,7 +20,7 @@ public class YearsFragment extends Fragment implements OnClickListener {
     private YearsListAdapter yearsListAdapter = null;
     private TextView listYears;
 
-    private int listYearsNumber = Date.TODAY_YEAR;
+    private int listYearsNumber = HouseHolderStatus.TODAY_YEAR;
 
 
 
