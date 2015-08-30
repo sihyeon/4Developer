@@ -19,15 +19,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
+        android:layout_marginTop="30dp"
         android:id="@+id/certification_edittext"
         android:layout_gravity="center" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="확인"
         android:id="@+id/certification_submit"
+        android:background="@drawable/com_rounded_corner"
+        android:text="확인"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center" />
-
 
 </LinearLayout>

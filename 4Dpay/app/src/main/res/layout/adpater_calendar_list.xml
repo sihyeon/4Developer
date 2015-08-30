@@ -3,45 +3,39 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-      android:background="?android:windowBackground"
-
+    android:background="?android:windowBackground"
     android:clickable="true">
 
     <LinearLayout
-        android:weightSum="3"
+
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
 
         <TextView
-            android:background="#FF0000"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="내역"
+            android:text="내역이당"
             android:id="@+id/breakdown" />
 
 
 
         <TextView
-            android:background="#00FF00"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="카테고리"
             android:id="@+id/categorize"
-            android:layout_gravity="center_horizontal"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+          />
 
 
         <TextView
-            android:background="#0000FF"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="수입/지출"

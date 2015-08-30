@@ -198,7 +198,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_weight="1"
                 android:background="#00000000"
-                android:drawableTop="@drawable/pen_icon"
+                android:drawableTop="@drawable/pen"
                 android:padding="5dp"
                 android:text="저장 후 계속 입력"
                 android:textSize="15sp" />
@@ -210,7 +210,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_weight="1"
                 android:background="#00000000"
-                android:drawableTop="@drawable/save_icon"
+                android:drawableTop="@drawable/save"
                 android:padding="5dp"
                 android:text="저장"
                 android:textSize="15sp" />
