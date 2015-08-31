@@ -67,6 +67,11 @@ public class CalendarListAdapter extends BaseAdapter{
                 houseHolderStatus.categorization = calendarItemList.get(position).categorization;
                 houseHolderStatus.amount = calendarItemList.get(position).incoming;
 
+                //날짜 설정
+                houseHolderStatus.year = calendarItemList.get(position).year;
+                houseHolderStatus.month = calendarItemList.get(position).month;
+                houseHolderStatus.day = calendarItemList.get(position).day;
+                houseHolderStatus.dateUseStatus = true;
                 ((MainActivity) MainActivity.mainActivityContext).setDrawerLastSelectedItem(3);
                 ((MainActivity) MainActivity.mainActivityContext).transactFragment(new WritingFragment(), "Writing");
 
@@ -77,8 +82,8 @@ public class CalendarListAdapter extends BaseAdapter{
     }
 
     // 외부에서 아이템 추가 요청 시 사용
-    public void add(String breakdown, String categorize, int incoming, int spending, String value) {
-        calendarItemList.add(new CalendarItem(breakdown, categorize, incoming, spending));
+    public void add(String breakdown, String categorize, int incoming, int spending, String value, int year, int month, int day) {
+        calendarItemList.add(new CalendarItem(breakdown, categorize, incoming, spending, year, month, day));
     }
 
     public void removeALL(){
@@ -96,11 +101,17 @@ public class CalendarListAdapter extends BaseAdapter{
         public String categorization;
         public int incoming = 0;
         public int spending = 0;
-        public CalendarItem(String breakdown, String categorize, int incoming, int spending){
+        public int year = 0;
+        public int month = 0;
+        public int day = 0;
+        public CalendarItem(String breakdown, String categorize, int incoming, int spending, int year, int month, int day){
             this.breakdown = breakdown;
             this.categorization = categorize;
             this.incoming = incoming;
             this.spending = spending;
+            this.year = year;
+            this.month = month;
+            this.day = day;
         }
     }
 }

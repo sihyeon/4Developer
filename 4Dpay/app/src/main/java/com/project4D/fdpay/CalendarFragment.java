@@ -1,7 +1,6 @@
 package com.project4D.fdpay;
 
 import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -32,14 +31,11 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
     private int setMonth;
     private int setDay;
 
-    public static Context calendarContext;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View calendarView = inflater.inflate(R.layout.fragment_calendar_view, container, false);
         calendar = (CalendarView) calendarView.findViewById(R.id.calendarView);
 
-        calendarContext = getActivity();
         //액션바 이름 변경
         setActivityTitle("월별 보기");
 
@@ -69,11 +65,11 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         calendarListView.setAdapter(calendarListAdapter);
 
         //어댑터 추가
-        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
-        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
-        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
-        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
-        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
+        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출", setYear, setMonth, setDay);
+        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출", setYear, setMonth, setDay);
+        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출", setYear, setMonth, setDay);
+        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출", setYear, setMonth, setDay);
+        calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출", setYear, setMonth, setDay);
 
 
         //날짜 선택이 변경될때마다 불리는 리스너
@@ -86,12 +82,11 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
                 calendarListAdapter = null;
                 calendarListAdapter = new CalendarListAdapter();
                 calendarListView.setAdapter(calendarListAdapter);
-                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
-                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
-                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
-                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
-                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출");
-                Log.d("test", random.nextInt(10000)+1 + "");
+                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출", year, month+1, dayOfMonth);
+                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출", year, month+1, dayOfMonth);
+                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출", year, month+1, dayOfMonth);
+                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출", year, month+1, dayOfMonth);
+                calendarListAdapter.add("내역", "카테고리", random.nextInt(10000)+1, 0, "지출", year, month+1, dayOfMonth);
             }
         });
 
@@ -139,6 +134,11 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
                 setCal.set(setYear, setMonth - 1, 1);
                 calendar.setMinDate(setCal.getTimeInMillis());
             } else if (nowMonth >= setMonth) {
+                //처리시간이 걸리면 maxDate보다 현재시간이 더 늦기 때문에 에러가남 그것을 방지하기 위해서
+                if(calendar.getMaxDate() < calendar.getDate()) {
+                    setCal.set(setYear + 1, setMonth - 1, 1);
+                    calendar.setMaxDate(setCal.getTimeInMillis());
+                }
                 //mindate부터 설정
                 setCal.set(setYear, setMonth - 1, 1);
                 calendar.setMinDate(setCal.getTimeInMillis());
@@ -176,22 +176,26 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.leftButton:
-                if (setMonth != 1) {
-                    setMonth--;
-                } else if (setMonth == 1) {
-                    setMonth = 12;
-                    setYear--;
+                if (setYear >= 1){
+                    if (setMonth != 1) {
+                        setMonth--;
+                    } else if (setMonth == 1) {
+                        setMonth = 12;
+                        setYear--;
+                    }
                 }
                 setMinMaxDate();
                 break;
             case R.id.rightButton:
-                if (setMonth != 12) {
-                    setMonth++;
-                } else if (setMonth == 12) {
-                    setMonth = 1;
-                    setYear++;
+                if (setYear <= 9999) {
+                    if (setMonth != 12) {
+                        setMonth++;
+                    } else if (setMonth == 12) {
+                        setMonth = 1;
+                        setYear++;
+                    }
+                    setMinMaxDate();
                 }
-                setMinMaxDate();
                 break;
         }
     }

@@ -88,11 +88,18 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
         super.onResume();
         setActivityTitle("쓰기");
 
-        if(houseHolderStatus.writingInfoUseStatus){
+        if(houseHolderStatus.writingInfoUseStatus && houseHolderStatus.dateUseStatus){
             breakdownEdit.setText(houseHolderStatus.breakdown);
             categorizationEdit.setText(houseHolderStatus.categorization);
             moneyEdit.setText(houseHolderStatus.amount + "");
             houseHolderStatus.writingInfoUseStatus = false;
+
+            writingYear = houseHolderStatus.year;
+            writingMonth = houseHolderStatus.month;
+            writingDay = houseHolderStatus.day;
+            houseHolderStatus.dateUseStatus = false;
+
+            writingDate.setText(writingYear + "." + writingMonth + "." + writingDay);
         }
     }
 
