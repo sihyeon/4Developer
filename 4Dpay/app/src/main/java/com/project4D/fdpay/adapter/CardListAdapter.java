@@ -79,7 +79,7 @@ public class CardListAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        setRoundedBackground(holder.layout, Color.parseColor("black"));
+        setRoundedBackground(holder.layout, Color.parseColor("white"));
 
         return convertView;
     }
