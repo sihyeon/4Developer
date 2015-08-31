@@ -20,6 +20,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     private int writingYear = HouseHolderStatus.TODAY_YEAR;
     private int writingMonth = HouseHolderStatus.TODAY_Month;
     private int writingDay = HouseHolderStatus.TODAY_DAY;
+    private DatePickerDialog datePickerDialog;
 
     private View writingView;
     private EditText moneyEdit;
@@ -104,6 +105,15 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
+    public void onStop(){
+        super.onStop();
+        if (datePickerDialog != null) {
+            datePickerDialog.dismiss();
+            datePickerDialog = null;
+        }
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_Income:
@@ -120,7 +130,8 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
                 memoEdit.getText().toString();
                 break;
             case R.id.writingDateSelector:
-                    new DatePickerDialog(WritingFragment.this.getActivity(), mDateSetListener, writingYear, writingMonth-1, writingDay).show();
+                datePickerDialog = new DatePickerDialog(WritingFragment.this.getActivity(), mDateSetListener, writingYear, writingMonth-1, writingDay);
+                datePickerDialog.show();
                 break;
         }
     }
