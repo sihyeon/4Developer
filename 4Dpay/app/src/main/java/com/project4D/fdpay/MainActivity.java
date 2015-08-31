@@ -39,7 +39,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 public class MainActivity extends AppCompatActivity {
     public Drawer drawer;
     public static Context mainActivityContext;
-    public Date date = new Date();
+    public HouseHolderStatus houseHolderStatus = new HouseHolderStatus();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -151,8 +151,9 @@ public class MainActivity extends AppCompatActivity {
                             new SecondaryDrawerItem().withName("신용 카드").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(1),
                             new SecondaryDrawerItem().withName("포인트 카드").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(2),
                             new DividerDrawerItem(),
-                            new PrimaryDrawerItem().withName("가계부").withIcon(FontAwesome.Icon.faw_area_chart).withIdentifier(3),
+                            new PrimaryDrawerItem().withName("가계부").withIcon(FontAwesome.Icon.faw_area_chart).withEnabled(false).withCheckable(false).withTextColor(R.color.hintColor),
                             new DividerDrawerItem(),
+                            new SecondaryDrawerItem().withName("쓰기").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(3),
                             new SecondaryDrawerItem().withName("월별보기").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(4),
                             new SecondaryDrawerItem().withName("연별보기").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(5),
                             new SecondaryDrawerItem().withName("분류별보기").withIcon(FontAwesome.Icon.faw_list_ol).withIdentifier(6),
@@ -189,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                                     lastDrawerSelectedItem = 5;
                                     break;
                                 case 6:
-                                    transactFragment(new CategorizeFragment(), "Category");
+                                    transactFragment(new CategorizationFragment(), "Category");
                                     lastDrawerSelectedItem = 6;
                                     break;
                             }

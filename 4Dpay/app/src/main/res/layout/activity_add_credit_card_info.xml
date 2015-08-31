@@ -39,7 +39,6 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
         android:text="카드번호"
-
         android:textColor="#000000"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -56,6 +55,8 @@
             android:layout_weight="1"
             android:inputType="number"
             android:maxLength="4"
+            android:ems="4"
+            android:gravity="center"
             android:nextFocusDown="@+id/addcreditcard_cardnumber2" />
 
         <TextView
@@ -71,6 +72,8 @@
             android:layout_weight="1"
             android:inputType="number"
             android:maxLength="4"
+            android:ems="4"
+            android:gravity="center"
             android:nextFocusDown="@+id/addcreditcard_cardnumber3" />
 
         <TextView
@@ -86,6 +89,8 @@
             android:layout_weight="1"
             android:inputType="number"
             android:maxLength="4"
+            android:ems="4"
+            android:gravity="center"
             android:nextFocusDown="@+id/addcreditcard_cardnumber4" />
 
         <TextView
@@ -100,7 +105,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="number"
-            android:maxLength="4" />
+            android:maxLength="4"
+            android:ems="4"
+            android:gravity="center" />
     </LinearLayout>
 
     <LinearLayout
@@ -229,12 +236,16 @@
 
     <Button
         android:id="@+id/addcreditcard_submit"
+        style="?android:textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#00000000"
-        android:drawableTop="@drawable/ok"
-        android:layout_gravity="end"
-        />
+        android:background="@drawable/com_rounded_corner"
+        android:text="확인"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
 
