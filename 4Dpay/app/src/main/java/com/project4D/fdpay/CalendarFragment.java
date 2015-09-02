@@ -2,6 +2,7 @@ package com.project4D.fdpay;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,10 +100,12 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         //현재 설정되어있는 날짜
         int nowYear = Integer.parseInt(HouseHolderStatus.DATE_FORMAT.format(calendar.getDate()).substring(0, 4));
         int nowMonth = Integer.parseInt(HouseHolderStatus.DATE_FORMAT.format(calendar.getDate()).substring(4, 6));
-
+        Log.i("calendar_test", nowMonth+"");
         //setYear, setMonth는 설정된 날짜. 즉, 변경될 날짜
 
         if (nowYear < setYear) {
+            //maxdate 의 마지막날을 구하기전에 설정
+            setCal.set(setYear, 0, 3);
             //maxdate부터 설정
             //이 달의 마지막 날 가져오기
             closeingDay = Integer.toString(setCal.getActualMaximum(setCal.DAY_OF_MONTH));
@@ -125,6 +128,8 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
             calendar.setMaxDate(setCal.getTimeInMillis());
         } else {
             if (nowMonth < setMonth) {
+                //maxdate 의 마지막날을 구하기전에 설정
+                setCal.set(setYear, nowMonth, 3);
                 //maxdate부터 설정
                 closeingDay = Integer.toString(setCal.getActualMaximum(setCal.DAY_OF_MONTH));
                 setCal.set(setYear, setMonth - 1, Integer.parseInt(closeingDay));
