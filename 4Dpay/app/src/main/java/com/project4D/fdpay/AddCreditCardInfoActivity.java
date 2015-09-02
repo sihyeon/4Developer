@@ -79,6 +79,5 @@ public class AddCreditCardInfoActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        db.close();
     }
 }

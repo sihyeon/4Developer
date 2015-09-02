@@ -1,5 +1,6 @@
 package com.project4D.fdpay;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,29 +22,31 @@ public class CreditCardFragment extends Fragment {
     private List<String> cardList;
     private String myname;
     private CreditCardDBManager db;
+    private ListView li;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         db = CreditCardDBManager.newCreditCardDBManager(getActivity());
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_credit_card, container, false);
-
-        setActivityTitle("신용카드");
         adapter = new CardListAdapter(getActivity());
-        listview = (ListView) view.findViewById(R.id.creditcard_listView);
-        listview.setAdapter(adapter);
+        li = (ListView) view.findViewById(R.id.creditcard_listView);
+        li.setAdapter(adapter);
         setAdapterItem();
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        li.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 setOnClickItemListView(parent, position);
             }
         });
+        setActivityTitle("신용카드");
+
 
         view.findViewById(R.id.credit_fab).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,9 +54,15 @@ public class CreditCardFragment extends Fragment {
                 startActivity(new Intent(getActivity(), AddCreditCardInfoActivity.class));
             }
         });
+
+        view.findViewById(R.id.Test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.deleteDataBase();
+                db.close();
+            }
+        });
         return view;
-
-
     }
 
     @Override
@@ -64,13 +73,16 @@ public class CreditCardFragment extends Fragment {
     }
 
     private void checkAdapterItemChanged() {
-        if(cardList.size() < db.getCount()){
-            Log.i("TAG", "checkAdapterItemChanged cardList size "+cardList.size());
-            for(int i = cardList.size() ; i < db.getCount(); i++){
+        int listSize = cardList.size();
+        int dbSize = db.getCount();
+        if(listSize < dbSize){
+            Log.i("TAG", "checkAdapterItemChanged cardList size " + listSize);
+            Log.i("TAG", "checkAdapterItemChanged db getCount " + dbSize);
+            for(int i = listSize+1; i <= dbSize; i++){
                 cardList.add(db.getName(i));
                 adapter.addItem(db.getName(i));
+                Log.i("TAG", "checkAdapterItemChanged inner function : "+db.getName(i));
             }
-            adapter.notifyDataSetChanged();
         }
     }
 
@@ -81,9 +93,11 @@ public class CreditCardFragment extends Fragment {
     private void setAdapterItem(){
         cardList = db.getAllName();
         if(cardList.isEmpty()) return;
+//        adapter.setCardList(cardList);
         for(String e : cardList){
             adapter.addItem(e);
         }
+//        adapter.notifyDataSetInvalidated();
     }
 
     //listview의 아이템 이벤트 등록
@@ -94,9 +108,4 @@ public class CreditCardFragment extends Fragment {
         startActivity(i);
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        db.close();
-    }
 }

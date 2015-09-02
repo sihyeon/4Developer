@@ -30,10 +30,21 @@ public class CardListAdapter extends BaseAdapter {
         this.context = context;
     }
 
+    public void setCardList(List<String> l){
+        List<CardModel> newCard = new ArrayList<CardModel>();
+        for(String e : l){
+            CardModel card = new CardModel();
+            card.setText(e);
+            newCard.add(card);
+        }
+        this.cardList = newCard;
+    }
+
     public void addItem(String name) {
         CardModel card = new CardModel();
         card.setText(name);
         cardList.add(card);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -54,11 +65,6 @@ public class CardListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
-        final CardModel discount = (CardModel) getItem(position);
-        CardModel prev_discount = null;
-        if (position > 0){
-            prev_discount = (CardModel) getItem(position - 1);
-        }
 
         if (convertView == null) {
             holder = new ViewHolder();
@@ -69,11 +75,11 @@ public class CardListAdapter extends BaseAdapter {
 
             holder.layout = (RelativeLayout) convertView.findViewById(R.id.card_mainlayout);
             holder.card = (ImageView) convertView.findViewById(R.id.card_item_img);
+            Log.i("TAG", "getView position : " + position);
             if(position%2==0)
                 holder.card.setImageResource(R.drawable.card_white_pink_gradation);
             holder.cardText = (TextView) convertView.findViewById(R.id.card_item_text);
             holder.cardText.setText(c.getText());
-            Log.i("Tag", "getView title:"+c.getText()+" position:"+position);
 
             convertView.setTag(holder);
         } else {
