@@ -55,13 +55,6 @@ public class CreditCardFragment extends Fragment {
             }
         });
 
-        view.findViewById(R.id.Test).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                db.deleteDataBase();
-                db.close();
-            }
-        });
         return view;
     }
 
