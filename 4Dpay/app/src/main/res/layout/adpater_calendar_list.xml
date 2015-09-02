@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="내역이당"
+            android:gravity="center"
             android:id="@+id/breakdown" />
 
 
@@ -29,6 +30,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="카테고리"
+            android:gravity="center"
             android:id="@+id/categorize"
           />
 
@@ -39,6 +41,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="수입/지출"
+            android:gravity="center"
             android:id="@+id/amount" />
 
     </LinearLayout>

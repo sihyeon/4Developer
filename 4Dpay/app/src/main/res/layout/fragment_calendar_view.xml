@@ -14,6 +14,7 @@
     </LinearLayout>
 
     <ListView
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/dayHouseHold"
@@ -22,6 +23,7 @@
         android:layout_below="@+id/calendarView" />
 
     <CalendarView
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:id="@+id/calendarView"
