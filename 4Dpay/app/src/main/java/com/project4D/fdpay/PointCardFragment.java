@@ -35,7 +35,7 @@ public class PointCardFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_point_card, container, false);
 
         setActivityTitle("포인트카드");
-        adapter = new CardListAdapter(getActivity());
+        adapter = new CardListAdapter();
         listview = (ListView) view.findViewById(R.id.pointcard_listView);
         listview.setAdapter(adapter);
         setAdapterItem("title1");

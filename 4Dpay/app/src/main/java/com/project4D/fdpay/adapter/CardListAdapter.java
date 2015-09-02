@@ -1,9 +1,7 @@
 package com.project4D.fdpay.adapter;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,29 +20,12 @@ import java.util.List;
  * Created by Administrator on 2015-08-14.
  */
 public class CardListAdapter extends BaseAdapter {
-    protected List<CardModel> cardList = new ArrayList<CardModel>();
-    protected Context context;
-
-    public CardListAdapter(Context context) {
-        super();
-        this.context = context;
-    }
-
-    public void setCardList(List<String> l){
-        List<CardModel> newCard = new ArrayList<CardModel>();
-        for(String e : l){
-            CardModel card = new CardModel();
-            card.setText(e);
-            newCard.add(card);
-        }
-        this.cardList = newCard;
-    }
+    protected final List<CardModel> cardList = new ArrayList<CardModel>();
 
     public void addItem(String name) {
         CardModel card = new CardModel();
         card.setText(name);
         cardList.add(card);
-        notifyDataSetChanged();
     }
 
     @Override
@@ -64,28 +45,27 @@ public class CardListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
+        ViewHolder curView;
 
         if (convertView == null) {
-            holder = new ViewHolder();
-            LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.card_item, null);
+            curView = new ViewHolder();
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
+            curView.layout = (RelativeLayout) convertView.findViewById(R.id.card_mainlayout);
+            curView.card = (ImageView) convertView.findViewById(R.id.card_item_img);
+            curView.cardText = (TextView) convertView.findViewById(R.id.card_item_text);
+            setRoundedBackground(curView.layout, Color.parseColor("white"));
 
-            CardModel c = cardList.get(position);
-
-            holder.layout = (RelativeLayout) convertView.findViewById(R.id.card_mainlayout);
-            holder.card = (ImageView) convertView.findViewById(R.id.card_item_img);
-            Log.i("TAG", "getView position : " + position);
-            if(position%2==0)
-                holder.card.setImageResource(R.drawable.card_white_pink_gradation);
-            holder.cardText = (TextView) convertView.findViewById(R.id.card_item_text);
-            holder.cardText.setText(c.getText());
-
-            convertView.setTag(holder);
+            convertView.setTag(curView);
         } else {
-            holder = (ViewHolder) convertView.getTag();
+            curView = (ViewHolder) convertView.getTag();
         }
-        setRoundedBackground(holder.layout, Color.parseColor("white"));
+
+        // Set data
+        CardModel c = cardList.get(position);
+        if (position % 2 == 0) {
+            curView.card.setImageResource(R.drawable.card_white_pink_gradation);
+        }
+        curView.cardText.setText(c.getText());
 
         return convertView;
     }

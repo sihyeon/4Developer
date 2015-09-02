@@ -22,18 +22,19 @@ public class CreditCardDBManager extends SQLiteOpenHelper {
     private Context context;
 
 
-    private CreditCardDBManager(Context context, String name, SQLiteDatabase.CursorFactory cursorFactory, int version){
+    private CreditCardDBManager(Context context, String name, SQLiteDatabase.CursorFactory cursorFactory, int version) {
         super(context, name, cursorFactory, version);
         this.context = context;
     }
-    public static CreditCardDBManager newCreditCardDBManager(Context context){
+
+    public static CreditCardDBManager newCreditCardDBManager(Context context) {
         return new CreditCardDBManager(context, DATABASENAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String createCard = "CREATE TABLE "+TABLENAME+"( " +
+        String createCard = "CREATE TABLE " + TABLENAME + "( " +
                 "_id INTEGER PRIMARY KEY, " +
                 "NUMBER CHAR(16), " +
                 "NAME CHAR(30) NOT NULL)";
@@ -46,7 +47,7 @@ public class CreditCardDBManager extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void add(CardInfo card){
+    public void add(CardInfo card) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("NUMBER", card.getCardNum());
@@ -54,11 +55,11 @@ public class CreditCardDBManager extends SQLiteOpenHelper {
         db.insert("CARD", null, contentValues);
     }
 
-    public void close(){
+    public void close() {
         this.close();
     }
 
-    public List<CardInfo> getAll(){
+    public List<CardInfo> getAll() {
         List<CardInfo> contactList = new ArrayList<CardInfo>();
         String selectQuery = "SELECT * FROM CARD";
         SQLiteDatabase db = this.getWritableDatabase();
@@ -66,42 +67,42 @@ public class CreditCardDBManager extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 CardInfo card = new CardInfo();
-                Log.i("TAG", "getAll _id - " + cursor.getColumnName(0)+" : "+cursor.getInt(0));
+                Log.i("TAG", "getAll _id - " + cursor.getColumnName(0) + " : " + cursor.getInt(0));
                 card.setCardNum(cursor.getString(1));
-                Log.i("TAG", "getAll num : " + cursor.getColumnName(1)+" : "+cursor.getString(1));
+                Log.i("TAG", "getAll num : " + cursor.getColumnName(1) + " : " + cursor.getString(1));
                 card.setCardName(cursor.getString(2));
-                Log.i("TAG", "getAll name : " + cursor.getColumnName(2)+" : "+cursor.getString(2));
+                Log.i("TAG", "getAll name : " + cursor.getColumnName(2) + " : " + cursor.getString(2));
                 contactList.add(card);
-                } while (cursor.moveToNext());
-            }
-        cursor.close();
-        return contactList;
-    }
-
-    public List<String> getAllName(){
-        List<String> contactList = new ArrayList<String>();
-        String selectQuery = "SELECT NAME FROM CARD";
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
-        if (cursor.moveToFirst()) {
-            do {
-                contactList.add(cursor.getString(0));
             } while (cursor.moveToNext());
         }
         cursor.close();
         return contactList;
     }
 
-    public int getCount(){
+    public List<String> getAllCardName() {
+        final List<String> cardNameList = new ArrayList<String>();
+        String selectQuery = "SELECT NAME FROM CARD";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                cardNameList.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return cardNameList;
+    }
+
+    public int getCount() {
         return getAll().size();
     }
 
-    public String getName(int position){
+    public String getCardNameById(int position) {
         String result = null;
         SQLiteDatabase db = getWritableDatabase();
-        String selectQuery = "SELECT NAME FROM CARD WHERE _id = " +position;
+        String selectQuery = "SELECT NAME FROM CARD WHERE _id = " + position;
         Cursor cursor = db.rawQuery(selectQuery, null);
-        if(cursor.moveToFirst()) {
+        if (cursor.moveToFirst()) {
             result = cursor.getString(0);
         }
         cursor.close();
@@ -109,7 +110,7 @@ public class CreditCardDBManager extends SQLiteOpenHelper {
     }
 
     //TODO { http://mainia.tistory.com/670 }
-    public void deleteDataBase(){
+    public void deleteDataBase() {
         context.deleteDatabase(DATABASENAME);
     }
 }
