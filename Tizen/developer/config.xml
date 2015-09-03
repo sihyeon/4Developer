@@ -3,8 +3,8 @@
     <tizen:application id="4nXMJGFWnf.developer" package="4nXMJGFWnf" required_version="2.2"/>
     <content src="Start.html"/>
     <feature name="http://tizen.org/feature/screen.size.normal.320.320"/>
-    <icon src="/images/4Dlogo.png"/>
-    <name>developer</name>
+    <icon src="/images/4Dpay.png"/>
+    <name>4Dpay</name>
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:privilege name="http://tizen.org/privilege/filesystem.read"/>
     <tizen:setting hwkey-event="enable"/>

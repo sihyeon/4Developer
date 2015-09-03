@@ -6,31 +6,25 @@ body {
 	position: relative;
 }
 
-.ui-card-padding {
-	padding-top: 30px;
-	padding-bottom: 30px;
-	padding-left: 25px;
-	padding-right: 25px;
-}
 
 .button-group-height {
 	height: 72px;
 }
 
 .ui-page {
-	background-color :rgba(8,8,8,1);
+	background-color :rgba(27,27,27,1);
 	}
 
 .ui-page img {
 	position : absolute;
-	margin-top:77px;
-	margin-left:50px;
-	width : 210px;
-	height : 150px;
+	top:50px;
+	left:90px;
+	width : 180px;
+	height : 180px;
 }
 
 .ui-title {
-	color:rgba(8,8,8,1);
+	color:rgba(27,27,27,1);
 	border-bottom: 2px solid #FF9100;
 }
 
@@ -39,9 +33,10 @@ body {
 }
 
 #InfoImg {
-	margin-left:42px;
-	width: 230px;
-	height:240px;
+	top:0;
+	left:50px;
+	width: 150px;
+	height:130px;
 }
 
 /*******************************Go btn *****************************/
