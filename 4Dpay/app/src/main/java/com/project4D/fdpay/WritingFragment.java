@@ -25,7 +25,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     private View writingView;
     private EditText moneyEdit;
     private EditText breakdownEdit;
-    private EditText categorizationEdit;
+    private TextView categorizationView;
     private EditText memoEdit;
     private TextView writingDate;
     @Override
@@ -55,15 +55,14 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
 
         moneyEdit = (EditText)writingView.findViewById(R.id.moneyEdit);
         breakdownEdit = (EditText)writingView.findViewById(R.id.breakdownEdit);
-        categorizationEdit = (EditText)writingView.findViewById(R.id.categorizeEdit);
         memoEdit = (EditText)writingView.findViewById(R.id.memoEdit);
 
-
+        categorizationView = (TextView)writingView.findViewById(R.id.categorizeEdit);
 
         return writingView;
     }
 
-    DatePickerDialog.OnDateSetListener mDateSetListener =
+    public DatePickerDialog.OnDateSetListener mDateSetListener =
             new DatePickerDialog.OnDateSetListener(){
 
                 @Override
@@ -91,7 +90,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
 
         if(houseHolderStatus.writingInfoUseStatus && houseHolderStatus.dateUseStatus){
             breakdownEdit.setText(houseHolderStatus.breakdown);
-            categorizationEdit.setText(houseHolderStatus.categorization);
+            categorizationView.setText(houseHolderStatus.categorization);
             moneyEdit.setText(houseHolderStatus.amount + "");
             houseHolderStatus.writingInfoUseStatus = false;
 
@@ -126,7 +125,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
             case R.id.button_SaveAndEnd:
                 moneyEdit.getText().toString();
                 breakdownEdit.getText().toString();
-                categorizationEdit.getText().toString();
+                categorizationView.getText().toString();
                 memoEdit.getText().toString();
                 break;
             case R.id.writingDateSelector:
