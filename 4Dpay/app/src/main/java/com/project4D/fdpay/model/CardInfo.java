@@ -4,17 +4,27 @@ package com.project4D.fdpay.model;
  * Created by Administrator on 2015-08-24.
  */
 public class CardInfo {
-    int cardNum;
+    String cardNum;
     int cardValid;
     int password;
     String cardName;
     int cvc;
 
-    public int getCardNum() {
+    public CardInfo(){}
+
+    public CardInfo(String cardNum, int cardValid, int password, String cardName, int cvc) {
+        this.cardNum = cardNum;
+        this.cardValid = cardValid;
+        this.password = password;
+        this.cardName = cardName;
+        this.cvc = cvc;
+    }
+
+    public String getCardNum() {
         return cardNum;
     }
 
-    public void setCardNum(int cardNum) {
+    public void setCardNum(String cardNum) {
         this.cardNum = cardNum;
     }
 

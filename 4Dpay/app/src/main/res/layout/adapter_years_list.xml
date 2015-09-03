@@ -46,14 +46,7 @@
             android:id="@+id/listTotalIncome"
             android:layout_gravity="center" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="잔액:"
-            android:textSize="20sp"
-            android:id="@+id/listTotalBalance"
-            android:layout_gravity="center_horizontal|bottom" />
+
     </FrameLayout>
 
     <FrameLayout
@@ -69,14 +62,6 @@
             android:textColor="#FF0000"
             android:id="@+id/listTotalSpendResult" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="금액"
-            android:textSize="20sp"
-            android:id="@+id/listTotalBalanceResult"
-            android:layout_gravity="left|bottom" />
 
         <TextView
             android:layout_width="wrap_content"

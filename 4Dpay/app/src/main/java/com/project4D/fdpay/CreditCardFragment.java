@@ -10,28 +10,35 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.project4D.fdpay.adapter.CardListAdapter;
+import com.project4D.fdpay.util.CreditCardDBManager;
 
 public class CreditCardFragment extends Fragment {
     private ListView listview;
     private CardListAdapter adapter;
-    private String myname;
+    private CreditCardDBManager db;
+    private ListView li;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_credit_card, container, false);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        db = CreditCardDBManager.newCreditCardDBManager(getActivity());
+    }
 
-        setActivityTitle("신용카드");
-        adapter = new CardListAdapter(getActivity());
-        listview = (ListView) view.findViewById(R.id.creditcard_listView);
-        listview.setAdapter(adapter);
-        setAdapterItem();
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_credit_card, container, false);
+        adapter = new CardListAdapter();
+        li = (ListView) view.findViewById(R.id.creditcard_listView);
+        li.setAdapter(adapter);
+        initAdapterItem();
+        li.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 setOnClickItemListView(parent, position);
             }
         });
+        setActivityTitle("신용카드");
+
 
         view.findViewById(R.id.credit_fab).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,31 +46,36 @@ public class CreditCardFragment extends Fragment {
                 startActivity(new Intent(getActivity(), AddCreditCardInfoActivity.class));
             }
         });
+
         return view;
-
-
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
         setActivityTitle("신용카드");
+        if (AddCreditCardInfoActivity.newlyCardInfo != null) {
+            adapter.addItem(AddCreditCardInfoActivity.newlyCardInfo.getCardName());
+            adapter.notifyDataSetChanged();
+        }
     }
 
-    private void setActivityTitle(String title){
+    private void setActivityTitle(String title) {
         ((MainActivity) getActivity()).setActionBarTitle(title);
     }
 
-    private void setAdapterItem(){
-        //for example
-        adapter.addItem("title1");
-        adapter.addItem("title2");
+    private void initAdapterItem() {
+        for (String e : db.getAllCardName()) {
+            adapter.addItem(e);
+        }
+        adapter.notifyDataSetChanged();
     }
 
     //listview의 아이템 이벤트 등록
-    private void setOnClickItemListView(AdapterView<?> parent,int position){
+    private void setOnClickItemListView(AdapterView<?> parent, int position) {
         //TODO hp..
-        startActivity(new Intent(getActivity(), ShowCardInfoActivity.class));
+        Intent i = new Intent(getActivity(), ShowCardInfoActivity.class);
+        i.putExtras(new Bundle(position));
+        startActivity(i);
     }
-
 }
