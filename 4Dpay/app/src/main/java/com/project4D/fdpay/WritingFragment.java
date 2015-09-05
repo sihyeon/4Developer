@@ -147,7 +147,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
                 memoEdit.getText().toString();
                 break;
             case R.id.writingDateSelector:
-                datePickerDialog = new DatePickerDialog(WritingFragment.this.getActivity(), mDateSetListener, writingYear, writingMonth - 1, writingDay);
+                datePickerDialog = new DatePickerDialog(WritingFragment.this.getActivity(), R.style.DialogTheme ,mDateSetListener, writingYear, writingMonth - 1, writingDay);
                 datePickerDialog.show();
                 break;
             case R.id.categorizationResult:
