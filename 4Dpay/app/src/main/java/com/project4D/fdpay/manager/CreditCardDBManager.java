@@ -1,4 +1,4 @@
-package com.project4D.fdpay.util;
+package com.project4D.fdpay.manager;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -93,9 +93,6 @@ public class CreditCardDBManager extends SQLiteOpenHelper {
         return cardNameList;
     }
 
-    public int getCount() {
-        return getAll().size();
-    }
 
     public String getCardNameById(int position) {
         String result = null;
@@ -107,10 +104,5 @@ public class CreditCardDBManager extends SQLiteOpenHelper {
         }
         cursor.close();
         return result;
-    }
-
-    //TODO { http://mainia.tistory.com/670 }
-    public void deleteDataBase() {
-        context.deleteDatabase(DATABASENAME);
     }
 }

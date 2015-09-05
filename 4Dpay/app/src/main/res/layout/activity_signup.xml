@@ -62,6 +62,63 @@
             android:hint="PHONE"
             android:inputType="phone" />
 
+        <EditText
+            android:id="@+id/signup_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="이름"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="성별" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/addpointcard_usergendermale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="남" />
+
+            <RadioButton
+                android:id="@+id/addpointcard_usergenderfemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="구분" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/addpointcard_userdomastic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내국인" />
+
+            <RadioButton
+                android:id="@+id/addpointcard_userforeigner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="외국인" />
+        </LinearLayout>
+
+
         <Button
             android:id="@+id/signup_signupbutton"
             android:layout_width="wrap_content"

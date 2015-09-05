@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.project4D.fdpay.model.CardInfo;
-import com.project4D.fdpay.util.CreditCardDBManager;
+import com.project4D.fdpay.manager.CreditCardDBManager;
 import com.project4D.fdpay.util.ViewUtil;
 
 public class AddCreditCardInfoActivity extends Activity {

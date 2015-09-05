@@ -10,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.project4D.fdpay.adapter.CardListAdapter;
-import com.project4D.fdpay.util.CreditCardDBManager;
+import com.project4D.fdpay.manager.CreditCardDBManager;
 
 public class CreditCardFragment extends Fragment {
     private ListView listview;
@@ -75,7 +75,9 @@ public class CreditCardFragment extends Fragment {
     private void setOnClickItemListView(AdapterView<?> parent, int position) {
         //TODO hp..
         Intent i = new Intent(getActivity(), ShowCardInfoActivity.class);
-        i.putExtras(new Bundle(position));
+        Bundle b = new Bundle();
+        b.putInt("POSITION", position+1);
+        i.putExtras(b);
         startActivity(i);
     }
 }
