@@ -159,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Medium Text"
-                    android:id="@+id/textView8"
+                    android:id="@+id/categorizationResult"
                     android:layout_column="1" />
 
             </TableRow>
