@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/leftMonthButton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="left|center_vertical"
             android:layout_marginLeft="30dp"
             android:background="#00ffffff"
@@ -24,8 +24,8 @@
 
         <ImageView
             android:id="@+id/rightMonthButton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="right|center_vertical"
             android:background="#00ffffff"
             android:src="@drawable/right_arrow"
