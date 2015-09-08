@@ -1,37 +1,69 @@
 package com.project4D.fdpay;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
-public class AddPointCardInfoActivity extends AppCompatActivity {
+import com.project4D.fdpay.manager.PointCardDBManager;
+import com.project4D.fdpay.model.PointCardInfo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AddPointCardInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    public static PointCardInfo newlyCardInfo = null;
+
+    private PointCardDBManager db;
+    private String selectedCardName = null;
+    List<String> cardName = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_point_card_info);
+
+        db = new PointCardDBManager(this);
+        cardName.add("CJ ONE");
+        cardName.add("MEGABOX");
+        cardName.add("CONVERSE");
+        cardName.add("REEBOK");
+        cardName.add("HAPPY POINT");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_dropdown_item, cardName);
+        Spinner sp = (Spinner) findViewById(R.id.addpointcard_cardtype);
+        sp.setPrompt("카드 종류를 선택하세요");
+        sp.setAdapter(adapter);
+        sp.setOnItemSelectedListener(this);
+
+        findViewById(R.id.addpointcard_submit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PointCardInfo pi = new PointCardInfo(selectedCardName);
+                db.add(pi);
+                newlyCardInfo = pi;
+                finish();
+            }
+        });
+
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_add_point_card_info, menu);
-        return true;
+    protected void onStart() {
+        super.onStart();
+        newlyCardInfo = null;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        selectedCardName = cardName.get(position);
+    }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        //EMTPY
     }
 }

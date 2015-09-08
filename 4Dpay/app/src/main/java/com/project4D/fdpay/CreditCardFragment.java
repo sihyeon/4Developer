@@ -3,6 +3,7 @@ package com.project4D.fdpay;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +22,7 @@ public class CreditCardFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        db = CreditCardDBManager.newCreditCardDBManager(getActivity());
+        db = new CreditCardDBManager(getActivity());
     }
 
     @Override
@@ -76,7 +77,9 @@ public class CreditCardFragment extends Fragment {
         //TODO hp..
         Intent i = new Intent(getActivity(), ShowCardInfoActivity.class);
         Bundle b = new Bundle();
-        b.putInt("POSITION", position+1);
+        b.putString("CLASS_NAME", this.getClass().getSimpleName());
+        Log.i("TAG", "setOnClickItemListView " + this.getClass().getSimpleName());
+        b.putInt("POSITION", position + 1);
         i.putExtras(b);
         startActivity(i);
     }

@@ -3,16 +3,16 @@ package com.project4D.fdpay.model;
 /**
  * Created by Administrator on 2015-08-24.
  */
-public class CardInfo {
+public class CreditCardInfo {
     String cardNum;
     int cardValid;
     int password;
     String cardName;
     int cvc;
 
-    public CardInfo(){}
+    public CreditCardInfo(){}
 
-    public CardInfo(String cardNum, int cardValid, int password, String cardName, int cvc) {
+    public CreditCardInfo(String cardNum, int cardValid, int password, String cardName, int cvc) {
         this.cardNum = cardNum;
         this.cardValid = cardValid;
         this.password = password;

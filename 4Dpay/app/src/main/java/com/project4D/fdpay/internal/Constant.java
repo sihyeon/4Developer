@@ -9,7 +9,7 @@ public class Constant {
 	public static final String httpOK = "OK";
 	public static final String signUpOK = "...";
 	public static final String idDuplicated = "duplicated";
-	public static final String cardName = "cardName for CardInfo";
+	public static final String cardName = "cardName";
 	public static final String callCredit = "callCredit";
 	public static final String callPoint = "callPoint";
 	public static final String iamCredit = "신용카드";

@@ -6,12 +6,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.project4D.fdpay.manager.CreditCardDBManager;
+import com.project4D.fdpay.manager.PointCardDBManager;
 import com.project4D.fdpay.util.ViewUtil;
 
 
 public class ShowCardInfoActivity extends ActionBarActivity {
     private ViewUtil.Finder vu = ViewUtil.finder(this);
-    private CreditCardDBManager db = CreditCardDBManager.newCreditCardDBManager(this);
+    private CreditCardDBManager cm = new CreditCardDBManager(this);
+    private PointCardDBManager pm = new PointCardDBManager(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +21,10 @@ public class ShowCardInfoActivity extends ActionBarActivity {
         setContentView(R.layout.activity_show_card_info);
 
         Bundle b = getIntent().getExtras();
-        vu.textView(R.id.showcardinfo_cardname).setText(db.getCardNameById(b.getInt("POSITION")));
+        if(b.getString("CLASS_NAME").equals("CreditCardFragment"))
+            vu.textView(R.id.showcardinfo_cardname).setText(cm.getCardNameById(b.getInt("POSITION")));
+        else
+            vu.textView(R.id.showcardinfo_cardname).setText(pm.getCardNameById(b.getInt("POSITION")));
     }
 
     @Override

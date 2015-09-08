@@ -6,12 +6,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.project4D.fdpay.model.CardInfo;
+import com.project4D.fdpay.model.CreditCardInfo;
 import com.project4D.fdpay.manager.CreditCardDBManager;
 import com.project4D.fdpay.util.ViewUtil;
 
 public class AddCreditCardInfoActivity extends Activity {
-    public static CardInfo newlyCardInfo = null;
+    public static CreditCardInfo newlyCardInfo = null;
 
     private ViewUtil.Finder vu = ViewUtil.finder(this);
     private CreditCardDBManager db;
@@ -25,7 +25,7 @@ public class AddCreditCardInfoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_credit_card_info);
-        db = CreditCardDBManager.newCreditCardDBManager(this);
+        db = new CreditCardDBManager(this);
 
         vu.button(R.id.addcreditcard_submit).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +62,7 @@ public class AddCreditCardInfoActivity extends Activity {
                     return;
                 }
                 //(int cardNum, int cardValid, int password, String cardName, int cvc)
-                CardInfo card = new CardInfo(cardnumber, Integer.parseInt(valid),
+                CreditCardInfo card = new CreditCardInfo(cardnumber, Integer.parseInt(valid),
                         Integer.parseInt(password), cardname, Integer.parseInt(cvc)
                 );
                 //TODO send data to server
@@ -84,4 +84,5 @@ public class AddCreditCardInfoActivity extends Activity {
         super.onStart();
         newlyCardInfo = null;
     }
+
 }
