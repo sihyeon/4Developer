@@ -23,6 +23,9 @@
             android:layout_marginBottom="10dp"
             android:src="@drawable/banner_black_big" />
 
+
+
+
         <EditText
             android:id="@+id/signup_id"
             android:layout_width="match_parent"
@@ -71,15 +74,21 @@
             android:hint="이름"
             android:inputType="text" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="성별" />
-
         <LinearLayout
+            android:layout_gravity="left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="성별"
+                android:layout_marginRight="5dp"
+                android:textSize="17sp"
+                android:textColor="#330000"/>
+
 
             <RadioButton
                 android:id="@+id/addpointcard_usergendermale"
@@ -94,16 +103,19 @@
                 android:text="여" />
         </LinearLayout>
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="구분" />
-
         <LinearLayout
+            android:layout_gravity="left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="국적"
+                android:layout_marginRight="5dp"
+               android:textSize="17sp"
+                android:textColor="#330000"/>
 
             <RadioButton
                 android:id="@+id/addpointcard_userdomastic"
@@ -117,7 +129,6 @@
                 android:layout_height="wrap_content"
                 android:text="외국인" />
         </LinearLayout>
-
 
         <Button
             android:id="@+id/signup_signupbutton"
