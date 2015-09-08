@@ -16,7 +16,8 @@
             android:id="@+id/budget_linear01"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <Button
                 android:id="@+id/button_Income"
