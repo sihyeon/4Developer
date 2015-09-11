@@ -29,5 +29,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_certification">CertificationActivity</string>
     <string name="title_activity_add_point_card_info">AddPointCardInfoActivity</string>
+    <string name="title_activity_show_point_card_info">ShowPointCardInfoActivity</string>
+    <string name="title_activity_edit_card_name">EditCardNameActivity</string>
 
 </resources>

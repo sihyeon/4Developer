@@ -61,6 +61,14 @@
             android:name=".AddPointCardInfoActivity"
             android:label="@string/title_activity_add_point_card_info" >
         </activity>
+        <activity
+            android:name=".ShowPointCardInfoActivity"
+            android:label="@string/title_activity_show_point_card_info" >
+        </activity>
+        <activity
+            android:name=".EditCardNameActivity"
+            android:label="@string/title_activity_edit_card_name" >
+        </activity>
     </application>
 
 </manifest>

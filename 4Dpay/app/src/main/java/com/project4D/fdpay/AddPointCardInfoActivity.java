@@ -7,16 +7,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.project4D.fdpay.manager.PointCardDBManager;
+import com.project4D.fdpay.manager.PointCardTableManager;
 import com.project4D.fdpay.model.PointCardInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddPointCardInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    public static PointCardInfo newlyCardInfo = null;
+    public static Bundle newlyCardInfo = null;
 
-    private PointCardDBManager db;
+    private PointCardTableManager db;
     private String selectedCardName = null;
     List<String> cardName = new ArrayList<String>();
 
@@ -25,7 +25,7 @@ public class AddPointCardInfoActivity extends AppCompatActivity implements Adapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_point_card_info);
 
-        db = new PointCardDBManager(this);
+        db = new PointCardTableManager(this);
         cardName.add("CJ ONE");
         cardName.add("MEGABOX");
         cardName.add("CONVERSE");
@@ -43,8 +43,11 @@ public class AddPointCardInfoActivity extends AppCompatActivity implements Adapt
             @Override
             public void onClick(View v) {
                 PointCardInfo pi = new PointCardInfo(selectedCardName);
-                db.add(pi);
-                newlyCardInfo = pi;
+
+                Bundle b = new Bundle();
+                b.putInt("ID",db.add(pi));
+                b.putString("NAME", selectedCardName);
+                newlyCardInfo = b;
                 finish();
             }
         });

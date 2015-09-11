@@ -9,7 +9,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:dividerHeight="-100dp"
+        android:dividerHeight="-150dp"
         android:id="@+id/creditcard_listView"/>
 
     <com.getbase.floatingactionbutton.AddFloatingActionButton

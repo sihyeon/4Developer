@@ -11,18 +11,17 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.project4D.fdpay.adapter.CardListAdapter;
-import com.project4D.fdpay.manager.CreditCardDBManager;
+import com.project4D.fdpay.manager.CreditCardTableManager;
 
 public class CreditCardFragment extends Fragment {
-    private ListView listview;
     private CardListAdapter adapter;
-    private CreditCardDBManager db;
+    private CreditCardTableManager db;
     private ListView li;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        db = new CreditCardDBManager(getActivity());
+        db = new CreditCardTableManager(getActivity());
     }
 
     @Override
@@ -51,13 +50,29 @@ public class CreditCardFragment extends Fragment {
         return view;
     }
 
+
     @Override
     public void onStart() {
         super.onStart();
         setActivityTitle("신용카드");
         if (AddCreditCardInfoActivity.newlyCardInfo != null) {
-            adapter.addItem(AddCreditCardInfoActivity.newlyCardInfo.getCardName());
+            adapter.addItem(AddCreditCardInfoActivity.newlyCardInfo.getString("NAME"));
+            adapter.addId(AddCreditCardInfoActivity.newlyCardInfo.getInt("ID"));
             adapter.notifyDataSetChanged();
+            AddCreditCardInfoActivity.newlyCardInfo = null;
+        }
+        if(EditCardNameActivity.cardNameChanged !=null) {
+            adapter.changeItemNameById(
+                    EditCardNameActivity.cardNameChanged.getInt("ID"),
+                    EditCardNameActivity.cardNameChanged.getString("NAME")
+            );
+            adapter.notifyDataSetChanged();
+            EditCardNameActivity.cardNameChanged = null;
+        }
+        if(ShowCardInfoActivity.deleteCardInfo !=null) {
+            adapter.deleteItemById(ShowCardInfoActivity.deleteCardInfo.getInt("ID"));
+            adapter.notifyDataSetChanged();
+            ShowCardInfoActivity.deleteCardInfo = null;
         }
     }
 
@@ -66,10 +81,14 @@ public class CreditCardFragment extends Fragment {
     }
 
     private void initAdapterItem() {
-        for (String e : db.getAllCardName()) {
+        for(String e : db.getAllCardName()){
             adapter.addItem(e);
         }
+        for(Integer i : db.getAllId()){
+            adapter.addId(i);
+        }
         adapter.notifyDataSetChanged();
+
     }
 
     //listview의 아이템 이벤트 등록
@@ -79,7 +98,7 @@ public class CreditCardFragment extends Fragment {
         Bundle b = new Bundle();
         b.putString("CLASS_NAME", this.getClass().getSimpleName());
         Log.i("TAG", "setOnClickItemListView " + this.getClass().getSimpleName());
-        b.putInt("POSITION", position + 1);
+        b.putInt("ID", adapter.getId(position));
         i.putExtras(b);
         startActivity(i);
     }

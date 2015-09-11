@@ -1,7 +1,5 @@
 package com.project4D.fdpay.model;
 
-import com.project4D.fdpay.manager.PointCardDBManager;
-
 /**
  * Created by Administrator on 2015-09-07.
  */

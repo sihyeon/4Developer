@@ -1,5 +1,8 @@
 package com.project4D.fdpay.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Administrator on 2015-08-24.
  */
@@ -62,4 +65,5 @@ public class CreditCardInfo {
     public void setPassword(int password) {
         this.password = password;
     }
+
 }
