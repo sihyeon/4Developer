@@ -154,6 +154,8 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
                 calendar.setMaxDate(setCal.getTimeInMillis());
             }
         }
+        nowYear = setYear;
+        nowMonth = setMonth;
     }
 
     private void setActivityTitle(String title) {
