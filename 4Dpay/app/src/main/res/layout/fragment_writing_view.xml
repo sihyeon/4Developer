@@ -1,230 +1,244 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:background="?android:windowBackground">
 
-    <RelativeLayout
+    <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?android:windowBackground"
-        android:clickable="true"
-        tools:context="com.example.crstal_choi.myapplication.BudgetActivity">
+        android:fillViewport="true"
+        android:layout_below="@+id/budget_linear01"
+        android:layout_above="@+id/linearLayout2">
 
-        <LinearLayout
-            android:id="@+id/budget_linear01"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:windowBackground"
+            android:clickable="true"
+            tools:context="com.example.crstal_choi.myapplication.BudgetActivity"
+            android:layout_below="@+id/budget_linear01"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/linearLayout2"
+            android:id="@+id/relativeLayout">
 
-            <Button
-                android:id="@+id/button_Income"
+
+            <LinearLayout
+                android:id="@+id/budget_linear02"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E7AA39"
-                android:text="수입"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp" />
+                android:layout_below="@id/budget_linear01"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button_Spend"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/writingDayText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="07.25 월요일"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/writingDateSelector"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/calendar_icon" />
+                <!-- android:layout_Right="@id/budget_textview02"-->
+
+
+            </LinearLayout>
+
+            <RadioGroup
+
+                android:id="@+id/budget_radio01"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E7AA39"
-                android:text="지출"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp" />
+                android:layout_below="@+id/budget_linear02"
+                android:layout_marginLeft="15dp"
+                android:checkedButton="@+id/budget_radio02"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-        </LinearLayout>
+                <RadioButton
+                    android:id="@+id/budget_radio02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="카드"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/budget_radio03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="현금"
+                    android:textStyle="bold" />
+
+            </RadioGroup>
+
+            <TableLayout
+                android:id="@+id/budget_table01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/budget_radio01"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text="금액"
+                        android:textColor="#000000"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/moneyEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="15"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textColor="#000000" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:text="내역"
+                        android:textColor="#000000"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/breakdownEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="15"
+                        android:maxLength="10"
+                        android:textColor="#000000" />
+                </TableRow>
 
 
-        <LinearLayout
-            android:id="@+id/budget_linear02"
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:text="메모"
+                        android:textColor="#000000"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/memoEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="15"
+                        android:maxLength="10"
+                        android:textColor="#000000" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="0.08"
+                        android:inputType="number"
+                        android:text="분류"
+                        android:textColor="#000000"
+                        android:textSize="17sp" />
+
+
+                    <Button
+                        android:id="@+id/categorizationResult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_weight="0.92"
+
+                        android:text="Medium Text"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textSize="15sp" />
+                </TableRow>
+
+
+            </TableLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout2">
+
+        <Button
+            android:id="@+id/button_SaveAndContinue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/budget_linear01"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableTop="@drawable/pen"
+            android:padding="5dp"
+            android:text="저장 후 계속 입력"
+            android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/writingDayText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="07.25 월요일"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/writingDateSelector"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginLeft="5dp"
-                android:src="@drawable/calendar_icon" />
-            <!-- android:layout_Right="@id/budget_textview02"-->
-
-
-        </LinearLayout>
-
-        <RadioGroup
-
-            android:id="@+id/budget_radio01"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/button_SaveAndEnd"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/budget_linear02"
-            android:layout_marginLeft="15dp"
-            android:checkedButton="@+id/budget_radio02"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableTop="@drawable/save"
+            android:padding="5dp"
+            android:text="저장"
+            android:textSize="15sp" />
 
-            <RadioButton
-                android:id="@+id/budget_radio02"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:text="카드"
-                android:textStyle="bold" />
+    </LinearLayout>
 
-            <RadioButton
-                android:id="@+id/budget_radio03"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="현금"
-                android:textStyle="bold" />
+    <LinearLayout
+        android:id="@+id/budget_linear01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        </RadioGroup>
-
-        <TableLayout
-            android:id="@+id/budget_table01"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/button_Income"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/budget_radio01"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="20dp">
+            android:layout_weight="1"
+            android:background="#E7AA39"
+            android:text="수입"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:text="금액"
-                    android:textSize="17sp"
-                    android:textColor="#000000" />
-
-                <EditText
-                    android:id="@+id/moneyEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="15"
-                    android:inputType="number"
-                    android:maxLength="10"
-                    android:textColor="#000000" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:inputType="number"
-                    android:text="내역"
-                    android:textSize="17sp"
-                    android:textColor="#000000" />
-
-                <EditText
-                    android:id="@+id/breakdownEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="15"
-                    android:maxLength="10"
-                    android:textColor="#000000" />
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:inputType="number"
-                    android:text="메모"
-                    android:textSize="17sp"
-                    android:textColor="#000000" />
-
-                <EditText
-                    android:id="@+id/memoEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="15"
-                    android:maxLength="10"
-                    android:textColor="#000000" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_weight="0.08"
-                    android:inputType="number"
-                    android:text="분류"
-                    android:textSize="17sp"
-                    android:textColor="#000000" />
-
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Medium Text"
-                    android:textSize="15sp"
-
-                    android:id="@+id/categorizationResult"
-                    android:layout_column="1"
-                    android:layout_weight="0.92"/>
-            </TableRow>
-
-
-        </TableLayout>
-
-     
-        <LinearLayout
-            android:layout_width="fill_parent"
+        <Button
+            android:id="@+id/button_Spend"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:background="#E7AA39"
+            android:text="지출"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
 
-            <Button
-                android:id="@+id/button_SaveAndContinue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#00000000"
-                android:drawableTop="@drawable/pen"
-                android:padding="5dp"
-                android:text="저장 후 계속 입력"
-                android:textSize="15sp" />
+    </LinearLayout>
 
-            <Button
-                android:id="@+id/button_SaveAndEnd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#00000000"
-                android:drawableTop="@drawable/save"
-                android:padding="5dp"
-                android:text="저장"
-                android:textSize="15sp" />
-
-        </LinearLayout>
-    </RelativeLayout>
-</ScrollView>
+</RelativeLayout>
