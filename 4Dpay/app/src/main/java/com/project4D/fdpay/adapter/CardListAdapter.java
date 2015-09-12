@@ -20,12 +20,23 @@ import java.util.List;
  * Created by Administrator on 2015-08-14.
  */
 public class CardListAdapter extends BaseAdapter {
-    protected final List<CardModel> cardList = new ArrayList<CardModel>();
+    protected final List<CardModel> cardList = new ArrayList<>();
+    protected final List<Integer> cardId = new ArrayList<>();
 
     public void addItem(String name) {
         CardModel card = new CardModel();
         card.setText(name);
+        //TODO generate card's color
+        card.setImgId(R.drawable.card_hot_pink);
         cardList.add(card);
+    }
+
+    public void addId(Integer id){
+        cardId.add(id);
+    }
+
+    public Integer getId(int position){
+        return cardId.get(position);
     }
 
     @Override
@@ -62,11 +73,8 @@ public class CardListAdapter extends BaseAdapter {
 
         // Set data
         CardModel c = cardList.get(position);
-        if (position % 2 == 0) {
-            curView.card.setImageResource(R.drawable.card_white_pink_gradation);
-        }
         curView.cardText.setText(c.getText());
-
+        curView.card.setImageResource(c.getImgId());
         return convertView;
     }
 
@@ -75,6 +83,18 @@ public class CardListAdapter extends BaseAdapter {
         gradientDrawable.setColor(color);
         gradientDrawable.invalidateSelf();
     }
+
+    public void changeItemNameById(int id, String name) {
+        cardList.get(cardId.indexOf(id)).setText(name);
+    }
+
+    public void deleteItemById(int id) {
+        int position = cardId.indexOf(id);
+        cardList.remove(position);
+        cardId.remove(position);
+    }
+
+
 
     private class ViewHolder {
         public RelativeLayout layout;

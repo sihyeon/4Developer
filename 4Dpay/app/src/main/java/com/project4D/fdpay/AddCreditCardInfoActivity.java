@@ -6,15 +6,16 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.project4D.fdpay.model.CardInfo;
-import com.project4D.fdpay.util.CreditCardDBManager;
+import com.project4D.fdpay.manager.CreditCardTableManager;
+import com.project4D.fdpay.model.CreditCardInfo;
 import com.project4D.fdpay.util.ViewUtil;
 
 public class AddCreditCardInfoActivity extends Activity {
-    public static CardInfo newlyCardInfo = null;
+    // fucking it cannot use. what the fuck
+    public static Bundle newlyCardInfo = null;
 
     private ViewUtil.Finder vu = ViewUtil.finder(this);
-    private CreditCardDBManager db;
+    private CreditCardTableManager db;
     private String cardnumber;
     private String cardname;
     private String valid;
@@ -25,7 +26,7 @@ public class AddCreditCardInfoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_credit_card_info);
-        db = CreditCardDBManager.newCreditCardDBManager(this);
+        db = new CreditCardTableManager(this);
 
         vu.button(R.id.addcreditcard_submit).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,17 +63,21 @@ public class AddCreditCardInfoActivity extends Activity {
                     return;
                 }
                 //(int cardNum, int cardValid, int password, String cardName, int cvc)
-                CardInfo card = new CardInfo(cardnumber, Integer.parseInt(valid),
+                CreditCardInfo card = new CreditCardInfo(cardnumber, Integer.parseInt(valid),
                         Integer.parseInt(password), cardname, Integer.parseInt(cvc)
                 );
                 //TODO send data to server
                 //HttpPoster.executePOST();
-                db.add(card);
-                newlyCardInfo = card;
+
+                Bundle b = new Bundle();
+                b.putInt("ID", db.add(card));
+                b.putString("NAME", card.getCardName());
+                newlyCardInfo = b;
                 finish();
             }
         });
     }
+
 
     private void setFocus(EditText ed) {
         ed.setFocusable(true);
@@ -84,4 +89,5 @@ public class AddCreditCardInfoActivity extends Activity {
         super.onStart();
         newlyCardInfo = null;
     }
+
 }

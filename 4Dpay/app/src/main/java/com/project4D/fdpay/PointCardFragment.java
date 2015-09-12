@@ -3,7 +3,6 @@ package com.project4D.fdpay;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.project4D.fdpay.adapter.CardListAdapter;
+import com.project4D.fdpay.manager.PointCardTableManager;
 
 /**
  * 1. extends AppCompatAcitivity
@@ -27,7 +27,13 @@ public class PointCardFragment extends Fragment {
     private ListView listview;
 
     private CardListAdapter adapter;
-    private String myname;
+    private PointCardTableManager db;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        db = new PointCardTableManager(getActivity());
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,7 +44,7 @@ public class PointCardFragment extends Fragment {
         adapter = new CardListAdapter();
         listview = (ListView) view.findViewById(R.id.pointcard_listView);
         listview.setAdapter(adapter);
-        setAdapterItem("title1");
+        initAdapterItem();
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -49,44 +55,52 @@ public class PointCardFragment extends Fragment {
         view.findViewById(R.id.point_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivityForResult(new Intent(getActivity(), AddCreditCardInfoActivity.class), 1);
+                startActivity(new Intent(getActivity(), AddPointCardInfoActivity.class));
             }
         });
         return view;
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode==1&&resultCode==1){
-            setAdapterItem(data.getStringExtra("cardName"));
-            Log.i("To show data", "onActivityResult "+data.getStringExtra("cardName"));
-        }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
         setActivityTitle("포인트카드");
+        if (AddPointCardInfoActivity.newlyCardInfo != null) {
+            adapter.addItem(AddPointCardInfoActivity.newlyCardInfo.getString("NAME"));
+            adapter.addId(AddPointCardInfoActivity.newlyCardInfo.getInt("ID"));
+            adapter.notifyDataSetChanged();
+            AddPointCardInfoActivity.newlyCardInfo = null;
+        }
+        if (ShowPointCardInfoActivity.deleteCardInfo != null) {
+            adapter.deleteItemById(ShowPointCardInfoActivity.deleteCardInfo.getInt("ID"));
+            adapter.notifyDataSetChanged();
+            ShowCardInfoActivity.deleteCardInfo = null;
+        }
     }
 
     private void setActivityTitle(String title){
         ((MainActivity) getActivity()).setActionBarTitle(title);
     }
 
-    private void setAdapterItem(String name){
-        //for example
-        adapter.addItem(name);
-        ((MainActivity)getActivity()).runOnUiThread(new Runnable() {
-            public void run() {
-                adapter.notifyDataSetChanged();
-            }
-        });
+    private void initAdapterItem(){
+        for (String e : db.getAllCardName()) {
+            adapter.addItem(e);
+        }
+        for (int i : db.getAllId()) {
+            adapter.addId(i);
+        }
+        adapter.notifyDataSetChanged();
     }
 
     //listview의 아이템 이벤트 등록
     private void setOnClickItemListView(AdapterView<?> parent,int position){
         //TODO hp..
-        startActivity(new Intent(getActivity(), ShowCardInfoActivity.class));
+        Intent i = new Intent(getActivity(), ShowPointCardInfoActivity.class);
+        Bundle b = new Bundle();
+        b.putString("CLASS_NAME", this.getClass().getSimpleName());
+        b.putInt("ID", adapter.getId(position));
+        i.putExtras(b);
+        startActivity(i);
     }
 
 

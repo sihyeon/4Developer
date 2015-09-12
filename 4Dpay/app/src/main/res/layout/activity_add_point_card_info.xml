@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.project4D.fdpay.AddPointCardInfoActivity">
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addpointcard_cardtype" />
+
+    <Button
+        android:id="@+id/addpointcard_submit"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/com_rounded_corner"
+        android:text="확인"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+
+</LinearLayout>

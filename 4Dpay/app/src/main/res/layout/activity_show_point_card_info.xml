@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.project4D.fdpay.ShowPointCardInfoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="카드 이름"
+        android:id="@+id/showpointcard_cardname" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        >
+
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/showpointcard_barcode"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/banner" />
+
+
+        <RelativeLayout
+            android:layout_below="@id/showpointcard_barcode"
+            android:layout_alignRight="@id/showpointcard_barcode"
+            android:layout_alignLeft="@id/showpointcard_barcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:text="삭제"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/com_rounded_corner"
+                android:id="@+id/showpointcard_deletecardbutton" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

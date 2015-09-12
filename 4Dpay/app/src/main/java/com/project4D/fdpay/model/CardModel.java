@@ -4,14 +4,14 @@ import android.graphics.drawable.Drawable;
 
 public class CardModel {
     private String text;
-    private Drawable img;
+    private int imgId;
 
-    public Drawable getImg() {
-        return img;
+    public int getImgId() {
+        return imgId;
     }
 
-    public void setImg(Drawable img) {
-        this.img = img;
+    public void setImgId(int imgId) {
+        this.imgId = imgId;
     }
 
     public String getText() {

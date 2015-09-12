@@ -28,6 +28,9 @@ public class HouseHolderStatus {
     public static int amount = 0;
     public static boolean writingInfoUseStatus = false;
 
+    public static String categorizationText = null;
+    public static boolean categorizationTextStatus = false;
+
     public HouseHolderStatus(){
     }
     //test slack

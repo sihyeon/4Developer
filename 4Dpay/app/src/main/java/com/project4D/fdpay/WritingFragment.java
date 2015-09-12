@@ -2,6 +2,8 @@ package com.project4D.fdpay;
 
 import android.app.DatePickerDialog;
 import android.app.Fragment;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,18 +23,24 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     private int writingMonth = HouseHolderStatus.TODAY_Month;
     private int writingDay = HouseHolderStatus.TODAY_DAY;
     private DatePickerDialog datePickerDialog;
+    private CategorizationDialog categorizationDialog;
 
     private View writingView;
     private EditText moneyEdit;
     private EditText breakdownEdit;
-    private EditText categorizationEdit;
+    private TextView categorizationView;
     private EditText memoEdit;
     private TextView writingDate;
+
+    public static Context writingFragmentContext;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         writingView = inflater.inflate(R.layout.fragment_writing_view, container, false);
         setActivityTitle("쓰기");
+
+        writingFragmentContext = this.getActivity();
 
         //텍스트뷰 등록
         writingDate = (TextView) writingView.findViewById(R.id.writingDayText);
@@ -53,30 +61,40 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
         Button buttonSaveAndEnd = (Button) writingView.findViewById(R.id.button_SaveAndEnd);
         buttonSaveAndEnd.setOnClickListener(this);
 
-        moneyEdit = (EditText)writingView.findViewById(R.id.moneyEdit);
-        breakdownEdit = (EditText)writingView.findViewById(R.id.breakdownEdit);
-        categorizationEdit = (EditText)writingView.findViewById(R.id.categorizeEdit);
-        memoEdit = (EditText)writingView.findViewById(R.id.memoEdit);
+        moneyEdit = (EditText) writingView.findViewById(R.id.moneyEdit);
+        breakdownEdit = (EditText) writingView.findViewById(R.id.breakdownEdit);
+        memoEdit = (EditText) writingView.findViewById(R.id.memoEdit);
 
-
+        categorizationView = (TextView) writingView.findViewById(R.id.categorizationResult);
+        categorizationView.setText("카테고리선택");
+        categorizationView.setOnClickListener(this);
 
         return writingView;
     }
 
-    DatePickerDialog.OnDateSetListener mDateSetListener =
-            new DatePickerDialog.OnDateSetListener(){
+    public DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            writingYear = year;
+            writingMonth = monthOfYear + 1;
+            writingDay = dayOfMonth;
 
-                @Override
-                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    writingYear = year;
-                    writingMonth = monthOfYear+1;
-                    writingDay = dayOfMonth;
+            updateWringDate();
+        }
+    };
 
-                    updateWringDate();
-                }
-            };
+    //카테고리 다이얼로그 종료시 불리는 리스너
+    public CategorizationDialog.OnDismissListener onDismissListener = new DialogInterface.OnDismissListener() {
+        @Override
+        public void onDismiss(DialogInterface dialog) {
+            if (houseHolderStatus.categorizationTextStatus) {
+                categorizationView.setText(houseHolderStatus.categorizationText);
+                houseHolderStatus.categorizationTextStatus = false;
+            }
+        }
+    };
 
-    private void updateWringDate(){
+    private void updateWringDate() {
         writingDate.setText(writingYear + "." + writingMonth + "." + writingDay);
     }
 
@@ -89,9 +107,9 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
         super.onResume();
         setActivityTitle("쓰기");
 
-        if(houseHolderStatus.writingInfoUseStatus && houseHolderStatus.dateUseStatus){
+        if (houseHolderStatus.writingInfoUseStatus && houseHolderStatus.dateUseStatus) {
             breakdownEdit.setText(houseHolderStatus.breakdown);
-            categorizationEdit.setText(houseHolderStatus.categorization);
+            categorizationView.setText(houseHolderStatus.categorization);
             moneyEdit.setText(houseHolderStatus.amount + "");
             houseHolderStatus.writingInfoUseStatus = false;
 
@@ -105,7 +123,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onStop(){
+    public void onStop() {
         super.onStop();
         if (datePickerDialog != null) {
             datePickerDialog.dismiss();
@@ -119,19 +137,23 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
             case R.id.button_Income:
                 break;
             case R.id.button_Spend:
-
                 break;
             case R.id.button_SaveAndContinue:
                 break;
             case R.id.button_SaveAndEnd:
                 moneyEdit.getText().toString();
                 breakdownEdit.getText().toString();
-                categorizationEdit.getText().toString();
+                categorizationView.getText().toString();
                 memoEdit.getText().toString();
                 break;
             case R.id.writingDateSelector:
-                datePickerDialog = new DatePickerDialog(WritingFragment.this.getActivity(), mDateSetListener, writingYear, writingMonth-1, writingDay);
+                datePickerDialog = new DatePickerDialog(WritingFragment.this.getActivity(), R.style.DialogTheme ,mDateSetListener, writingYear, writingMonth - 1, writingDay);
                 datePickerDialog.show();
+                break;
+            case R.id.categorizationResult:
+                categorizationDialog = new CategorizationDialog(WritingFragment.this.getActivity());
+                categorizationDialog.setOnDismissListener(onDismissListener);
+                categorizationDialog.show();
                 break;
         }
     }
