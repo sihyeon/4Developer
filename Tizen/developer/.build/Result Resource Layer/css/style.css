@@ -12,13 +12,13 @@ body {
 }
 
 .ui-page {
-	background-color :rgba(27,27,27,1);
+	background-color :rgba(245,245,245,1);
 	}
 
 .ui-page img {
 	position : absolute;
-	top:50px;
-	left:90px;
+	top:60px;
+	left:70px;
 	width : 180px;
 	height : 180px;
 }
@@ -28,20 +28,27 @@ body {
 	border-bottom: 2px solid #FF9100;
 }
 
+#refresh {
+	top:4px;
+	left:260px;
+	width:68px;
+	height:55px;	
+}
 .info-content {
 	background-color:rgba(8,8,8,1);
 }
 
 #InfoImg {
+	position:relative;
 	top:0;
-	left:50px;
-	width: 150px;
-	height:130px;
+	left:60px;
+	width: 200px;
+	height:230px;
 }
 
 /*******************************Go btn *****************************/
 .code-btn{
-	position : absolute;
+	position : relative;
 	bottom:0;
 }
 .code-btn {

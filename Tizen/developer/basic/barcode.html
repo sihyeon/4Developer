@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<title>Gear Intro</title>
+    <link rel="stylesheet"  href="../lib/tau/wearable/theme/default/tau.css">
+	<link rel="stylesheet"  href="../css/barcode.css">
+	<script type="text/javascript" src="../barcode.js"></script>
+	<script type="text/javascript">
+	function encode()
+		{
+  			var strValue = document.getElementById("barcode_input").value;
+  			var strBarcodeHTML = code128(strValue);
+  			document.getElementById("barcode").innerHTML = strBarcodeHTML;
+		}
+	</script>
+</head>
+<body>
+<div class="ui-page">
+	<div class="barcode128v" id="barcode"></div>
+	<input type="text" id="barcode_input"></input>
+	<input type="button" value="Encode" onclick="encode()"/>
+</div>
+</body>
+<script type="text/javascript" src="../lib/tau/wearable/js/tau.js"></script>
+</html>
