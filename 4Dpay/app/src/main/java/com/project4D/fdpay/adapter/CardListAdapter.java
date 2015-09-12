@@ -26,13 +26,23 @@ public class CardListAdapter extends BaseAdapter {
     public void addItem(String name) {
         CardModel card = new CardModel();
         card.setText(name);
-        //TODO generate card's color
-        card.setImgId(R.drawable.card_hot_pink);
         cardList.add(card);
     }
 
     public void addId(Integer id){
         cardId.add(id);
+        switch (id%10) {
+            case 0: cardList.get(cardId.indexOf(id)).setImgId(R.drawable.card_hot_pink); break;
+            case 1: cardList.get(cardId.indexOf(id)).setImgId(R.drawable.card_white_pink); break;
+            case 2: cardList.get(cardId.indexOf(id)).setImgId(R.drawable.card_orange); break;
+            case 3: cardList.get(cardId.indexOf(id)).setImgId(R.drawable.card_yellow); break;
+            case 4: cardList.get(cardId.indexOf(id)).setImgId(R.drawable.card_white_green); break;
+            case 5: cardList.get(cardId.indexOf(id)).setImgId(R.drawable.card_green); break;
+            case 6: cardList.get(cardId.indexOf(id)).setImgId(R.drawable.card_clear_blue); break;
+            case 7: cardList.get(cardId.indexOf(id)).setImgId(R.drawable.card_blue); break;
+            case 8: cardList.get(cardId.indexOf(id)).setImgId(R.drawable.card_plum); break;
+            case 9: cardList.get(cardId.indexOf(id)).setImgId(R.drawable.card_purple); break;
+        }
     }
 
     public Integer getId(int position){

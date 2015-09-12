@@ -17,7 +17,7 @@
         android:adjustViewBounds="true"
         android:background="@drawable/card"
         android:scaleType="fitStart"
-        android:src="@drawable/card_pink_gradation" />
+        android:src="@drawable/card_hot_pink" />
 
     <TextView
         android:id="@+id/card_item_text"
