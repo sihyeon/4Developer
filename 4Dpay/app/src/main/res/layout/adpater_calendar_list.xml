@@ -7,19 +7,26 @@
     android:clickable="true">
 
     <LinearLayout
-
+    android:background="#ffdfb0"
+        android:padding="5dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         >
+
+        <!--ImageView 아이콘 구현?-->
 
         <TextView
             android:layout_weight="1"
             android:layout_width="0px"
+            android:textSize="20sp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="내역이당"
+
             android:gravity="center"
+            android:textColor="#333333"
             android:id="@+id/breakdown" />
 
 
@@ -27,9 +34,11 @@
         <TextView
             android:layout_weight="1"
             android:layout_width="0px"
+            android:textSize="20sp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="카테고리"
+            android:textColor="#333333"
             android:gravity="center"
             android:id="@+id/categorize"
           />
@@ -38,9 +47,11 @@
         <TextView
             android:layout_weight="1"
             android:layout_width="0px"
+            android:textSize="20sp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="수입/지출"
+            android:textColor="#ff8200"
             android:gravity="center"
             android:id="@+id/amount" />
 
