@@ -6,15 +6,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.project4D.fdpay.event.EventManager;
+import com.project4D.fdpay.event.UListener;
 import com.project4D.fdpay.manager.CreditCardTableManager;
 import com.project4D.fdpay.model.CreditCardInfo;
 import com.project4D.fdpay.util.ViewUtil;
 
 public class AddCreditCardInfoActivity extends Activity {
-    // fucking it cannot use. what the fuck
-    public static Bundle newlyCardInfo = null;
-
     private ViewUtil.Finder vu = ViewUtil.finder(this);
+    private EventManager eventManager = EventManager.getInstance();
     private CreditCardTableManager db;
     private String cardnumber;
     private String cardname;
@@ -72,7 +72,9 @@ public class AddCreditCardInfoActivity extends Activity {
                 Bundle b = new Bundle();
                 b.putInt("ID", db.add(card));
                 b.putString("NAME", card.getCardName());
-                newlyCardInfo = b;
+                for(UListener ul : eventManager.getListener("ADD_CREDIT")){
+                    ul.onSuccess(b);
+                }
                 finish();
             }
         });
@@ -87,7 +89,6 @@ public class AddCreditCardInfoActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        newlyCardInfo = null;
     }
 
 }

@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.project4D.fdpay.adapter.CardListAdapter;
+import com.project4D.fdpay.event.EventManager;
+import com.project4D.fdpay.event.SimpleUAdapter;
 import com.project4D.fdpay.manager.PointCardTableManager;
 
 /**
@@ -28,11 +30,13 @@ public class PointCardFragment extends Fragment {
 
     private CardListAdapter adapter;
     private PointCardTableManager db;
+    private EventManager eventManager = EventManager.getInstance();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         db = new PointCardTableManager(getActivity());
+
     }
 
     @Override
@@ -58,6 +62,22 @@ public class PointCardFragment extends Fragment {
                 startActivity(new Intent(getActivity(), AddPointCardInfoActivity.class));
             }
         });
+
+        eventManager.registerListener("ADD_POINT", new SimpleUAdapter<Bundle>() {
+            @Override
+            public void onSuccess(Bundle b) {
+                adapter.addItem(b.getString("NAME"));
+                adapter.addId(b.getInt("ID"));
+                adapter.notifyDataSetChanged();
+            }
+        });
+        eventManager.registerListener("DELETE_POINT", new SimpleUAdapter<Bundle>() {
+            @Override
+            public void onSuccess(Bundle b) {
+                adapter.deleteItemById(b.getInt("ID"));
+                adapter.notifyDataSetChanged();
+            }
+        });
         return view;
     }
 
@@ -65,17 +85,6 @@ public class PointCardFragment extends Fragment {
     public void onStart() {
         super.onStart();
         setActivityTitle("포인트카드");
-        if (AddPointCardInfoActivity.newlyCardInfo != null) {
-            adapter.addItem(AddPointCardInfoActivity.newlyCardInfo.getString("NAME"));
-            adapter.addId(AddPointCardInfoActivity.newlyCardInfo.getInt("ID"));
-            adapter.notifyDataSetChanged();
-            AddPointCardInfoActivity.newlyCardInfo = null;
-        }
-        if (ShowPointCardInfoActivity.deleteCardInfo != null) {
-            adapter.deleteItemById(ShowPointCardInfoActivity.deleteCardInfo.getInt("ID"));
-            adapter.notifyDataSetChanged();
-            ShowCardInfoActivity.deleteCardInfo = null;
-        }
     }
 
     private void setActivityTitle(String title){

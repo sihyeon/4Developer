@@ -6,28 +6,30 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 
+import com.project4D.fdpay.event.EventManager;
+import com.project4D.fdpay.event.UListener;
 import com.project4D.fdpay.manager.CreditCardTableManager;
 import com.project4D.fdpay.util.AlertDialogHelper;
 import com.project4D.fdpay.util.ViewUtil;
 
 
 public class ShowCardInfoActivity extends ActionBarActivity {
-    public static Bundle deleteCardInfo = null;
     private ViewUtil.Finder vu = ViewUtil.finder(this);
     private CreditCardTableManager cm = new CreditCardTableManager(this);
+    private EventManager eventManager = EventManager.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_card_info);
 
-        final Bundle b = getIntent().getExtras();
-        vu.textView(R.id.showcardinfo_cardname).setText(cm.getCardNameById(b.getInt("ID")));
+        final Bundle bundle = getIntent().getExtras();
+        vu.textView(R.id.showcardinfo_cardname).setText(cm.getCardNameById(bundle.getInt("ID")));
         vu.button(R.id.showcardinfo_editcardbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ShowCardInfoActivity.this, EditCardNameActivity.class);
-                i.putExtras(b);
+                i.putExtras(bundle);
                 startActivity(i);
                 finish();
             }
@@ -40,11 +42,13 @@ public class ShowCardInfoActivity extends ActionBarActivity {
                         .setPositiveButton("예", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                cm.deleteCardInfoById(b.getInt("ID"));
+                                cm.deleteCardInfoById(bundle.getInt("ID"));
 
-                                Bundle bundle = new Bundle();
-                                bundle.putInt("ID", b.getInt("ID"));
-                                deleteCardInfo = bundle;
+                                Bundle b = new Bundle();
+                                b.putInt("ID", bundle.getInt("ID"));
+                                for(UListener ul : eventManager.getListener("DELETE_CREDIT")){
+                                    ul.onSuccess(b);
+                                }
                                 finish();
                             }
                         })
@@ -57,6 +61,5 @@ public class ShowCardInfoActivity extends ActionBarActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        deleteCardInfo = null;
     }
 }

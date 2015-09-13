@@ -11,17 +11,23 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.project4D.fdpay.adapter.CardListAdapter;
+import com.project4D.fdpay.event.EventManager;
+import com.project4D.fdpay.event.SimpleUAdapter;
+import com.project4D.fdpay.event.UListener;
 import com.project4D.fdpay.manager.CreditCardTableManager;
 
 public class CreditCardFragment extends Fragment {
     private CardListAdapter adapter;
     private CreditCardTableManager db;
     private ListView li;
+    private EventManager eventManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         db = new CreditCardTableManager(getActivity());
+        eventManager = EventManager.getInstance();
+
     }
 
     @Override
@@ -39,11 +45,36 @@ public class CreditCardFragment extends Fragment {
         });
         setActivityTitle("신용카드");
 
-
         view.findViewById(R.id.credit_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), AddCreditCardInfoActivity.class));
+            }
+        });
+
+        eventManager.registerListener("ADD_CREDIT", new SimpleUAdapter<Bundle>() {
+            @Override
+            public void onSuccess(Bundle b) {
+                adapter.addItem(b.getString("NAME"));
+                adapter.addId(b.getInt("ID"));
+                adapter.notifyDataSetChanged();
+            }
+        });
+        eventManager.registerListener("EDIT_CREDIT", new SimpleUAdapter<Bundle>() {
+            @Override
+            public void onSuccess(Bundle b) {
+                adapter.changeItemNameById(
+                        b.getInt("ID"),
+                        b.getString("NAME")
+                );
+                adapter.notifyDataSetChanged();
+            }
+        });
+        eventManager.registerListener("DELETE_CREDIT", new SimpleUAdapter<Bundle>() {
+            @Override
+            public void onSuccess(Bundle b) {
+                adapter.deleteItemById(b.getInt("ID"));
+                adapter.notifyDataSetChanged();
             }
         });
 
@@ -55,25 +86,6 @@ public class CreditCardFragment extends Fragment {
     public void onStart() {
         super.onStart();
         setActivityTitle("신용카드");
-        if (AddCreditCardInfoActivity.newlyCardInfo != null) {
-            adapter.addItem(AddCreditCardInfoActivity.newlyCardInfo.getString("NAME"));
-            adapter.addId(AddCreditCardInfoActivity.newlyCardInfo.getInt("ID"));
-            adapter.notifyDataSetChanged();
-            AddCreditCardInfoActivity.newlyCardInfo = null;
-        }
-        if(EditCardNameActivity.cardNameChanged !=null) {
-            adapter.changeItemNameById(
-                    EditCardNameActivity.cardNameChanged.getInt("ID"),
-                    EditCardNameActivity.cardNameChanged.getString("NAME")
-            );
-            adapter.notifyDataSetChanged();
-            EditCardNameActivity.cardNameChanged = null;
-        }
-        if(ShowCardInfoActivity.deleteCardInfo !=null) {
-            adapter.deleteItemById(ShowCardInfoActivity.deleteCardInfo.getInt("ID"));
-            adapter.notifyDataSetChanged();
-            ShowCardInfoActivity.deleteCardInfo = null;
-        }
     }
 
     private void setActivityTitle(String title) {

@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.project4D.fdpay.event.EventManager;
+import com.project4D.fdpay.event.UListener;
 import com.project4D.fdpay.manager.CreditCardTableManager;
 import com.project4D.fdpay.util.AlertDialogHelper;
 import com.project4D.fdpay.util.ViewUtil;
@@ -11,15 +13,15 @@ import com.project4D.fdpay.util.ViewUtil;
 public class EditCardNameActivity extends AppCompatActivity {
     private ViewUtil.Finder vu = ViewUtil.finder(this);
     private CreditCardTableManager cm = new CreditCardTableManager(this);
-    public static Bundle cardNameChanged = null;
+    private EventManager eventManager = EventManager.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_card_name);
 
-        final Bundle b = getIntent().getExtras();
-        final String cardName = cm.getCardNameById(b.getInt("ID"));
+        final Bundle bundle = getIntent().getExtras();
+        final String cardName = cm.getCardNameById(bundle.getInt("ID"));
         vu.editText(R.id.editcardname_edittext).setText(cardName);
         vu.button(R.id.editcardname_submit).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,11 +34,13 @@ public class EditCardNameActivity extends AppCompatActivity {
                             .setPositiveButton("확인", null)
                             .build();
                 } else {
-                    cm.updateCardNameById(newCardName, b.getInt("ID"));
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("ID", b.getInt("ID"));
-                    bundle.putString("NAME", newCardName);
-                    cardNameChanged = bundle;
+                    cm.updateCardNameById(newCardName, bundle.getInt("ID"));
+                    Bundle b = new Bundle();
+                    b.putInt("ID", bundle.getInt("ID"));
+                    b.putString("NAME", newCardName);
+                    for(UListener ul : eventManager.getListener("EDIT_CREDIT")){
+                        ul.onSuccess(b);
+                    }
                     finish();
                 }
             }
@@ -46,6 +50,5 @@ public class EditCardNameActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        cardNameChanged = null;
     }
 }

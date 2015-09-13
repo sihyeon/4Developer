@@ -7,17 +7,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.project4D.fdpay.event.EventManager;
+import com.project4D.fdpay.event.UListener;
 import com.project4D.fdpay.manager.PointCardTableManager;
 import com.project4D.fdpay.model.PointCardInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddPointCardInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    public static Bundle newlyCardInfo = null;
-
+public class AddPointCardInfoActivity extends AppCompatActivity {
     private PointCardTableManager db;
     private String selectedCardName = null;
+    private EventManager eventManager = EventManager.getInstance();
     List<String> cardName = new ArrayList<String>();
 
     @Override
@@ -37,7 +38,15 @@ public class AddPointCardInfoActivity extends AppCompatActivity implements Adapt
         Spinner sp = (Spinner) findViewById(R.id.addpointcard_cardtype);
         sp.setPrompt("카드 종류를 선택하세요");
         sp.setAdapter(adapter);
-        sp.setOnItemSelectedListener(this);
+        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedCardName = cardName.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
 
         findViewById(R.id.addpointcard_submit).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,9 +54,11 @@ public class AddPointCardInfoActivity extends AppCompatActivity implements Adapt
                 PointCardInfo pi = new PointCardInfo(selectedCardName);
 
                 Bundle b = new Bundle();
-                b.putInt("ID",db.add(pi));
+                b.putInt("ID", db.add(pi));
                 b.putString("NAME", selectedCardName);
-                newlyCardInfo = b;
+                for(UListener ul : eventManager.getListener("ADD_POINT")) {
+                    ul.onSuccess(b);
+                }
                 finish();
             }
         });
@@ -57,16 +68,5 @@ public class AddPointCardInfoActivity extends AppCompatActivity implements Adapt
     @Override
     protected void onStart() {
         super.onStart();
-        newlyCardInfo = null;
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        selectedCardName = cardName.get(position);
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        //EMTPY
     }
 }

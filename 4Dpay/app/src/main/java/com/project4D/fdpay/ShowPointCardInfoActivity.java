@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.project4D.fdpay.event.EventManager;
+import com.project4D.fdpay.event.UListener;
 import com.project4D.fdpay.manager.PointCardTableManager;
 import com.project4D.fdpay.util.AlertDialogHelper;
 import com.project4D.fdpay.util.ViewUtil;
@@ -14,15 +16,15 @@ import com.project4D.fdpay.util.ViewUtil;
 public class ShowPointCardInfoActivity extends AppCompatActivity {
     private ViewUtil.Finder vu = ViewUtil.finder(this);
     private PointCardTableManager pm = new PointCardTableManager(this);
-    public static Bundle deleteCardInfo = null;
+    private EventManager eventManager = EventManager.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_point_card_info);
 
-        final Bundle b = getIntent().getExtras();
-        vu.textView(R.id.showpointcard_cardname).setText(pm.getCardNameById(b.getInt("ID")));
+        final Bundle bundle = getIntent().getExtras();
+        vu.textView(R.id.showpointcard_cardname).setText(pm.getCardNameById(bundle.getInt("ID")));
         vu.button(R.id.showpointcard_deletecardbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,9 +33,12 @@ public class ShowPointCardInfoActivity extends AppCompatActivity {
                         .setPositiveButton("예", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                pm.deleteCardInfoById(b.getInt("ID"));
-                                deleteCardInfo = new Bundle();
-                                deleteCardInfo.putInt("ID", b.getInt("ID"));
+                                pm.deleteCardInfoById(bundle.getInt("ID"));
+                                Bundle b = new Bundle();
+                                b.putInt("ID", bundle.getInt("ID"));
+                                for(UListener ul : eventManager.getListener("DELETE_POINT")){
+                                    ul.onSuccess(b);
+                                }
                                 finish();
                             }
                         })
@@ -46,6 +51,5 @@ public class ShowPointCardInfoActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        deleteCardInfo = null;
     }
 }
