@@ -163,7 +163,20 @@
                         android:textSize="17sp" />
 
 
-                    <Button
+
+                    <EditText
+                        android:id="@+id/categorizationResult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_weight="0.92"
+                        android:text="Medium Text"
+                        android:focusableInTouchMode="false"
+                        android:enabled="true"
+                        android:maxLength="10"
+                        android:textColor="#000000" />
+
+<!--                    <Button
                         android:id="@+id/categorizationResult"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -172,7 +185,7 @@
 
                         android:text="Medium Text"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textSize="15sp" />
+                        android:textSize="15sp" />-->
                 </TableRow>
 
 
@@ -229,6 +242,10 @@
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
 
+
+
+
+
         <Button
             android:id="@+id/button_Spend"
             android:layout_width="wrap_content"
@@ -238,6 +255,8 @@
             android:text="지출"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
+
+
 
     </LinearLayout>
 

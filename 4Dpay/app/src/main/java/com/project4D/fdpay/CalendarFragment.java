@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -43,9 +44,9 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         calendar.setShowWeekNumber(false);
 
         //버튼 등록 및 리스너 등록
-        Button leftMonthButton = (Button) calendarView.findViewById(R.id.leftButton);
+        ImageView leftMonthButton = (ImageView) calendarView.findViewById(R.id.leftButton);
         leftMonthButton.setOnClickListener(this);
-        Button rightMonthButton = (Button) calendarView.findViewById(R.id.rightButton);
+        ImageView rightMonthButton = (ImageView) calendarView.findViewById(R.id.rightButton);
         rightMonthButton.setOnClickListener(this);
 
         //현재 날짜

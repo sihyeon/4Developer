@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,6 +18,9 @@ import android.widget.TextView;
 /**
  * Created by Jaeung on 2015-08-04.
  */
+
+
+
 public class WritingFragment extends Fragment implements View.OnClickListener {
     private HouseHolderStatus houseHolderStatus;
     private int writingYear = HouseHolderStatus.TODAY_YEAR;
@@ -28,7 +32,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     private View writingView;
     private EditText moneyEdit;
     private EditText breakdownEdit;
-    private TextView categorizationView;
+    private EditText categorizationView;
     private EditText memoEdit;
     private TextView writingDate;
 
@@ -65,8 +69,9 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
         breakdownEdit = (EditText) writingView.findViewById(R.id.breakdownEdit);
         memoEdit = (EditText) writingView.findViewById(R.id.memoEdit);
 
-        categorizationView = (TextView) writingView.findViewById(R.id.categorizationResult);
+        categorizationView = (EditText) writingView.findViewById(R.id.categorizationResult);
         categorizationView.setText("카테고리선택");
+        categorizationView.setInputType(0);
         categorizationView.setOnClickListener(this);
 
         return writingView;
@@ -150,6 +155,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
                 datePickerDialog = new DatePickerDialog(WritingFragment.this.getActivity(), R.style.DialogTheme ,mDateSetListener, writingYear, writingMonth - 1, writingDay);
                 datePickerDialog.show();
                 break;
+
             case R.id.categorizationResult:
                 categorizationDialog = new CategorizationDialog(WritingFragment.this.getActivity());
                 categorizationDialog.setOnDismissListener(onDismissListener);
@@ -157,5 +163,8 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
+
+
 }
 
