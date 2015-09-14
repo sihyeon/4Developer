@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -103,7 +102,7 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         int nowMonth = Integer.parseInt(HouseHolderStatus.DATE_FORMAT.format(calendar.getDate()).substring(4, 6));
 
         //setYear, setMonth는 설정된 날짜. 즉, 변경될 날짜
-
+        Log.d("calendar_test", nowYear + "nowMonth: " + nowMonth);
         if (nowYear < setYear) {
             //maxdate 의 마지막날을 구하기전에 설정
             setCal.set(setYear, 0, 3);
@@ -130,9 +129,7 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         } else {
             if (nowMonth < setMonth) {
                 //maxdate 의 마지막날을 구하기전에 설정
-                setCal.set(setYear, setMonth-1
-                        , 3);
-                Log.d("calendar_test", nowMonth+"");
+                setCal.set(setYear, setMonth - 1, 3);
                 //maxdate부터 설정
                 closeingDay = Integer.toString(setCal.getActualMaximum(setCal.DAY_OF_MONTH));
                 setCal.set(setYear, setMonth - 1, Integer.parseInt(closeingDay));
@@ -155,8 +152,8 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
                 calendar.setMaxDate(setCal.getTimeInMillis());
             }
         }
-        nowYear = setYear;
-        nowMonth = setMonth;
+        setCal.set(setYear, setMonth -1, 1);
+        calendar.setDate(setCal.getTimeInMillis());
     }
 
     private void setActivityTitle(String title) {
