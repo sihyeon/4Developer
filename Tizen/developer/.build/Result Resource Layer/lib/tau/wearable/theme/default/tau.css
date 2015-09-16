@@ -862,7 +862,7 @@ progress.ui-progress-indeterminate::-webkit-progress-value {
   }
 }
 .ui-processing {
-  background-color: rgba(0, 123, 255, 1);
+  background-color:#ffc300;
   -webkit-mask-image: url("images/Progress/tw_widget_activity_01.png");
   -webkit-mask-size: 100% 100%;
   -webkit-repeat: no-repeat;
@@ -870,7 +870,7 @@ progress.ui-progress-indeterminate::-webkit-progress-value {
   width: 4.705882352941177rem;
   height: 4.705882352941177rem;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 6rem;
   margin-bottom: 0.8235294117647058rem;
 }
 .ui-processing-text {
@@ -878,6 +878,7 @@ progress.ui-progress-indeterminate::-webkit-progress-value {
   text-align: center;
   width: 9.882352941176471rem;
   font-size: 1.4117647058823528rem;
+  color:#333;
 }
 .ui-btn {
   display: block;

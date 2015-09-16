@@ -2,5 +2,5 @@
 #add
 #modify
 res/wgt/author-signature.xml
-res/wgt/basic/barcode.html
+res/wgt/lib/tau/wearable/theme/default/tau.css
 res/wgt/signature1.xml
