@@ -51,7 +51,7 @@
                     <EditText
                         android:id="@+id/signin_id"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="50dp"
                         android:hint="ID 입력"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
@@ -60,7 +60,7 @@
                     <EditText
                         android:id="@+id/signin_password"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="50dp"
                         android:hint="PASSWORD"
                         android:inputType="textPassword"
                         android:maxLines="1"
@@ -87,7 +87,7 @@
             android:orientation="horizontal"
             android:weightSum="1"
             android:layout_below="@+id/signin_line01"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:layout_alignEnd="@+id/signin_line01"
             android:layout_alignStart="@+id/signin_line01">
 
