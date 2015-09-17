@@ -21,12 +21,15 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="확인"
         android:id="@+id/editcardname_submit"
+        android:background="@drawable/com_rounded_corner"
+        android:text="확인"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:layout_below="@+id/editcardname_edittext"
-        android:layout_alignParentStart="true" />
-
-
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center" />
 </RelativeLayout>
