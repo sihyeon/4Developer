@@ -47,7 +47,12 @@
         </activity>
         <activity
             android:name=".ShowCardInfoActivity"
-            android:label="@string/title_activity_card_info" />
+            android:label="@string/title_activity_card_info" >
+        <intent-filter>
+            <action android:name="com.google.zxing.client.android.ENCODE"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+        </intent-filter>
+        </activity>
         <activity
             android:name=".AddCreditCardInfoActivity"
             android:label="@string/title_activity_add_card_info" />

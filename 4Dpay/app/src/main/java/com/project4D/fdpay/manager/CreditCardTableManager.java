@@ -102,4 +102,15 @@ public class CreditCardTableManager {
         cursor.close();
         return cardIdList;
     }
+
+    public String getCardNumById(int id) {
+        String result = null;
+        String selectQuery = "SELECT NUMBER FROM "+TABLENAME+" WHERE _id = " + id;
+        Cursor cursor = dbManager.getWritableDatabase().rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            result = cursor.getString(0);
+        }
+        cursor.close();
+        return result;
+    }
 }

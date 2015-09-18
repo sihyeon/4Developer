@@ -2,10 +2,16 @@ package com.project4D.fdpay;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
+import android.widget.ImageView;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.common.BitMatrix;
 import com.project4D.fdpay.event.EventManager;
 import com.project4D.fdpay.event.UListener;
 import com.project4D.fdpay.manager.CreditCardTableManager;
@@ -14,6 +20,7 @@ import com.project4D.fdpay.util.ViewUtil;
 
 
 public class ShowCardInfoActivity extends ActionBarActivity {
+
     private ViewUtil.Finder vu = ViewUtil.finder(this);
     private CreditCardTableManager cm = new CreditCardTableManager(this);
     private EventManager eventManager = EventManager.getInstance();
@@ -22,8 +29,26 @@ public class ShowCardInfoActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_card_info);
-
         final Bundle bundle = getIntent().getExtras();
+
+        MultiFormatWriter gen = new MultiFormatWriter();
+        try {
+            final int WIDTH = 320;
+            final int HEIGHT = 180;
+            BitMatrix bytemap = gen.encode(cm.getCardNumById(bundle.getInt("ID")), BarcodeFormat.CODE_128, WIDTH, HEIGHT);
+            Bitmap bitmap = Bitmap.createBitmap(WIDTH, HEIGHT, Bitmap.Config.ARGB_8888);
+            for (int i = 0 ; i < WIDTH ; ++i)
+                for (int j = 0 ; j < HEIGHT ; ++j) {
+                    bitmap.setPixel(i, j, bytemap.get(i,j) ? Color.BLACK : Color.WHITE);
+                }
+            ImageView view = (ImageView) findViewById(R.id.showcardinfo_barcode);
+            view.setImageBitmap(bitmap);
+            view.invalidate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         vu.textView(R.id.showcardinfo_cardname).setText(cm.getCardNameById(bundle.getInt("ID")));
         vu.button(R.id.showcardinfo_editcardbutton).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +71,7 @@ public class ShowCardInfoActivity extends ActionBarActivity {
 
                                 Bundle b = new Bundle();
                                 b.putInt("ID", bundle.getInt("ID"));
-                                for(UListener ul : eventManager.getListener("DELETE_CREDIT")){
+                                for (UListener ul : eventManager.getListener("DELETE_CREDIT")) {
                                     ul.onSuccess(b);
                                 }
                                 finish();
@@ -62,4 +87,6 @@ public class ShowCardInfoActivity extends ActionBarActivity {
     protected void onStart() {
         super.onStart();
     }
+
 }
+
