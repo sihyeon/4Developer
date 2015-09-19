@@ -1,75 +1,90 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.project4D.fdpay.EditCardNameActivity">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffc300"
-        android:gravity="center"
-        >
-        <TextView
-            android:id="@+id/add_credit01"
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="카드 수정이♥"
-            android:textColor="#ffffff"
-            android:textSize="30dp"
-            />
-    </LinearLayout>
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffc300"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/add_credit01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="카드 수정이♥"
+                    android:textColor="#ffffff"
+                    android:textSize="30dp" />
+            </LinearLayout>
 
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="20dp"
-        android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="20dp">
 
-        <TextView
-            android:text="수정할 카드 이름을 입력하세요ㅋ"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView8"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:layout_centerHorizontal="true"
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="수정할 카드 이름을 입력하세요ㅋ"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
 
-            />
+                    />
 
-        <EditText
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:layout_centerHorizontal="true"
+                <EditText
+                    android:id="@+id/editcardname_edittext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView8"
+                    android:layout_centerHorizontal="true"
 
-            android:text=""
+                    android:layout_marginTop="10dp"
 
-            android:ems="20"
-            android:id="@+id/editcardname_edittext"
-            android:layout_below="@+id/textView8"
+                    android:ems="20"
+                    android:inputType="textPersonName"
+                    android:text=""
 
 
-            />
+                    />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editcardname_submit"
-            android:background="@drawable/com_rounded_corner"
-            android:text="확인"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/editcardname_edittext"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center" />
+                <Button
+                    android:id="@+id/editcardname_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editcardname_edittext"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/com_rounded_corner"
+                    android:text="확인"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-    </RelativeLayout>
+            </RelativeLayout>
 
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 
 </RelativeLayout>
