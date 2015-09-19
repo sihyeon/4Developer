@@ -33,8 +33,8 @@ public class ShowCardInfoActivity extends ActionBarActivity {
 
         MultiFormatWriter gen = new MultiFormatWriter();
         try {
-            final int WIDTH = 320;
-            final int HEIGHT = 180;
+            final int WIDTH = 960;
+            final int HEIGHT = 540;
             BitMatrix bytemap = gen.encode(cm.getCardNumById(bundle.getInt("ID")), BarcodeFormat.CODE_128, WIDTH, HEIGHT);
             Bitmap bitmap = Bitmap.createBitmap(WIDTH, HEIGHT, Bitmap.Config.ARGB_8888);
             for (int i = 0 ; i < WIDTH ; ++i)
