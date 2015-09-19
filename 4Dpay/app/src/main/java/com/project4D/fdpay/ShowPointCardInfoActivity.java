@@ -33,8 +33,8 @@ public class ShowPointCardInfoActivity extends AppCompatActivity {
 
         MultiFormatWriter gen = new MultiFormatWriter();
         try {
-            final int WIDTH = 600;
-            final int HEIGHT = 300;
+            final int WIDTH = 960;
+            final int HEIGHT = 540;
             BitMatrix bytemap = gen.encode(pm.getCardNameById(bundle.getInt("ID"))+ DBManager.DATABASENAME, BarcodeFormat.CODE_128, WIDTH, HEIGHT);
             Bitmap bitmap = Bitmap.createBitmap(WIDTH, HEIGHT, Bitmap.Config.ARGB_8888);
             for (int i = 0 ; i < WIDTH ; ++i)

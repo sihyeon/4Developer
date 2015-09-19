@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.project4D.fdpay.manager.DBManager;
+
 public class CertificationActivity extends Activity {
 
     @Override
@@ -19,6 +21,8 @@ public class CertificationActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //TODO send number to server and check is it right later
+                Bundle bundle = getIntent().getExtras();
+                DBManager.setDbName(bundle.getString("USER_ID"));
                 startActivity(new Intent(CertificationActivity.this, MainActivity.class));
             }
         });

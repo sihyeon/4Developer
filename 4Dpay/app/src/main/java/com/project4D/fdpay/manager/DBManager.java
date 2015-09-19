@@ -5,10 +5,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by Somin Lee on 2015-09-08.
+ * Created by Administrator on 2015-09-08.
  */
 public class DBManager extends SQLiteOpenHelper {
-    public static String DATABASENAME = "DATABASE";
+    public static String DATABASENAME;
     private static final String CREATE_CREDIT = "CREATE TABLE CREDIT ( " +
             "_id INTEGER PRIMARY KEY, " +
             "NUMBER CHAR(16), " +
@@ -38,9 +38,7 @@ public class DBManager extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public static void setDbName(String name) {
-        if(!DATABASENAME.equals(name)) {
-            DATABASENAME = name;
-        }
+    public static void setDbName(String dbname){
+        DATABASENAME = dbname;
     }
 }

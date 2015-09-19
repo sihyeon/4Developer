@@ -28,6 +28,24 @@ public class AddCreditCardInfoActivity extends Activity {
         setContentView(R.layout.activity_add_credit_card_info);
         db = new CreditCardTableManager(this);
 
+        //EditText 포커스 순서
+        //9. 19. Sujeong
+        vu.editText(R.id.addcreditcard_cardnumber4).setNextFocusDownId(R.id.addcreditcard_vaildmonth);
+        vu.editText(R.id.addcreditcard_vaildmonth).setNextFocusDownId(R.id.addcreditcard_vaildyear);
+        vu.editText(R.id.addcreditcard_vaildyear).setNextFocusDownId(R.id.addcreditcard_password);
+        vu.editText(R.id.addcreditcard_password).setNextFocusDownId(R.id.addcreditcard_cardname);
+        vu.editText(R.id.addcreditcard_cardname).setNextFocusDownId(R.id.addcreditcard_cvcnumber);
+
+
+
+
+
+
+
+
+
+
+
         vu.button(R.id.addcreditcard_submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

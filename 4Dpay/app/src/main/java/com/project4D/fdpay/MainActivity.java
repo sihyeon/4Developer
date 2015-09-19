@@ -33,8 +33,8 @@ import com.project4D.fdpay.manager.DBManager;
  * 3. onOptionsItemSelected(MenuItem item)
  *
  * @author Somin Lee(sayyo1120@gmail.com)
- * @version 10.1 (2015-08-10)
- * @see this Activity is the main Activity - card in this app, and I am fucking crazy to make.
+ * @version 10.1.1 (2015-09-19)
+ * @see this Activity is the main Activity - card in this app,
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -47,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mainActivityContext = this;
-        Bundle bundle = getIntent().getExtras();
-        DBManager.setDbName(bundle.getString("USER_ID"));
 
         drawer = new Drawer(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
