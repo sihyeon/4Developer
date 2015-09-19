@@ -53,7 +53,7 @@ public class SignInActivity extends Activity {
 	}
 
 
-	private void signIn(String id, char[] pw) throws JSONException {
+	private void signIn(final String id, char[] pw) throws JSONException {
 		if (id.length() < 4 || pw.length < 4) {
 			return;
 		}
@@ -63,7 +63,11 @@ public class SignInActivity extends Activity {
 			@Override
 			public void onSuccess(String response) {
 				//TODO MainActivity
-				startActivity(new Intent(SignInActivity.this, MainActivity.class));
+				Bundle bundle = new Bundle();
+				bundle.putString("USER_ID", id);
+				Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+				intent.putExtras(bundle);
+				startActivity(intent);
 			}
 			@Override
 			public void onError(Throwable error) {

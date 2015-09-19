@@ -127,8 +127,8 @@ public class CategorizationFragment extends DemoBase implements OnSeekBarChangeL
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
         setActivityTitle("분류별 보기");
     }
 

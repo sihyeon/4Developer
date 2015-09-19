@@ -23,6 +23,7 @@ import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.project4D.fdpay.manager.DBManager;
 
 
 /**
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mainActivityContext = this;
+        Bundle bundle = getIntent().getExtras();
+        DBManager.setDbName(bundle.getString("USER_ID"));
 
         drawer = new Drawer(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

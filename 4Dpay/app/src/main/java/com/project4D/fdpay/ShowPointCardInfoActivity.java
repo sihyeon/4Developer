@@ -15,6 +15,7 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
 import com.project4D.fdpay.event.EventManager;
 import com.project4D.fdpay.event.UListener;
+import com.project4D.fdpay.manager.DBManager;
 import com.project4D.fdpay.manager.PointCardTableManager;
 import com.project4D.fdpay.util.AlertDialogHelper;
 import com.project4D.fdpay.util.ViewUtil;
@@ -32,15 +33,15 @@ public class ShowPointCardInfoActivity extends AppCompatActivity {
 
         MultiFormatWriter gen = new MultiFormatWriter();
         try {
-            final int WIDTH = 320;
-            final int HEIGHT = 180;
-            BitMatrix bytemap = gen.encode(pm.getCardNumById(bundle.getInt("ID")), BarcodeFormat.CODE_128, WIDTH, HEIGHT);
+            final int WIDTH = 600;
+            final int HEIGHT = 300;
+            BitMatrix bytemap = gen.encode(pm.getCardNameById(bundle.getInt("ID"))+ DBManager.DATABASENAME, BarcodeFormat.CODE_128, WIDTH, HEIGHT);
             Bitmap bitmap = Bitmap.createBitmap(WIDTH, HEIGHT, Bitmap.Config.ARGB_8888);
             for (int i = 0 ; i < WIDTH ; ++i)
                 for (int j = 0 ; j < HEIGHT ; ++j) {
                     bitmap.setPixel(i, j, bytemap.get(i,j) ? Color.BLACK : Color.WHITE);
                 }
-            ImageView view = (ImageView) findViewById(R.id.showcardinfo_barcode);
+            ImageView view = (ImageView) findViewById(R.id.showpointcard_barcode);
             view.setImageBitmap(bitmap);
             view.invalidate();
 
