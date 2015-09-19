@@ -1,12 +1,18 @@
 package com.project4D.fdpay;
 
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.common.BitMatrix;
 import com.project4D.fdpay.event.EventManager;
 import com.project4D.fdpay.event.UListener;
 import com.project4D.fdpay.manager.PointCardTableManager;
@@ -22,8 +28,26 @@ public class ShowPointCardInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_point_card_info);
-
         final Bundle bundle = getIntent().getExtras();
+
+        MultiFormatWriter gen = new MultiFormatWriter();
+        try {
+            final int WIDTH = 320;
+            final int HEIGHT = 180;
+            BitMatrix bytemap = gen.encode(pm.getCardNumById(bundle.getInt("ID")), BarcodeFormat.CODE_128, WIDTH, HEIGHT);
+            Bitmap bitmap = Bitmap.createBitmap(WIDTH, HEIGHT, Bitmap.Config.ARGB_8888);
+            for (int i = 0 ; i < WIDTH ; ++i)
+                for (int j = 0 ; j < HEIGHT ; ++j) {
+                    bitmap.setPixel(i, j, bytemap.get(i,j) ? Color.BLACK : Color.WHITE);
+                }
+            ImageView view = (ImageView) findViewById(R.id.showcardinfo_barcode);
+            view.setImageBitmap(bitmap);
+            view.invalidate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         vu.textView(R.id.showpointcard_cardname).setText(pm.getCardNameById(bundle.getInt("ID")));
         vu.button(R.id.showpointcard_deletecardbutton).setOnClickListener(new View.OnClickListener() {
             @Override
