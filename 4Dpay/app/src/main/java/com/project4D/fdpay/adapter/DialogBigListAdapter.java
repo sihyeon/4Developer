@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.project4D.fdpay.R;
@@ -43,9 +44,13 @@ public class DialogBigListAdapter extends BaseAdapter {
         final Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View item = inflater.inflate(R.layout.dialog_adapter_big_list, parent, false);
-
+        ImageView bigListImage = (ImageView) item.findViewById(R.id.bigListIcon);
         TextView bigListText = (TextView) item.findViewById(R.id.bigListText);
+
         bigListText.setText(bigListItems.get(position).categorizationBigText);
+
+        int drawableResID = item.getResources().getIdentifier(bigListItems.get(position).imageName, "drawable", context.getPackageName());
+        bigListImage.setImageDrawable(item.getResources().getDrawable(drawableResID, null));
   /*      item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,8 +62,8 @@ public class DialogBigListAdapter extends BaseAdapter {
     }
 
     // 외부에서 아이템 추가 요청 시 사용
-    public void add(String CategorizationBigText) {
-        bigListItems.add(new BigListItem(CategorizationBigText));
+    public void add(String CategorizationBigText, String imageName) {
+        bigListItems.add(new BigListItem(CategorizationBigText, imageName));
     }
 
     public void removeALL() {
@@ -73,9 +78,11 @@ public class DialogBigListAdapter extends BaseAdapter {
     }
 
     public class BigListItem{
+        public String imageName;
         public String categorizationBigText;
-        public BigListItem(String CategorizationBigText){
+        public BigListItem(String CategorizationBigText, String imageName){
             this.categorizationBigText = CategorizationBigText;
+            this.imageName = imageName;
         }
     }
 }
