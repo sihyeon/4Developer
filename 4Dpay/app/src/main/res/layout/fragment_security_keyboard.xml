@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/sec_layout">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sec_edit" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="*"
+            android:id="@+id/security_table">
+            <TableRow
+                android:layout_weight="1"
+                android:gravity="center">
+                <Button android:id="@+id/seckey_k0" android:background="#eeeeee" android:text="Button" android:layout_width="match_parent" android:layout_height="match_parent" android:onClick="ONCLICK_DIALOG"/>
+                <Button android:id="@+id/seckey_k1" android:background="#eeeeee" android:text="Button" android:layout_width="match_parent" android:layout_height="match_parent" android:onClick="ONCLICK_DIALOG"/>
+                <Button android:id="@+id/seckey_k2" android:background="#eeeeee" android:text="Button" android:layout_width="match_parent" android:layout_height="match_parent" android:onClick="ONCLICK_DIALOG"/>
+            </TableRow>
+            <TableRow
+                android:layout_weight="1"
+                android:gravity="center">
+                <Button android:id="@+id/seckey_k3" android:background="#eeeeee" android:text="Button" android:layout_width="match_parent" android:layout_height="match_parent" android:onClick="ONCLICK_DIALOG"/>
+                <Button android:id="@+id/seckey_k4" android:background="#eeeeee" android:text="Button" android:layout_width="match_parent" android:layout_height="match_parent" android:onClick="ONCLICK_DIALOG"/>
+                <Button android:id="@+id/seckey_k5" android:background="#eeeeee" android:text="Button" android:layout_width="match_parent" android:layout_height="match_parent" android:onClick="ONCLICK_DIALOG"/>
+            </TableRow>
+            <TableRow
+                android:layout_weight="1"
+                android:gravity="center">
+                <Button android:id="@+id/seckey_k6" android:background="#eeeeee" android:text="Button" android:layout_width="match_parent" android:layout_height="match_parent" android:onClick="ONCLICK_DIALOG"/>
+                <Button android:id="@+id/seckey_k7" android:background="#eeeeee" android:text="Button" android:layout_width="match_parent" android:layout_height="match_parent" android:onClick="ONCLICK_DIALOG"/>
+                <Button android:id="@+id/seckey_k8" android:background="#eeeeee" android:text="Button" android:layout_width="match_parent" android:layout_height="match_parent" android:onClick="ONCLICK_DIALOG"/>
+            </TableRow>
+            <TableRow
+                android:layout_weight="1"
+                android:gravity="center">
+                <Button android:id="@+id/seckey_back" android:background="#eeeeee" android:text="Back" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                <Button android:id="@+id/seckey_k9" android:background="#eeeeee" android:text="Button" android:layout_width="match_parent" android:layout_height="match_parent" android:onClick="ONCLICK_DIALOG"/>
+                <Button android:id="@+id/seckey_ok" android:background="#eeeeee" android:text="OK" android:layout_width="match_parent" android:layout_height="match_parent"/>
+            </TableRow>
+        </TableLayout>
+</LinearLayout>

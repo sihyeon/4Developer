@@ -237,7 +237,7 @@ public class CategorizationFragment extends DemoBase implements OnSeekBarChangeL
             return;
         Log.i("VAL SELECTED",
                 "Value: " + e.getVal() + ", xIndex: " + e.getXIndex()
-                        + ", DataSet index: " + dataSetIndex);
+                        + ", DataSet value: " + dataSetIndex);
     }
 
     @Override
@@ -271,7 +271,7 @@ public class CategorizationFragment extends DemoBase implements OnSeekBarChangeL
     // Entry e = set.getEntryForXIndex(set.getEntryCount() - 1);
     //
     // data.removeEntry(e, 0);
-    // // or remove by index
+    // // or remove by value
     // // mData.removeEntry(xIndex, dataSetIndex);
     //
     // mChart.notifyDataSetChanged();
