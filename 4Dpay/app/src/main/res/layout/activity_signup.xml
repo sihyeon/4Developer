@@ -23,15 +23,12 @@
             android:layout_marginBottom="20dp"
             android:src="@drawable/banner_black_and_gold" />
 
-
         <TableLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
 
             <TableRow
-                android:layout_margin="5dp"
-                >
+                android:layout_margin="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -65,9 +62,7 @@
             </TableRow>
 
             <TableRow
-                android:layout_margin="5dp"
-                >
-
+                android:layout_margin="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -95,20 +90,16 @@
                         android:layout_height="wrap_content"
                         android:text="외국인"
                         android:textSize="18sp" />
-
                 </LinearLayout>
-
             </TableRow>
 
             <TableRow
-                android:layout_margin="5dp"
-                >
+                android:layout_margin="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ID"
-
                     android:textColor="#330000"
                     android:textSize="20sp" />
 
@@ -117,48 +108,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round"
-
                     android:ems="10"
                     android:paddingLeft="10dp">
-
                     <requestFocus />
                 </EditText>
-
             </TableRow>
 
             <TableRow
-                android:layout_margin="5dp"
-                >
+                android:layout_margin="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PASSWORD"
-
                     android:textColor="#330000"
                     android:textSize="20sp" />
+
                 <EditText
                     android:id="@+id/signup_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round"
-
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:paddingLeft="10dp"
                     android:singleLine="true" />
-
-
-
             </TableRow>
 
             <TableRow
-                android:layout_margin="5dp"
-                >    <TextView
+                android:layout_margin="5dp">
+
+                <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="EMAIL"
-
                 android:textColor="#330000"
                 android:textSize="20sp" />
 
@@ -167,21 +150,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round"
-
                     android:ems="10"
                     android:inputType="textEmailAddress"
                     android:paddingLeft="10dp" />
-
-
             </TableRow>
 
             <TableRow
-                android:layout_margin="5dp"
-                >       <TextView
+                android:layout_margin="5dp">
+
+                <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PHONE"
-
                 android:textColor="#330000"
                 android:textSize="20sp" />
 
@@ -190,20 +170,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round"
-
                     android:ems="10"
                     android:inputType="phone"
                     android:paddingLeft="10dp" />
-
             </TableRow>
 
             <TableRow
-                android:layout_margin="5dp"
-                >  <TextView
+                android:layout_margin="5dp">
+
+                <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이름"
-
                 android:textColor="#330000"
                 android:textSize="20sp" />
 
@@ -212,34 +190,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round"
-
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="10dp" />
-
             </TableRow>
-
-            <TableRow
-                android:layout_margin="5dp"
-                ><TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="인증번호"
-
-                android:textColor="#330000"
-                android:textSize="20sp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/round"
-
-                    android:ems="10"
-                    android:paddingLeft="10dp" />
-
-            </TableRow>
-
-
         </TableLayout>
 
 
