@@ -41,12 +41,7 @@ public class CertificationActivity extends Activity {
             @Override
             public void onClick(View v) {
                 ed.setText("");
-<<<<<<< HEAD
                 secure.show(getFragmentManager(), "callByCerti");
-=======
-
-                secure.show(getFragmentManager(), "TAG");
->>>>>>> 00379bf6bd73a88f7519f2f34ab0ecca8ca25f2f
             }
         });
 
