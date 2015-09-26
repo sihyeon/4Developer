@@ -12,6 +12,7 @@ import com.project4D.fdpay.MainActivity;
 import com.project4D.fdpay.R;
 import com.project4D.fdpay.WritingFragment;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -47,6 +48,9 @@ public class CalendarListAdapter extends BaseAdapter{
     // 출력 될 아이템 관리
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        DecimalFormat df = new DecimalFormat("###,###.####");
+
+
         final Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View item = inflater.inflate(R.layout.adpater_calendar_list, parent, false);
@@ -57,7 +61,7 @@ public class CalendarListAdapter extends BaseAdapter{
 
         breakdown.setText(calendarItemList.get(position).breakdown);
         categorization.setText(calendarItemList.get(position).categorization);
-        amount.setText(calendarItemList.get(position).incoming + "");
+        amount.setText("￦" + df.format(calendarItemList.get(position).incoming) + "");
 
         item.setOnClickListener(new View.OnClickListener() {
             @Override

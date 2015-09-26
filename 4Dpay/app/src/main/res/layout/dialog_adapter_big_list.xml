@@ -10,13 +10,21 @@
         android:layout_gravity="center_horizontal"
         >
 
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/bigListIcon"
+            android:src="@drawable/dialog_health_culture" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="식료품"
             android:id="@+id/bigListText"
-            android:textSize="30dp" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="25dp" />
     </LinearLayout>
 
 </LinearLayout>

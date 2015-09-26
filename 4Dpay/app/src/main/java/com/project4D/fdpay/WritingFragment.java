@@ -108,8 +108,8 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
         setActivityTitle("쓰기");
 
         if (houseHolderStatus.writingInfoUseStatus && houseHolderStatus.dateUseStatus) {

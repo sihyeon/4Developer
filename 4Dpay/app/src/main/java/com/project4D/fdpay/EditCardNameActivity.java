@@ -1,5 +1,6 @@
 package com.project4D.fdpay;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -19,6 +20,8 @@ public class EditCardNameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_card_name);
+
+
 
         final Bundle bundle = getIntent().getExtras();
         final String cardName = cm.getCardNameById(bundle.getInt("ID"));
@@ -45,6 +48,21 @@ public class EditCardNameActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //EditText 포커스 시 커서 위치 맨 뒤로 이동
+        //9 .19 Sujeong
+        vu.editText(R.id.editcardname_edittext).setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    vu.editText(R.id.editcardname_edittext).setSelection(vu.editText(R.id.editcardname_edittext).getText().length());
+                }
+            }
+        });
+
+
+
     }
 
     @Override

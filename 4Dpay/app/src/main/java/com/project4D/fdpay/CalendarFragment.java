@@ -161,8 +161,8 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
         setActivityTitle("월별 보기");
 
         Toast t = Toast.makeText(getActivity(),

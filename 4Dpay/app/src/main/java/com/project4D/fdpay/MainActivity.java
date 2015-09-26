@@ -23,6 +23,7 @@ import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.project4D.fdpay.manager.DBManager;
 
 
 /**
@@ -32,8 +33,8 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
  * 3. onOptionsItemSelected(MenuItem item)
  *
  * @author Somin Lee(sayyo1120@gmail.com)
- * @version 10.1 (2015-08-10)
- * @see this Activity is the main Activity - card in this app, and I am fucking crazy to make.
+ * @version 10.1.1 (2015-09-19)
+ * @see this Activity is the main Activity - card in this app,
  */
 
 public class MainActivity extends AppCompatActivity {

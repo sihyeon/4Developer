@@ -69,8 +69,8 @@ public class YearsFragment extends Fragment implements OnClickListener {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
         setActivityTitle("연별 보기");
     }
 

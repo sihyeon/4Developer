@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by Administrator on 2015-09-08.
  */
 public class DBManager extends SQLiteOpenHelper {
-    private static final String DATABASENAME = "DATABASE";
+    public static String DATABASENAME;
     private static final String CREATE_CREDIT = "CREATE TABLE CREDIT ( " +
             "_id INTEGER PRIMARY KEY, " +
             "NUMBER CHAR(16), " +
@@ -36,5 +36,9 @@ public class DBManager extends SQLiteOpenHelper {
         db.execSQL(DROP_CREDIT);
         db.execSQL(DROP_POINT);
         onCreate(db);
+    }
+
+    public static void setDbName(String dbname){
+        DATABASENAME = dbname;
     }
 }

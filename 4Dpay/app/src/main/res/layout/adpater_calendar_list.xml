@@ -20,7 +20,7 @@
         <TextView
             android:layout_weight="1"
             android:layout_width="0px"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="내역이당"
@@ -34,12 +34,12 @@
         <TextView
             android:layout_weight="1"
             android:layout_width="0px"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="카테고리"
             android:textColor="#333333"
-            android:gravity="center"
+
             android:id="@+id/categorize"
           />
 
@@ -47,12 +47,12 @@
         <TextView
             android:layout_weight="1"
             android:layout_width="0px"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="수입/지출"
             android:textColor="#ff8200"
-            android:gravity="center"
+            android:textStyle="bold"
             android:id="@+id/amount" />
 
     </LinearLayout>

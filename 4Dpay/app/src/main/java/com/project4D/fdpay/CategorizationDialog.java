@@ -39,16 +39,16 @@ public class CategorizationDialog extends Dialog {
         bigList.setAdapter(dialogBigListAdapter);
         bigList.setOnItemClickListener(bigListClickListener);
 
-        dialogBigListAdapter.add("식비");
-        dialogBigListAdapter.add("주거/통신");
-        dialogBigListAdapter.add("생활용품");
-        dialogBigListAdapter.add("의복/미용");
-        dialogBigListAdapter.add("건강/문화");
-        dialogBigListAdapter.add("교통/차량");
-        dialogBigListAdapter.add("경조사/기부금");
-        dialogBigListAdapter.add("저축");
-        dialogBigListAdapter.add("이체/출금");
-        dialogBigListAdapter.add("기타지출");
+        dialogBigListAdapter.add("식비", "dialog_food_expenses");
+        dialogBigListAdapter.add("주거/통신", "dialog_house_communication");
+        dialogBigListAdapter.add("생활용품", "dialog_daily_supplies");
+        dialogBigListAdapter.add("의복/미용", "dialog_clothes_beauty_treatment");
+        dialogBigListAdapter.add("건강/문화", "dialog_health_culture");
+        dialogBigListAdapter.add("교통/차량", "dialog_traffic_car");
+        dialogBigListAdapter.add("경조사/기부금", "dialog_family_event_contribution");
+        dialogBigListAdapter.add("저축", "dialog_saving");
+        dialogBigListAdapter.add("이체/출금", "dialog_transfer_withdraw");
+        dialogBigListAdapter.add("기타지출", "dialog_the_others");
 
         smallList = (ListView) findViewById(R.id.smallList);
     }
