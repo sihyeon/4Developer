@@ -34,12 +34,13 @@ public class CertificationActivity extends Activity {
         Button submit = (Button) findViewById(R.id.certification_submit);
         final EditText ed = (EditText) findViewById(R.id.certification_edittext);
         final SecurityKeyboardFragment secure = new SecurityKeyboardFragment();
+        secure.initLimit(5);
         ed.setInputType(0);
         ed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ed.setText("");
-                secure.show(getFragmentManager(), "TAG");
+                secure.show(getFragmentManager(), "callByCerti");
             }
         });
 

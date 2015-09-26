@@ -27,6 +27,10 @@ public class AddCreditCardInfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_credit_card_info);
         db = new CreditCardTableManager(this);
+        final SecurityKeyboardFragment secureByPw = new SecurityKeyboardFragment();
+        secureByPw.initLimit(4);
+        final SecurityKeyboardFragment secureByCvc = new SecurityKeyboardFragment();
+        secureByCvc.initLimit(3);
 
         //EditText 포커스 순서
         //9. 19. Sujeong
@@ -36,15 +40,45 @@ public class AddCreditCardInfoActivity extends Activity {
         vu.editText(R.id.addcreditcard_password).setNextFocusDownId(R.id.addcreditcard_cardname);
         vu.editText(R.id.addcreditcard_cardname).setNextFocusDownId(R.id.addcreditcard_cvcnumber);
 
+        final EditText pwEdit = vu.editText(R.id.addcreditcard_password);
+        pwEdit.setInputType(0);
+        pwEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    pwEdit.setText("");
+                    secureByPw.show(getFragmentManager(), "callByPw");
+                }
 
+            }
+        });
+        secureByPw.setOnSecureKeyInputListener(new SecurityKeyboardFragment.SecureKeyInputListener() {
+            @Override
+            public void onInput(String input) {
+                password = input;
+                for (int i = 0; i < input.length(); ++i) {
+                    pwEdit.append("●");
+                }
+            }
+        });
 
-
-
-
-
-
-
-
+        final EditText cvcEdit = vu.editText(R.id.addcreditcard_cvcnumber);
+        cvcEdit.setInputType(0);
+        cvcEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                cvcEdit.setText("");
+                secureByCvc.show(getFragmentManager(), "callByCvc");
+            }
+        });
+        secureByCvc.setOnSecureKeyInputListener(new SecurityKeyboardFragment.SecureKeyInputListener() {
+            @Override
+            public void onInput(String input) {
+                cvc = input;
+                for(int i = 0 ; i < input.length() ; ++i)
+                    cvcEdit.append("●");
+            }
+        });
 
         vu.button(R.id.addcreditcard_submit).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,10 +88,8 @@ public class AddCreditCardInfoActivity extends Activity {
                         vu.text(vu.editText(R.id.addcreditcard_cardnumber3)) +
                         vu.text(vu.editText(R.id.addcreditcard_cardnumber4));
                 cardname = vu.text(vu.editText(R.id.addcreditcard_cardname));
-                password = vu.text(vu.editText(R.id.addcreditcard_password));
                 valid = vu.text(vu.editText(R.id.addcreditcard_vaildyear)) +
                         vu.text(vu.editText(R.id.addcreditcard_vaildmonth));
-                cvc = vu.text(vu.editText(R.id.addcreditcard_cvcnumber));
                 //TODO to show that this activity can attach card.
                 if (cardname.isEmpty()) {
                     Toast.makeText(AddCreditCardInfoActivity.this, "카드 이름을 입력해 주세요", Toast.LENGTH_LONG).show();
@@ -90,12 +122,14 @@ public class AddCreditCardInfoActivity extends Activity {
                 Bundle b = new Bundle();
                 b.putInt("ID", db.add(card));
                 b.putString("NAME", card.getCardName());
-                for(UListener ul : eventManager.getListener("ADD_CREDIT")){
+                for (UListener ul : eventManager.getListener("ADD_CREDIT")) {
                     ul.onSuccess(b);
                 }
                 finish();
             }
         });
+
+
     }
 
 

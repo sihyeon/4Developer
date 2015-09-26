@@ -1,6 +1,8 @@
 package com.project4D.fdpay;
 
 import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -21,11 +23,16 @@ public class SecurityKeyboardFragment extends DialogFragment {
     private SecureRandom secureRandom = new SecureRandom();
     private List<Integer> input = new ArrayList<>();
     private EditText editText;
+    private int max;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initKeyBoard();
+    }
+
+    public void initLimit(int max) {
+        this.max = max;
     }
 
     public void initKeyBoard() {
@@ -64,9 +71,8 @@ public class SecurityKeyboardFragment extends DialogFragment {
             public void onClick(View v) {
                 if (client == null)
                     throw new IllegalStateException("You must implement client");
-                // Prevent too short input
-                if (input.size() <= 4)
-                    return;
+
+                if(input.size() < max) return;
 
                 StringBuffer s = new StringBuffer();
                 for (int e : input) s.append(e);
