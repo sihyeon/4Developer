@@ -17,7 +17,7 @@ body {
 
 .ui-page img {
 	position : absolute;
-	top:60px;
+	top:45px;
 	left:70px;
 	width : 180px;
 	height : 180px;
@@ -28,12 +28,11 @@ body {
 	border-bottom: 2px solid #FF9100;
 }
 
-#refresh {
-	top:4px;
-	left:260px;
-	width:68px;
-	height:55px;	
+
+.ui-page a{
+	color:#999;
 }
+
 .info-content {
 	background-color:rgba(8,8,8,1);
 }
