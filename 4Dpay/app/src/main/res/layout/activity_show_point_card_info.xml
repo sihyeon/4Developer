@@ -5,13 +5,23 @@
     android:orientation="vertical"
     tools:context="com.project4D.fdpay.ShowPointCardInfoActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="카드 이름"
-        android:id="@+id/showpointcard_cardname" />
+        android:background="#ffc300"
+        android:gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="카드 이름"
+            android:layout_margin="10dp"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:id="@+id/showpointcard_cardname" />
 
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"

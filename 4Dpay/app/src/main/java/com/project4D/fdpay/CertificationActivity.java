@@ -8,6 +8,7 @@ import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -40,7 +41,12 @@ public class CertificationActivity extends Activity {
             @Override
             public void onClick(View v) {
                 ed.setText("");
+<<<<<<< HEAD
                 secure.show(getFragmentManager(), "callByCerti");
+=======
+
+                secure.show(getFragmentManager(), "TAG");
+>>>>>>> 00379bf6bd73a88f7519f2f34ab0ecca8ca25f2f
             }
         });
 

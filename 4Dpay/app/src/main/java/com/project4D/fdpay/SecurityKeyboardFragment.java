@@ -8,6 +8,7 @@ import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -44,6 +45,7 @@ public class SecurityKeyboardFragment extends DialogFragment {
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View dialog = inflater.inflate(R.layout.fragment_security_keyboard, container, false);
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         ViewUtil.Finder vu = ViewUtil.finder(dialog);
         editText = (EditText) dialog.findViewById(R.id.sec_edit);
         editText.setEnabled(false);

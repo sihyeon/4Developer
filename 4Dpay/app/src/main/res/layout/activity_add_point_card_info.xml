@@ -5,10 +5,43 @@
     android:orientation="vertical"
     tools:context="com.project4D.fdpay.AddPointCardInfoActivity">
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffc300"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/add_credit01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="포인트 카드 선택"
+            android:textColor="#ffffff"
+            android:textSize="30dp"
+            />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <Spinner
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#ffdfb0"
         android:id="@+id/addpointcard_cardtype" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="#00ffffff"
+        android:src="@drawable/down_arrow"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentEnd="true" />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/addpointcard_submit"

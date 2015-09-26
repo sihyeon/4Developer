@@ -52,7 +52,6 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="수입/지출"
             android:textColor="#ff8200"
-
             android:textStyle="bold"
             android:id="@+id/amount" />
 
