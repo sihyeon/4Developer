@@ -17,7 +17,7 @@ body {
 
 .ui-page img {
 	position : absolute;
-	top:45px;
+	top:35px;
 	left:70px;
 	width : 180px;
 	height : 180px;
@@ -33,52 +33,23 @@ body {
 	color:#999;
 }
 
-.info-content {
-	background-color:rgba(8,8,8,1);
+
+.go-btn .arrow {
+	margin-top : 190px;
+	height:55px;
 }
 
-#InfoImg {
+.ui-header #refresh{
+	background:url(../images/tw_ic_lock_restart.png) no-repeat;
+}
+
+
+.ui-header #refresh{
 	position:relative;
-	top:0;
-	left:60px;
-	width: 200px;
-	height:230px;
-}
-
-
-/*******************************Go btn *****************************/
-.code-btn{
-	position : relative;
-	bottom:0;
-}
-.code-btn {
-	text-decoration:none;
-	font-family:Arial;
-	text-indent:0px;
-	line-height:45px;
-	-moz-border-radius:0px;
-	-webkit-border-radius:0px;
-	border-radius:0px;
-	text-align:center;
-	vertical-align:middle;
-	display:inline-block;
-	font-size:35px;
-	background-color:rgba(8,8,8,1);
-	color:#ffffff;
-	width:320px;
-	height:70px;
-	padding:13px;
-	border-color:#ffffff;
-	border-width:2px;
-	border-style:solid;
-}
-
-.code-btn:active {
-	position:relative;
-	top:3px
-}
-
-.code-btn:hover {
+	width:60px;
+	height:50px;
+	left:260px;
+	border:0;
 }
 /***************************Card tab********************************/
 .ui-content section {
@@ -90,6 +61,7 @@ body {
 	background-color: #ffffff;
 	color:#404040;
 	border:0;
+	position:absolute;
 }
 
 .ui-section-active h3{
