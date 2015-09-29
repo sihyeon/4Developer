@@ -16,8 +16,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/bigList"
             android:layout_gravity="center_horizontal"
-            android:listSelector="#faecc5"
-            />
+            android:listSelector="#faecc5" />
 
         <Space
             android:layout_width="30dp"
@@ -29,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/smallList"
+            android:listSelector="#faecc5"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </RelativeLayout>
