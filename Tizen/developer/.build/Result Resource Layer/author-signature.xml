@@ -104,7 +104,19 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>BvR6yLaMtLZ0UT4aFlrKJkuU4iGO5sUkOCahbjxEIyU=</DigestValue>
+<DigestValue>hcQ0b9iKUGPNrj2tgJ2L8Ko+imUK7Dop+kTdFOjQ1as=</DigestValue>
+</Reference>
+<Reference URI="extra%2FNotice_bluetooth.html">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>AMXUCCxjjSU9bZWO0epyk3TQZM9gbodw4Qa94RVMbrE=</DigestValue>
+</Reference>
+<Reference URI="extra%2FNotice_card.html">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>AMXUCCxjjSU9bZWO0epyk3TQZM9gbodw4Qa94RVMbrE=</DigestValue>
+</Reference>
+<Reference URI="extra%2FNotice_reload.html">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>AMXUCCxjjSU9bZWO0epyk3TQZM9gbodw4Qa94RVMbrE=</DigestValue>
 </Reference>
 <Reference URI="extra%2Fimages%2FController_icon%2Ftw_btn_next_depth_disabled_focused_holo_dark.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -242,10 +254,6 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>gBpp0tlE14Ro4JcE3zpt2mNSYTCntdqORyAw51VbHz8=</DigestValue>
 </Reference>
-<Reference URI="extra%2Fnotice.html">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>AMXUCCxjjSU9bZWO0epyk3TQZM9gbodw4Qa94RVMbrE=</DigestValue>
-</Reference>
 <Reference URI="extra%2Fscroller%2Fapp.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>x/MTvmgxjAiXvb827vQSZYCt5z8A/CYXh80YD1BG+vE=</DigestValue>
@@ -356,7 +364,7 @@
 </Reference>
 <Reference URI="extra%2Ftab.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>gfpnssYEZ33mLTPV8jacsSdDuQnWNooxHsHIVssKyKY=</DigestValue>
+<DigestValue>73ubAJino1RUbhACoPjDx+/sspU9Pd0bnqepSfG4j2E=</DigestValue>
 </Reference>
 <Reference URI="extra%2Ftab.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -422,22 +430,6 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>SJAi8s43x4qE1nc+tSp6tvu/rjgKbmIdwsvoq+WzSr0=</DigestValue>
 </Reference>
-<Reference URI="images%2Fb_option_list_icon_action.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ywC5UQ9oxYh7Y+iG7rIzDid9FsJJ7+uVyt3oyckMO7U=</DigestValue>
-</Reference>
-<Reference URI="images%2Fb_option_list_icon_delete.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>nGDJbF66DYGxkVxRker9idEy3naHcUVpTQIZu/E6XxI=</DigestValue>
-</Reference>
-<Reference URI="images%2Fb_option_list_icon_enter.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>CFsDFQGxm7E7Ogi07jtvNTbnl+J5D3/UsIVczA3EpEY=</DigestValue>
-</Reference>
-<Reference URI="images%2Fb_option_list_icon_share.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>hnQdc5Y1QV8WTG7I1i0tfCzxjwGOoY35SmG4VSS/vws=</DigestValue>
-</Reference>
 <Reference URI="images%2Fbacode.PNG">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>OpQKYxobCmCFAQkGTB3GagEScTGEeh6AXVMuprvmggY=</DigestValue>
@@ -445,6 +437,10 @@
 <Reference URI="images%2Fgoldbrown.jpg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>CGZ7uKOHtjCTACoLSaOLZZy7noY/1Fd9fjE2r59Mh/o=</DigestValue>
+</Reference>
+<Reference URI="images%2Frefresh.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>CAdqZ5+sagEF77WazsDNTdDwo5uhBuuVeiqmeRB4Yh0=</DigestValue>
 </Reference>
 <Reference URI="images%2Freload.PNG">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -2975,11 +2971,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-fHkOZ4MrQLrezMevWlzITVoungvwyjC0k/3/z0k5Pn/z1RuakGrZ4M92Gx3XaZWv8Kj90pwt44dw
-ejNuCmlpXn42pqUaPcYg5O6MFUHapFPHc0ZGcz91UpJ93HQAQZrZGM1yLj9WgSHGASn59svgjqYz
-TFgGr/tOZ/XU7HV8SjIpU5TQ27OP4L9HEykTI8nkvwc64ygebzw56UPg2zukwA+quBFvaTbaOiBp
-7IX3MttoFLlPPVC/lbocF0rHMHA0InjAOTPvJOMeLfZcM2aPB2SBJdoTqx1AVbBS/5qQFntIf7Hj
-AAOIxmxmBiKHeSIgGcG0RecJGQ1cY45E0wEwWw==
+llMZ5Eoiyj/681EWU7Xvuy5aVqguEA63/zrcCi925R/yMvY6Mv9550azpSPDL8rfQGwG+o3r4meW
+ef2Uv4jZOR/vJUCKe0PDkzzRi6Cv82kj8il+Q7DH8lD6c1w31oVMWlx2CjQ89jcDWrby9MhYsV+V
+R2g8GUS6PHRJxCguKifhQcuOsRaWqrZwIvozV/Pt0PJXX/k7SSPpyEoJK86eJ/w+10otOXp6wbzZ
+x2Quil0LMqrD17c3lAC/9DjEIzmW/PxY1Vc7TEFx9dPrgAVaPKTUuCTBfA/GMSceeFYtlFzuxOXG
+hEccbR21M5QQBCOhRVt9yEmmBWOAtwprQ0U2bQ==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

@@ -40,12 +40,13 @@ body {
 }
 
 .ui-header #refresh{
-	background:url(../images/tw_ic_lock_restart.png) no-repeat;
+	background:url(../images/refresh.jpg) no-repeat;
 }
 
 
 .ui-header #refresh{
 	position:relative;
+	margin-top:5px;
 	width:60px;
 	height:50px;
 	left:260px;
