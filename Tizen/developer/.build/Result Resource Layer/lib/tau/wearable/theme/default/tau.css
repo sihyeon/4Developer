@@ -467,6 +467,7 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   /* overrides webkit link color */
 }
+
 .ui-page.ui-page-active {
   display: block;
 }
@@ -501,7 +502,6 @@ body {
   background-color: rgba(255, 255, 255, 1);
 }
 .ui-header .ui-title {
-  /*color: rgba(116, 196, 252, 1);*/
   font-size: 32px;
   white-space: nowrap;
   margin: 0px;
