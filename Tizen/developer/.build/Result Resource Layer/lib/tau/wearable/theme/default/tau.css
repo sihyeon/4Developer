@@ -1041,8 +1041,8 @@ Normal Popup
   left: 0px;
   width: 100%;
   margin: 0;
-  background-color: rgba(0, 17, 33, 1);
-  border: 3px solid rgba(0, 55, 92, 1);
+  background-color: rgba(255, 255, 255, 1);
+  border: 3px solid #ff9100;
   display: none;
   z-index: 1000;
 }
@@ -1066,8 +1066,8 @@ Normal Popup
   min-height: 13.176470588235293rem;
   font-size: 2rem;
   text-align: left;
-  color: rgba(245, 245, 245, 1);
-  background-color: rgba(0, 17, 33, 1);
+  color: rgba(8, 8, 8, 1);
+  background-color: rgba(255, 255, 255, 1);
   padding: 10px 16px 9px 16px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;

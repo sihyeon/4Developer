@@ -42,10 +42,6 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>V8xd+V0N4dmHGdAnJ2bXXcem17XoHzCK4s6e99f1x9Q=</DigestValue>
 </Reference>
-<Reference URI="basic%2Fpopup.js">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>kxKhdD0T3aTrjJbAF55AYq3Sw+VN4NAWVyg6+ymXuQo=</DigestValue>
-</Reference>
 <Reference URI="basic%2Fpopup%2FCard.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>vGegrSGQEKLU05MyPVXRhCTnMVoK9RWOYApVubDdF0k=</DigestValue>
@@ -89,10 +85,6 @@
 <Reference URI="basic%2Fpopup%2Fpopup.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>kxKhdD0T3aTrjJbAF55AYq3Sw+VN4NAWVyg6+ymXuQo=</DigestValue>
-</Reference>
-<Reference URI="basic%2Fpopup_toast.html">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>6VzEa5GSLAacFs40exMqEaN9k+U7jXJyqipw/GkLVq0=</DigestValue>
 </Reference>
 <Reference URI="basic%2Fprocessing.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -368,7 +360,7 @@
 </Reference>
 <Reference URI="extra%2Ftab.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>O4mSPrqEgxpIwFxTDQ3wgGoS/2skS/L937YbSjERgtw=</DigestValue>
+<DigestValue>1IKMU1PPTCuVqzEkU5KAkGbM88FAwIV5F9TzhLwfghU=</DigestValue>
 </Reference>
 <Reference URI="extra%2Ftab.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -476,7 +468,7 @@
 </Reference>
 <Reference URI="lib%2Ftau%2Fwearable%2Ftheme%2Fdefault%2Ftau.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>fzNUxDX8vMcmSvneN/AMae6Q1aU7ivcnAK7lxCKmgZM=</DigestValue>
+<DigestValue>qjebCfqb0N7Ktop08Y5VhA6iS6CVkGbReRmlg1FYyjo=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2Fwearable%2Ftheme%2Fdefault%2Ftau.min.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -531,11 +523,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-t6Nl3UaSZQbcnxiEAamtdZ1cimQ7DwpM30FjGbAXOyi+CT2bBoPnSDc1ajKzEayZPVEvIEsMDFCV
-u0mRpUo8W8zvLIP/Ju+c4Bw3VnamKfmvuEhG5t5idu2wzXwLu5chr6jMo/ib41QbNLnq89yC9oFx
-oTHAwNrphzErb778rl9RlKv3eD2DP9qOabHY8EsGEH3f5DCy27x/NRklBB5WBIqLqrmQGhROWLGt
-FTKQWTW3EnpCOJ/JVQasTuGv753IS+1Vg5ubUOZXTatQl8NEP6Xay96xwH0DZceZEAaFqSSNMdnv
-pX4s6Bs9dOGlILYB5Ww2U25frw13k3bVnEEElQ==
+PaRbuQVXY3mGENsks9AJOc1ue/YkoXlS9Wq/Cy+co3lFdYcnriXJ61MzbshAHxxO+0F1QavQi9CY
+iprx6bi0DyujgIIMAeNAjSD18kD1Bii5FVd1swVlI5C7eIZMjCTAfbSWtFYXSTLzTvmJIw8VjpB8
+acveG9ksP4YL5JWGeVlaApPfAHEMM181HoPESjO6Sz7qRMANreaFKeSR9v64UgElPGuU3dSAmzsl
+qenkWT28cDL30RvIzFxk7GpHzZ4+sFFCx5YCSMTQlZTw3/s3GPiWUP0yhzpZwV17vEnzWo4icjEB
+Q+jaBCRwkjdKAHZF8ue4u6O0RoYKMtmGkEpTUA==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
