@@ -18,54 +18,64 @@
 					<h3> How to use </h3>
 					<ul class="ui-listview">
 						<li class="li-has-multiline li-has-next-depth">
-						<a href="Notice_bluetooth.html">
-							1.Bluetooth
-						<span class="li-text-sub">블루투스 연결을 확인하세요.</span>
-						</a>
+							<a href="Notice_bluetooth.html">
+								1.Bluetooth
+							<span class="li-text-sub">블루투스 연결을 확인하세요.</span>
+							</a>
 						</li>
 					
 						<li class="li-has-multiline li-has-next-depth">
-						<a href="Notice_reload.html">
-							2.카드 목록 갱신
-							<span class="li-text-sub">새로 등록한 카드가 있다면</span>
-							<span class="li-text-sub">상단의 새로고침 버튼을 누르세요.</span>
-						</a>
+							<a href="Notice_reload.html">
+								2.카드 목록 갱신
+								<span class="li-text-sub">새로 등록한 카드가 있다면</span>
+								<span class="li-text-sub">상단의 새로고침 버튼을 누르세요.</span>
+							</a>
 						</li>
 						
 						<li class="li-has-multiline li-has-next-depth">
-						<a href="Notice_card.html">
-							3.카드 Click
-							<span class="li-text-sub">해당 카드의 바코드로 결제!</span>
-						</a>
+							<a href="Notice_card.html">
+								3.카드 Click
+								<span class="li-text-sub">해당 카드의 바코드로 결제!</span>
+							</a>
 						</li>		
 					
-				</ul>
+					</ul>
 				</section>
 				
 				<section class="ui-section-active" style="text-align:center">
 					<h3> Credit card </h3>
-						<ul class="ui-listview">
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Credit card 1</a>
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Credit card 2</a>
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Credit card 3</a>
-					</ul>
+						<div class="ui-content content-padding">
+							<div class="ui-grid-row">
+								<a href="#popupToast" class="ui-btn" data-rel="popup">Popup toast</a>
+								<a href="#popupToast" class="ui-btn" data-rel="popup">Popup toast</a>
+								<a href="#popupToast" class="ui-btn" data-rel="popup">Popup toast</a>
+							</div>
+						</div>
+					
+						<div id="popupToast" class="ui-popup ui-popup-toast">
+							<div class="ui-popup-content">
+								image
+							</div>
+						</div>
 				</section>
 				
-					<section style="text-align:center">
+				<section style="text-align:center">
 					<h3> Point Card </h3>
-						<ul class="ui-listview">
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Point card 1</a>
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Point card 2</a>
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Point card 3</a>
-					</ul>
+						<div class="ui-content-active content-padding">
+							<div class="ui-grid-row">
+								<a href="#popupToast" class="ui-btn" data-rel="popup">Popup toast</a>
+								<a href="#popupToast" class="ui-btn" data-rel="popup">Popup toast</a>
+								<a href="#popupToast" class="ui-btn" data-rel="popup">Popup toast</a>
+							</div>
+						</div>
+						<div id="popupToast" class="ui-popup ui-popup-toast">
+							<div class="ui-popup-content">
+								image
+							</div>
+						</div>
 				</section>
 			</div>
 		</div>
-			<div id="popupToast" class="ui-popup ui-popup-toast">
-				<div class="ui-popup-content">
-				 <img src="images/bacode.PNG">
-				</div>
-			</div>
 		<script src="./tab.js"></script>
 	</div>
 	 <script type="text/javascript" src="lib/tau/wearable/js/tau.js" data-build-remove="false"></script>

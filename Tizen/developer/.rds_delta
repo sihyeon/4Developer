@@ -2,5 +2,5 @@
 #add
 #modify
 res/wgt/author-signature.xml
-res/wgt/css/style.css
+res/wgt/lib/tau/wearable/theme/default/tau.css
 res/wgt/signature1.xml
