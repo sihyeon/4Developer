@@ -104,19 +104,19 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>T+A9qvTJaGrJf9eT37T+yseKMmKf2qktCAbut71G0Uk=</DigestValue>
+<DigestValue>2DjcYo+5fE9bpDram8ndDLDaK+1kbr7QM8NR8TBnNtI=</DigestValue>
 </Reference>
 <Reference URI="extra%2FNotice_bluetooth.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ECTOqRbUGgQKyGeMkPKmh4fSM2RKGa9ECSqDaEYsxT0=</DigestValue>
+<DigestValue>iddCsV76RNc6agIeChrfDuQH8M4n5IXPXF0b/KLxFYM=</DigestValue>
 </Reference>
 <Reference URI="extra%2FNotice_card.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>2VR0EAsa750Qow3C0CRWN/QaNEZVN5pxRcYFma9o1+M=</DigestValue>
+<DigestValue>GjzmsM4JET/4IHSBR0EvcgDZKRvvlUhCAHCyxFOh3xk=</DigestValue>
 </Reference>
 <Reference URI="extra%2FNotice_reload.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>P5CNA3fpKhvh/PUjSQV8yLXTwz1diRQ1jpkEMcg6zo4=</DigestValue>
+<DigestValue>GeoelYsXeWpajioSozN1/aIpMJqAACyGUU7wQml8zV8=</DigestValue>
 </Reference>
 <Reference URI="extra%2Fimages%2FController_icon%2Ftw_btn_next_depth_disabled_focused_holo_dark.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -438,9 +438,9 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>OpQKYxobCmCFAQkGTB3GagEScTGEeh6AXVMuprvmggY=</DigestValue>
 </Reference>
-<Reference URI="images%2Fbluetooth.jpg">
+<Reference URI="images%2Fbluetooth.PNG">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>J//+Nlvkn3W15rrrVm+LSQHRrg9RhMulXvAWU9OPaBU=</DigestValue>
+<DigestValue>VL/adnyuMkvIupU5fX8bMMMByH+n0lzCPrpPJgHN8Uc=</DigestValue>
 </Reference>
 <Reference URI="images%2Fgoldbrown.jpg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -452,7 +452,11 @@
 </Reference>
 <Reference URI="images%2Freload.PNG">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>o97BHsJWP9V4kAWp3/2CvNvelBvplJI/5a2c9uHO5rQ=</DigestValue>
+<DigestValue>8uJdpOMZ8pqYSiS3PaUQC1l68CG5k54QnBkGwo8rSA0=</DigestValue>
+</Reference>
+<Reference URI="images%2Freload2.PNG">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>/d8y/nWyATe7etYS4FfbN7OJaZFIA+DhU+32LECZoC4=</DigestValue>
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -2975,11 +2979,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-MC3Ma6MKzT7X9UKRUqcQ1+J3OfzACxdpJI+/naoHEEVAQIFuHEVaKIkmnhObgs6LdUVBmqjOKs7y
-GJt1h9fzNfREuQyrXXLGKpo/THqZgykB3iHsFax4POdk+qjSq3JCoOl+YFsToGoe2iUFIqRHc8VN
-0mu5sg1e7xDmBl1Oqw3d1UErz7DXcCm7cai5m3G8gzXNSQ5msejcmHd+63NM94yGZV6obg5dlw9m
-Jjp4xzi49TZvs5s8Kq9yCJLsBx/Dn0dk5h85CeIA44PhB9RNMljl7YaPk64nNamPYMrrtxkfq2CX
-MYPDalP6MHXrn5lH63kxIUFFeu9wQqcPpSUAHw==
+vxgZLvkb20VY8Swaug0lM+KtbWWwGlGU+vhsydQjAK00yqevoFN86GnJJoQrM1jaR7dXKDvi3orF
+Kvf24YP7QoZMICuDprwznqh2LJzPLG8o/lwvfNg1hYbhtYdFto9Hx5G1u5az8gT3zC+7PYyWKgMq
+t6hMogCasI887Ym8yZnNjAIeNCQhwfX3TcytbdDr4LctRRW5pLARbokcoAu74QAk4/rL0E5e1aoP
+EqNz92sPxsGGyHS37kap1xyzRgR08hTBrgSjIfdcJCrEv6fmWDhLLjRxsNcxakSmtXK1E+7uFvWI
+ELgx8TD5uYv/oh1sQYSjmzqM9H4XXTMwd64YoQ==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
