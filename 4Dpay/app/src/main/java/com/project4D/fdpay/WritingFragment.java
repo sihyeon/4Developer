@@ -2,11 +2,9 @@ package com.project4D.fdpay;
 
 import android.app.DatePickerDialog;
 import android.app.Fragment;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -36,15 +34,11 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     private EditText memoEdit;
     private TextView writingDate;
 
-    public static Context writingFragmentContext;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         writingView = inflater.inflate(R.layout.fragment_writing_view, container, false);
         setActivityTitle("쓰기");
-
-        writingFragmentContext = this.getActivity();
 
         //텍스트뷰 등록
         writingDate = (TextView) writingView.findViewById(R.id.writingDayText);
