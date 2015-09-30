@@ -17,7 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2015-08-14.
+ * @author Somin Lee (sayyo1120@gmail,com)
+ * @version 2015-08-14.
  */
 public class CardListAdapter extends BaseAdapter {
     protected final List<CardModel> cardList = new ArrayList<>();

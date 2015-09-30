@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Author Somin Lee(sayyo1120@gmail.com)
+ * @author Somin Lee (sayyo1120@gmail.com)
  */
 public class PointCardTableManager {
     private static final String TABLENAME = "POINT";

@@ -18,6 +18,9 @@ import com.project4D.fdpay.util.ViewUtil.Finder;
 
 import org.json.JSONException;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ **/
 public class SignInActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

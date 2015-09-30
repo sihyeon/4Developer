@@ -11,6 +11,9 @@ import com.project4D.fdpay.manager.CreditCardTableManager;
 import com.project4D.fdpay.util.AlertDialogHelper;
 import com.project4D.fdpay.util.ViewUtil;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ **/
 public class EditCardNameActivity extends AppCompatActivity {
     private ViewUtil.Finder vu = ViewUtil.finder(this);
     private CreditCardTableManager cm = new CreditCardTableManager(this);

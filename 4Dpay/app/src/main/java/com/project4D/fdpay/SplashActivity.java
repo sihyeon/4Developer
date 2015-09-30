@@ -14,6 +14,9 @@ import android.widget.ImageView;
 
 import com.project4D.fdpay.util.AlertDialogHelper;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ **/
 public class SplashActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

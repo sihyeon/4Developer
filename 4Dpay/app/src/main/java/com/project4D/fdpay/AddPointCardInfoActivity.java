@@ -15,6 +15,9 @@ import com.project4D.fdpay.model.PointCardInfo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ **/
 public class AddPointCardInfoActivity extends AppCompatActivity {
     private PointCardTableManager db;
     private String selectedCardName = null;

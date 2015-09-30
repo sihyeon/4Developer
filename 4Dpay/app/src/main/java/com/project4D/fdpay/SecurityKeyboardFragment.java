@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ **/
 public class SecurityKeyboardFragment extends DialogFragment {
     private List<Integer> numList = new ArrayList<>();
     private SecureRandom secureRandom = new SecureRandom();

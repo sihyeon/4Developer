@@ -12,6 +12,9 @@ import com.project4D.fdpay.manager.CreditCardTableManager;
 import com.project4D.fdpay.model.CreditCardInfo;
 import com.project4D.fdpay.util.ViewUtil;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ **/
 public class AddCreditCardInfoActivity extends Activity {
     private ViewUtil.Finder vu = ViewUtil.finder(this);
     private EventManager eventManager = EventManager.getInstance();

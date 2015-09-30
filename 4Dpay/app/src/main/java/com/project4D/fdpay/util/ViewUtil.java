@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ **/
 public class ViewUtil {
 	public static Finder finder(Activity activity) {
 		return new ActivityFinder(activity);

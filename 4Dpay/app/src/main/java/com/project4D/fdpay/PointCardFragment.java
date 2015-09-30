@@ -15,10 +15,6 @@ import com.project4D.fdpay.event.SimpleUAdapter;
 import com.project4D.fdpay.manager.PointCardTableManager;
 
 /**
- * 1. extends AppCompatAcitivity
- * 2. getSupportActionBar().setDisplayHomeAsUpEnabled(true);
- * getSupportActionBar().setHomeButtonEnabled(false);
- * 3. onOptionsItemSelected(MenuItem item)
  *
  * @author Somin Lee(sayyo1120@gmail.com)
  * @version 8 (2015-08-08)

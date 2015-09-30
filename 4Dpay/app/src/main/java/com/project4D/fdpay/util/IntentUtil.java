@@ -5,7 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 /**
- * Created by Administrator on 2015-08-09.
+ * @author Somin Lee (sayyo1120@gmail.com)
+ * @version 2015-08-09.
  */
 public class IntentUtil {
     public static void pullActivity(Context from, Class<?> to, Bundle... extra) {

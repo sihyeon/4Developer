@@ -1,0 +1,24 @@
+<resources>
+
+    <application name="4Dpay" >
+        <serviceProfile
+            id="/app/provider_service"
+            name="provider_service"
+            role="provider"
+            serviceImpl="com.project4D.fdpay.accessory.ContentsProvider"
+            version="1.0"
+            serviceLimit="one_peeragent"
+            serviceTimeout="10">
+            <supportedTransports>
+                <transport type="TRANSPORT_BT" />
+                <transport type="TRANSPORT_WIFI" />
+            </supportedTransports>
+            <serviceChannel
+                id="104"
+                dataRate="low"
+                priority="low"
+                reliability= "enable"/>
+        </serviceProfile>
+    </application>
+
+</resources>
