@@ -1,3 +1,7 @@
+
+
+*****************************************
+
 body {
 	font-family : Consolas, Monaco, arial
 }
@@ -17,69 +21,96 @@ body {
 
 .ui-page img {
 	position : absolute;
-	top:60px;
+	top:35px;
 	left:70px;
 	width : 180px;
 	height : 180px;
 }
 
 .ui-title {
-	color:rgba(27,27,27,1);
-	border-bottom: 2px solid #FF9100;
-}
-
-#refresh {
-	top:4px;
-	left:260px;
-	width:68px;
-	height:55px;	
-}
-.info-content {
-	background-color:rgba(8,8,8,1);
-}
-
-#InfoImg {
-	position:relative;
-	top:0;
-	left:60px;
-	width: 200px;
-	height:230px;
-}
-
-.ui-processing-text
-/*******************************Go btn *****************************/
-.code-btn{
-	position : relative;
-	bottom:0;
-}
-.code-btn {
-	text-decoration:none;
-	font-family:Arial;
-	text-indent:0px;
-	line-height:45px;
-	-moz-border-radius:0px;
-	-webkit-border-radius:0px;
-	border-radius:0px;
-	text-align:center;
-	vertical-align:middle;
-	display:inline-block;
-	font-size:35px;
-	background-color:rgba(8,8,8,1);
-	color:#ffffff;
 	width:320px;
-	height:70px;
-	padding:13px;
-	border-color:#ffffff;
-	border-width:2px;
-	border-style:solid;
+	position:absolute;
+	color:rgba(27,27,27,1);
 }
 
-.code-btn:active {
+.ui-page a{
+	color:#999;
+}
+
+.go-btn .arrow {
+	margin-top : 190px;
+	height:55px;
+}
+
+.ui-header #refresh{
+	background:url(../images/refresh.jpg) no-repeat;
+}
+
+
+.ui-header #refresh{
 	position:relative;
-	top:3px
+	margin-top:5px;
+	width:60px;
+	height:50px;
+	left:260px;
+	border:0;
 }
 
-.code-btn:hover {
+
+/***************************Notice********************************/
+.ui-header #back {
+	background:url(../images/back.png) no-repeat;
+}
+
+.ui-header #back {
+	position:relative;
+	width:60px;
+	height:50px;
+	left:255px;
+	border:0;
+}
+
+.bluetooth {
+	position:relative;
+}
+
+.bluetooth img {
+	border: 2px solid #ffc300;
+	width:180px;
+	height:130px;
+}
+.ui-page .notice{
+	text-align:center;
+	font-size : 1.8rem;
+	margin-top:170px;
+	color:rgba(8,8,8,1);
+}
+.reload {
+	position:relative;
+}
+
+.reload img {
+	border: 2px solid #ffc300;
+	width:180px;
+	height:100px;
+}
+
+.Ncard {
+	position:relative;
+	left:0;
+}
+
+.Ncard img {
+	border: 2px solid #ffc300;
+	width:180px;
+	height:100px;
+}
+
+.ui-page p {
+	text-align:center;
+	font-size : 1.8rem;
+	margin-top:155px;
+	color:rgba(8,8,8,1);
 }
 /***************************Card tab********************************/
 .ui-content section {
@@ -91,6 +122,7 @@ body {
 	background-color: #ffffff;
 	color:#404040;
 	border:0;
+	position:absolute;
 }
 
 .ui-section-active h3{
@@ -124,7 +156,7 @@ body {
 ***************************************************************************/
 .ui-listview li .li-text-sub {
         display: block;
-        color: #918d88;
+        color: #61442e;
         font-size: 20px;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -223,32 +255,4 @@ body {
 .disabled {
     pointer-events: none;
 }
-/* -----------------------------------  OPTION POPUP------------------------------------ */
-.option-icon-action::before {
-	-webkit-mask-image:url(../basic/popup/images/b_option_list_icon_action.png);
-	mask-image:url(../basic/popup/images/b_option_list_icon_action.png);
-}
-.option-icon-delete::before {
-	-webkit-mask-image:url(../basic/popup/images/b_option_list_icon_delete.png);
-	mask-image:url(../basic/popup/images/b_option_list_icon_delete.png);
-}
-.option-icon-enter::before {
-	-webkit-mask-image:url(../basic/popup/images/b_option_list_icon_enter.png);
-	mask-image:url(../basic/popup/images/b_option_list_icon_enter.png);
-}
-.option-icon-share::before {
-	-webkit-mask-image:url(../basic/popup/images/b_option_list_icon_share.png);
-	mask-image:url(../basic/popup/images/b_option_list_icon_share.png);
-}
-.option-icon-notext-call::before {
-	-webkit-mask-image:url(../basic/popup/images/b_option_icon_call.png);
-	mask-image:url(../basic/popup/images/b_option_icon_call.png);
-}
-.option-icon-notext-contacts::before {
-	-webkit-mask-image:url(../basic/popup/images/b_option_icon_contacts.png);
-	mask-image:url(../basic/popup/images/b_option_icon_contacts.png);
-}
-.option-icon-notext-message::before {
-	-webkit-mask-image:url(../basic/popup/images/b_option_icon_message.png);
-	mask-image:url(../basic/popup/images/b_option_icon_message.png);
-}
+

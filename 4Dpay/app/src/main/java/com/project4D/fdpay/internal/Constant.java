@@ -3,7 +3,7 @@ package com.project4D.fdpay.internal;
 
 public class Constant {
 	//TODO WRITE THE SERVER URL LATER
-	public static final String serverURL = "https://..";
+	public static final String serverURL = "http://220.88.82.130:8080/serverTest.php";
 	public static final String error = "ERROR";
 	public static final String signIn = "SIGNIN";
 	public static final String httpOK = "OK";

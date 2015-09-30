@@ -2,76 +2,99 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-	
 	<title>Section changer</title>
 	<link rel="stylesheet"  href="../../lib/tau/wearable/theme/default/tau.css">
 	<link rel="stylesheet"  href="../css/style.css">
 </head>
-
 <body>
 	<div id="tabsectionchangerPage" class="ui-page">
 		<header class="ui-header">
 			<h2 class="ui-title" id="tab">My Wallet</h2>
-			<img src="../images/reload.PNG" id="refresh">
+			<button type="button" id="refresh" onClick="history.go(0)"></button>
 		</header>
-
 	<div id="tabsectionchanger" class="ui-content">
 		<div>
 				<section style="text-align:center">
-					<h3> Setting </h3>
+					<h3> How to use </h3>
 					<ul class="ui-listview">
 						<li class="li-has-multiline li-has-next-depth">
-						<a href="#">
-							Notice
-						<span class="li-text-sub">이번 업데이트 진행 후 변경된 사항에 대한~</span>
-						</a>
+							<a href="Notice_bluetooth.html">
+								1.Bluetooth
+							<span class="li-text-sub">블루투스 연결을 확인하세요.</span>
+							</a>
 						</li>
 					
 						<li class="li-has-multiline li-has-next-depth">
-						<a href="#">
-							Version Info
-							<span class="li-text-sub">Ver 1.0.1 </span>
-							<span class="li-text-sub">최신 버전입니다. </span>
-						</a>
-						</li>	
-					
-						<li class="li-has-multiline li-has-next-depth">
-						<a href="#">
-							1:1 문의
-						<span class="li-text-sub">4DPAY 바로 문의</span>
-						</a>
+							<a href="Notice_reload.html">
+								2.카드 목록 갱신
+								<span class="li-text-sub">새로 등록한 카드가 있다면</span>
+								<span class="li-text-sub">상단의 새로고침 버튼을 누르세요.</span>
+							</a>
 						</li>
-				</ul>
+						
+						<li class="li-has-multiline li-has-next-depth">
+							<a href="Notice_card.html">
+								3.카드 Click
+								<span class="li-text-sub">해당 카드의 바코드로 결제!</span>
+							</a>
+						</li>		
+					
+					</ul>
 				</section>
 				
 				<section class="ui-section-active" style="text-align:center">
 					<h3> Credit card </h3>
-						<ul class="ui-listview">
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Credit card 1</a>
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Credit card 2</a>
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Credit card 3</a>
-					</ul>
+						<div class="ui-content content-padding">
+							<div class="ui-grid-row">
+								<a href="#1btnPopup" class="ui-btn" data-rel="popup">1btn popup</a>
+								<a href="#1btnPopup" class="ui-btn" data-rel="popup">1btn popup</a>
+								<a href="#1btnPopup" class="ui-btn" data-rel="popup">1btn popup</a>
+							</div>
+						</div>
+					
+						<div id="1btnPopup" class="ui-popup">
+						<div class="ui-popup-content">
+							barcode
+							barcode
+							barcode
+							barcode
+							barcode
+						</div>
+						<div class="ui-popup-footer">
+							<a id="1btnPopup-cancel" href="#" class="ui-btn" data-rel="back">Done.</a>
+						</div>
+					</div>
 				</section>
 				
-					<section style="text-align:center">
+				<section style="text-align:center">
 					<h3> Point Card </h3>
-						<ul class="ui-listview">
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Point card 1</a>
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Point card 2</a>
-						<a href="#popupToast" class="ui-btn" data-rel="popup">Point card 3</a>
-					</ul>
+						<div class="ui-content-active content-padding">
+							<div class="ui-grid-row">
+								<a href="#2btnPopup" class="ui-btn" data-rel="popup">1btn popup</a>
+								<a href="#2btnPopup" class="ui-btn" data-rel="popup">1btn popup</a>
+								<a href="#2btnPopup" class="ui-btn" data-rel="popup">1btn popup</a>
+							</div>
+						</div>
+					
+						<div id="2btnPopup" class="ui-popup">
+							<div class="ui-popup-content">
+								Turning on Power
+								saving mode will
+								limit the maximum
+								power.
+							</div>
+		
+						<div class="ui-popup-footer ui-grid-col-1">
+							<a id="1btnPopup-cancel" href="#" class="ui-btn" data-rel="back">Done.</a>
+						</div>
+					</div>
 				</section>
 			</div>
 		</div>
-			<div id="popupToast" class="ui-popup ui-popup-toast">
-				<div class="ui-popup-content">
-				 <img src="images/bacode.PNG">
-				</div>
-			</div>
 		<script src="./tab.js"></script>
 	</div>
 	 <script type="text/javascript" src="lib/tau/wearable/js/tau.js" data-build-remove="false"></script>
-	<script src="app.js"></script>
+	<script src="../js/app.js"></script>
 	<script type="text/javascript" src="../../lib/tau/wearable/js/tau.js"></script>
 </body>
 </html>

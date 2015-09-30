@@ -453,8 +453,8 @@ body {
   height: 100%;
   font-size: 2rem;
   font-family: Tizen, Samsung Sans, Helvetica;
-  background: rgba(245, 245, 245, 1);
-  color: rgba(245, 245, 245, 1);
+  background: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
 }
 .ui-page {
   width: 100%;
@@ -467,6 +467,7 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   /* overrides webkit link color */
 }
+
 .ui-page.ui-page-active {
   display: block;
 }
@@ -501,7 +502,6 @@ body {
   background-color: rgba(255, 255, 255, 1);
 }
 .ui-header .ui-title {
-  /*color: rgba(116, 196, 252, 1);*/
   font-size: 32px;
   white-space: nowrap;
   margin: 0px;
@@ -596,13 +596,7 @@ body {
   -webkit-mask-position: center;
   -webkit-mask-repeat: no-repeat;
 }
-.ui-footer {
-  width: 100%;
-  height: 85px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
+
 /***************************************************************************
                    Grid layout
 ***************************************************************************/
@@ -896,20 +890,20 @@ progress.ui-progress-indeterminate::-webkit-progress-value {
   text-overflow: ellipsis;
   overflow: hidden;
   border: 0 none;
-  color: rgba(245, 245, 245, 1);
-  background-color: rgba(2, 56, 92, 1);
+  color: rgba(255, 255, 255, 1);
+  background-color: #ffd452;
 }
 a.ui-btn:active:hover,
 .ui-btn:enabled:active:hover {
-  background-color: rgba(23, 73, 115, 1);
+  background-color: #ff9100;
 }
 .ui-btn:enabled:focus {
-  background-color: rgba(2, 56, 92, 1);
+  background-color: #ff9100;
 }
 a.ui-btn.ui-state-disabled,
 .ui-btn:disabled {
-  color: rgba(245, 245, 245, 0.2);
-  background-color: rgba(3, 44, 64, 1);
+  color: rgba(255, 255, 255, 1);
+  background-color: #ff9100;
   cursor: default;
 }
 .ui-btn.ui-multiline {
@@ -928,15 +922,15 @@ a.ui-btn.ui-state-disabled,
   background-size: 60px 60px;
 }
 .ui-default {
-  color: rgba(245, 245, 245, 1);
-  background-color: rgba(2, 56, 92, 1);
+  color: rgba(255, 255, 255, 1);
+  background-color: #ff9100;
 }
 a.ui-default:active:hover,
 .ui-default:enabled:active:hover {
-  background-color: rgba(23, 73, 115, 1);
+  background-color: #ff9100;
 }
 .ui-default:enabled:focus {
-  background-color: rgba(2, 56, 92, 1);
+  background-color: #ff9100;
 }
 a.ui-default.ui-state-disabled,
 .ui-default:disabled {
@@ -1047,8 +1041,8 @@ Normal Popup
   left: 0px;
   width: 100%;
   margin: 0;
-  background-color: rgba(0, 17, 33, 1);
-  border: 3px solid rgba(0, 55, 92, 1);
+  background-color: rgba(255, 255, 255, 1);
+  border: 3px solid #ff9100;
   display: none;
   z-index: 1000;
 }
@@ -1072,8 +1066,8 @@ Normal Popup
   min-height: 13.176470588235293rem;
   font-size: 2rem;
   text-align: left;
-  color: rgba(245, 245, 245, 1);
-  background-color: rgba(0, 17, 33, 1);
+  color: rgba(8, 8, 8, 1);
+  background-color: rgba(255, 255, 255, 1);
   padding: 10px 16px 9px 16px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -1143,8 +1137,8 @@ div.ui-popup.ui-ctxpopup.ui-popup-content-size .ui-popup-content {
   min-height: 48px;
 }
 .ui-popup.ui-ctxpopup .ui-popup-content .ui-listview li a:active {
-  color: rgba(245, 245, 245, 1);
-  background-color: rgba(19, 99, 145, 1);
+  color: rgba(255, 255, 255, 1);
+  background-color: #ff9100;
 }
 .ui-popup.ui-ctxpopup .ui-popup-content .ui-listview li:last-child {
   border: none;
@@ -1196,7 +1190,7 @@ div.ui-popup.ui-ctxpopup.ui-popup-content-size .ui-popup-content {
 }
 .ui-popup.ui-ctxpopup .ui-popup-content .ui-inline-listview li a:active {
   color: rgba(245, 245, 245, 1);
-  background-color: rgba(19, 99, 145, 1);
+  background-color: #ff9100;
 }
 .ui-popup.ui-ctxpopup .ui-popup-content .ui-inline-listview .ui-list-icon-notext {
   width: 3.4705882352941178rem;
@@ -1296,7 +1290,7 @@ Popup Toast
 .ui-popup.ui-popup-toast .ui-popup-content {
   min-height: initial;
   padding: 1.2941176470588236rem 0.7647058823529411rem 1.3529411764705883rem 0.7647058823529411rem;
-  background-color: rgba(0, 17, 33, 1);
+  background-color: rgba(255, 255, 255, 1);
 }
 /****************************************
 Popup Overlay
@@ -1507,19 +1501,19 @@ Listview
   width: 100%;
   min-height: 5.88235294117647rem;
   padding: 1.2352941176470589rem 0.47058823529411764rem 1.1764705882352942rem 0.9411764705882353rem;
-  border-bottom: 1px solid rgba(56, 56, 56, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   position: relative;
-  color: rgba(245, 245, 245, 1);
+  color: rgba(255, 255, 255, 1);
 }
 .ui-listview li > * {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-user-select: none;
-  color: rgba(245, 245, 245, 1);
+  color: rgba(255, 255, 255, 1);
 }
 .ui-listview li > a {
   display: block;
@@ -1534,16 +1528,16 @@ Listview
   box-sizing: content-box;
 }
 .ui-listview li.ui-li-active {
-  background-color: rgba(8, 56, 94, 1);
-  color: rgba(245, 245, 245, 1);
+  background-color: #ffd452;
+  color: rgba(255, 255, 255, 1);
 }
 .ui-listview .li-divider {
   height: 1.7647058823529411rem;
   min-height: 1.7647058823529411rem;
   line-height: 1.7647058823529411rem;
   padding: 0 0.47058823529411764rem 0 0.9411764705882353rem;
-  background-color: rgba(29, 72, 105, 1);
-  color: rgba(151, 197, 230, 1);
+  background-color: #ffd452;
+  color: #ff9100;
   font-size: 1.4117647058823528rem;
 }
 .ui-listview .ui-li-has-action-icon .ui-action-text {
