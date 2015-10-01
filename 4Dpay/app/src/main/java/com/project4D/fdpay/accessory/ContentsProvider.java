@@ -77,6 +77,7 @@ public class ContentsProvider extends SAAgent {
         // This function called when requestServiceConnection called.
         // for specify the value
         if (peerAgent != null) {
+            Log.d(TAG, "onServiceConnectionRequested ");
             acceptServiceConnectionRequest(peerAgent);
         }
     }
@@ -167,6 +168,7 @@ public class ContentsProvider extends SAAgent {
             final String message;
             try {
                 message = card.getString("CREDIT");
+                message.concat("POINT CARD : ");
                 message.concat(card.getString("POINT"));
                 new Thread(new Runnable() {
                     public void run() {
