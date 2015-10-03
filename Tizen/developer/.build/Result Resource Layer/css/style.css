@@ -1,6 +1,9 @@
-
-
-*****************************************
+/*************************************
+*** 4DPAY on Gear
+*** copyright by sihyeon
+*** version 3.0
+*** last create date : 2015.10.01
+**************************************/
 
 body {
 	font-family : Consolas, Monaco, arial
@@ -57,7 +60,7 @@ body {
 }
 
 
-/***************************Notice********************************/
+/***************************How to use section********************************/
 .ui-header #back {
 	background:url(../images/back.png) no-repeat;
 }
@@ -112,7 +115,8 @@ body {
 	margin-top:155px;
 	color:rgba(8,8,8,1);
 }
-/***************************Card tab********************************/
+
+/***************************card & point card section********************************/
 .ui-content section {
 	overflow: hidden;
 	overflow-y: auto;
@@ -132,6 +136,11 @@ body {
 	position: relative;
 }
 
+#card_barcode {
+	left :10px;
+	width : 280px;
+	height : 160px;
+}
 /***************************************************************************
                    Tab Style
 ***************************************************************************/

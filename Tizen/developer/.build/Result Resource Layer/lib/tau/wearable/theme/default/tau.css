@@ -1065,10 +1065,11 @@ Normal Popup
   width: 100%;
   min-height: 13.176470588235293rem;
   font-size: 2rem;
-  text-align: left;
+  /*text-align: left;*/
   color: rgba(8, 8, 8, 1);
   background-color: rgba(255, 255, 255, 1);
-  padding: 10px 16px 9px 16px;
+  padding: 1px 1px 1px 1px;
+  left:10px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   -moz-overflow-scrolling: touch;

@@ -115,6 +115,7 @@ body {
 	margin-top:155px;
 	color:rgba(8,8,8,1);
 }
+
 /***************************card & point card section********************************/
 .ui-content section {
 	overflow: hidden;
@@ -135,6 +136,11 @@ body {
 	position: relative;
 }
 
+#card_barcode {
+	left :10px;
+	width : 280px;
+	height : 160px;
+}
 /***************************************************************************
                    Tab Style
 ***************************************************************************/

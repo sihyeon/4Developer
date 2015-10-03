@@ -2,5 +2,7 @@
 #add
 #modify
 res/wgt/author-signature.xml
-res/wgt/js/main.js
+res/wgt/css/style.css
+res/wgt/extra/tab.html
+res/wgt/lib/tau/wearable/theme/default/tau.css
 res/wgt/signature1.xml

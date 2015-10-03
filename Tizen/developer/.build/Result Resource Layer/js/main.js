@@ -2,9 +2,10 @@
 var SAAgent = null;
 var SASocket = null;
 var CHANNELID = 104;
-var ProviderAppName = "4DPAY";
+var tag = "SAP tag";
+var ProviderAppName = "SimpleSAPProvider";
 var Cardlist = 0; //card 목록 저장
-var CardBarcode = 0; // card 바코드 
+var CardBarcode = ""; // card 바코드 
 
 
 function createHTML(log_string)

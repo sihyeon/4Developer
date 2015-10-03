@@ -948,7 +948,7 @@
 </Reference>
 <Reference URI="Start.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>PST4zdnpejsNIJLmnXBh+TP9JwMnSyXV3VWIzeX29OY=</DigestValue>
+<DigestValue>vsxnMWDKTa5mkkh/P8/BuUtITpDWGeTB/B1xX09IaZA=</DigestValue>
 </Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1016,7 +1016,7 @@
 </Reference>
 <Reference URI="basic%2Fprocessing.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>yf8aiVHlaZC+3e/1fZCF//b8pMCgvG1tfDwDCo3bPL0=</DigestValue>
+<DigestValue>D1pYKynXHkEhSpkWlPJwW/3Fumf2eaakn3HAB9AsCHI=</DigestValue>
 </Reference>
 <Reference URI="basic%2Fsample.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1036,7 +1036,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>j2eUxxemUFFuYPLth1RWc9ttcCS5xj04p7nb7+JYH8A=</DigestValue>
+<DigestValue>RpwFBGLxDNvJ0jaIx6nnIzB/67rq+Wr4xVhwYK4Jdh8=</DigestValue>
 </Reference>
 <Reference URI="css%2Fstyle2.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1044,15 +1044,15 @@
 </Reference>
 <Reference URI="extra%2FNotice_bluetooth.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>iddCsV76RNc6agIeChrfDuQH8M4n5IXPXF0b/KLxFYM=</DigestValue>
+<DigestValue>e3nG5UIY98QYL08nYA1gXd3S5GA1MwomvIfY2DKsL8c=</DigestValue>
 </Reference>
 <Reference URI="extra%2FNotice_card.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>GjzmsM4JET/4IHSBR0EvcgDZKRvvlUhCAHCyxFOh3xk=</DigestValue>
+<DigestValue>2075pxYLPqkanDK3UVgufelRY4ViFBsOr2j3TFoVR5U=</DigestValue>
 </Reference>
 <Reference URI="extra%2FNotice_reload.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>GeoelYsXeWpajioSozN1/aIpMJqAACyGUU7wQml8zV8=</DigestValue>
+<DigestValue>uESa6ow9LquT7gBXxkb+pxEDAwP6PHG9v4RTy7lKM8c=</DigestValue>
 </Reference>
 <Reference URI="extra%2Fimages%2FController_icon%2Ftw_btn_next_depth_disabled_focused_holo_dark.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1300,7 +1300,7 @@
 </Reference>
 <Reference URI="extra%2Ftab.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>SsKWyZ1OmnMLxl+F4VfaH547IL9tqC1TQbwKOCQO+Fk=</DigestValue>
+<DigestValue>rf+hvH9boFNEgVjfeUstOiCMzur+MXFPG62wqZQkqJo=</DigestValue>
 </Reference>
 <Reference URI="extra%2Ftab.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1374,6 +1374,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>OpQKYxobCmCFAQkGTB3GagEScTGEeh6AXVMuprvmggY=</DigestValue>
 </Reference>
+<Reference URI="images%2Fbarcode.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>mIcRcFqA5fCDeYZXw9mvJbg0KnXZ9t4N1HlTADtxgO4=</DigestValue>
+</Reference>
 <Reference URI="images%2Fbluetooth.PNG">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>VL/adnyuMkvIupU5fX8bMMMByH+n0lzCPrpPJgHN8Uc=</DigestValue>
@@ -1416,7 +1420,7 @@
 </Reference>
 <Reference URI="js%2Fcircle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>7VTmpM6HNPFtfSJbuV7ojF1m01oXMFnVzWdWvNVOIqc=</DigestValue>
+<DigestValue>l37NcLl+8rxF2eKlx+O76PpcJHMnWlU9mOfCc2IwzX0=</DigestValue>
 </Reference>
 <Reference URI="js%2FlowBatteryCheck.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1424,7 +1428,7 @@
 </Reference>
 <Reference URI="js%2Fmain.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>HOrERPPrLTAh/d4J2bq9SO2KYz/0RxqhVtYG4DYbzjY=</DigestValue>
+<DigestValue>SPRLkZJyC5ieEOcsCKyXRDO0arcBEiHpjLLA+XMuPJ0=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2Fwearable%2Fjs%2Ftau.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1436,7 +1440,7 @@
 </Reference>
 <Reference URI="lib%2Ftau%2Fwearable%2Ftheme%2Fdefault%2Ftau.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>qjebCfqb0N7Ktop08Y5VhA6iS6CVkGbReRmlg1FYyjo=</DigestValue>
+<DigestValue>ZpfGWS8qc7fG5dakaD9AYyWu2f1Gr2fBpgCDR5Uzwmc=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2Fwearable%2Ftheme%2Fdefault%2Ftau.min.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1495,11 +1499,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-qOgtnS0v2IYM6gLPQ4DWDlyshGunLehQ3CrfmbLl7rmAB8Qle4pSd63a2clyXlpRhZPE5/yrDKIE
-U1JQ+xfKbeNrFhCQtQEDK1FzSk+NS2b4srBHikTMEwMQAr5INDwaWwJ02hg3YW+HCaKgs2Va2p/O
-mstgLjgFIojVD+4GrhHkIhE4MD7O+yEaFe0wEdgwpAYCrDaOGgT7D02g+6nWLOo0pZAZ7tOCGfh7
-CGHlAL6585bySXfSbeBMJ2XxYQ7oE92qbm4SbAlz2cAdWxmeOmm4zHuWSeghXujJXiRuJYjauXH3
-U/Rv9i8NuVvAx7HwaaJCNuWj2vEAEoue1oe6pA==
+OcKqc8RQKGtY4hy08dCeN2fz4hnsW4PjQgkwZPhZyGJkOOPMh5hHXCCSFmt7LJuAZAr9UEJYqeiV
+TmXRKp1kWUayeoSKyKw/5B8ugErQh0C+XluYMNndM8k7b7x6Ho08ZpM7R/3lHC+6a1P5afcK7aLb
+akkB31C7xTTONtw/jihijrc7DSlNW+KANX6W/GOZ1lCIRkMgxh+U98yKbaXTvZOM/Bb94fOYoTj9
+e4uYhazxtvpnpMTO2hRnIMgevl0aMLkNOmvXMZdhQpDQF1oxQhXSSh1tvMWQLLlsCrh+RQpQGlJI
+uvt+Cwp3Zm5MayBJIZpcO04YTLSnH9gm6s3MFA==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
