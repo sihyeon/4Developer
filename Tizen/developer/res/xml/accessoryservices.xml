@@ -2,7 +2,7 @@
 <resources>
     <application name="4DPAY" >
         <serviceProfile
-            id="/Tizenwork/developer"
+            id="/4DPAY/developer"
             name="4DPAY"
             role="consumer"
             version="2.0" >
@@ -11,7 +11,7 @@
             </supportedTransports>
             <serviceChannel
                 id="104"
-                dataRate="high"
+                dataRate="low"
                 priority="low"
                 reliability="enable" >
             </serviceChannel>

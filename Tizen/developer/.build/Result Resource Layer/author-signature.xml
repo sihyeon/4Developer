@@ -948,7 +948,7 @@
 </Reference>
 <Reference URI="Start.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>nconW6pyQQf02/DhaOA6rAVzgOAQdyfMaTpzZUma4Y4=</DigestValue>
+<DigestValue>PST4zdnpejsNIJLmnXBh+TP9JwMnSyXV3VWIzeX29OY=</DigestValue>
 </Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -965,10 +965,6 @@
 <Reference URI="basic%2FPass.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>d5iNNOLVj/HhbCxm2JZgDs/vQOM4OyiXYpGhBBq5fpY=</DigestValue>
-</Reference>
-<Reference URI="basic%2Fbarcode.html">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>gjPrcvBLaMA82SIFyxJT8WDsNhnTOgRufSAmNuKHyKQ=</DigestValue>
 </Reference>
 <Reference URI="basic%2Findex.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1022,6 +1018,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>yf8aiVHlaZC+3e/1fZCF//b8pMCgvG1tfDwDCo3bPL0=</DigestValue>
 </Reference>
+<Reference URI="basic%2Fsample.html">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>73P3/gdvasc9aX59+cNS1tp8Mew/Emq+VtcxXs7yDf4=</DigestValue>
+</Reference>
 <Reference URI="bridge%2Flib%2Faccessory-v2.3.0.jar">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>FjCwOIlClIk4POHRlVKhxv6Fs4NevwcYKx985JkmKqI=</DigestValue>
@@ -1034,13 +1034,13 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>1k+iaUlPR8hvxmQBjhykmEvhs6UzFUnIhtBb5RG7/Ik=</DigestValue>
 </Reference>
-<Reference URI="css%2Fbarcode.css">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>E1XT7JocUf/k8ZgfEMXLRAoTZB+TzOtDr0zc14KJt2U=</DigestValue>
-</Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>j2eUxxemUFFuYPLth1RWc9ttcCS5xj04p7nb7+JYH8A=</DigestValue>
+</Reference>
+<Reference URI="css%2Fstyle2.css">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>aZliJlNBXp/blNA6az/C9AxOs5jyZMn7YNfWWHKuSiI=</DigestValue>
 </Reference>
 <Reference URI="extra%2FNotice_bluetooth.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1406,9 +1406,17 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>3vjm5/hZlVIxVATIUWvCdaAY0fG71+WmF61mjN1TIXU=</DigestValue>
 </Reference>
+<Reference URI="js%2Fbytescoutbarcode128_1.00.06.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>tu3Yo/HJi8e/eAdcy/qiYT66Va/Gz35l1g9ZRGHD5WM=</DigestValue>
+</Reference>
+<Reference URI="js%2Fbytescoutbarcode128_1.00.07.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>CxXjWoGTXo7y242b2w0PtVxn1AONQldJlvhuN4CZxi0=</DigestValue>
+</Reference>
 <Reference URI="js%2Fcircle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>diL+Ji326kvzKMlDyvY/XnaJX6Fx6Wr4Hinze1GLbow=</DigestValue>
+<DigestValue>7VTmpM6HNPFtfSJbuV7ojF1m01oXMFnVzWdWvNVOIqc=</DigestValue>
 </Reference>
 <Reference URI="js%2FlowBatteryCheck.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1416,7 +1424,7 @@
 </Reference>
 <Reference URI="js%2Fmain.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>tDFGaNjjYszbsulEDdnHozg5QUnw/eUKyEW4aALT+n8=</DigestValue>
+<DigestValue>HOrERPPrLTAh/d4J2bq9SO2KYz/0RxqhVtYG4DYbzjY=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2Fwearable%2Fjs%2Ftau.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1440,7 +1448,7 @@
 </Reference>
 <Reference URI="res%2Fxml%2Faccessoryservices.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>3lSWuXuUoITEnfDWwmOSJC7nbVsJrEAFHpETnIaqREI=</DigestValue>
+<DigestValue>/3ow4b8gX+ibB9V4FC5qLssXi5Org8AN7sdeEjhQrSE=</DigestValue>
 </Reference>
 <Reference URI="sample.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1487,11 +1495,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-lhq2OFtNvQraknHUWdYeSnPMbe/IHW2Txbp7d5JOKxyx6/rXvcX9IUOMvsB60POY0mgPJERsEghS
-rOn7GWUNuqCuawEO+WWZ9w+6GUxbaFGBUZhCzKBpEdlYhWTlK9uv3GJLLUlrqJY7sbEWN/S6P4Kw
-ATxoDhSIiZ2Bxh0/F6elbjoq+iNduzogH+Egan2h7Jh88YUlRVtoFTgvwZPfjJXv22XOedpM3jPN
-GKWluemN4JCQ2WmmnZU63rHPf60KAhQ8ql7ejyOzsFXrT484o7lR6j4tbzFmIGdna0XwS/PplRVR
-qQw3pHjsWdm48+VRPGkS5y2oD00Tw2RCBkrxjA==
+qOgtnS0v2IYM6gLPQ4DWDlyshGunLehQ3CrfmbLl7rmAB8Qle4pSd63a2clyXlpRhZPE5/yrDKIE
+U1JQ+xfKbeNrFhCQtQEDK1FzSk+NS2b4srBHikTMEwMQAr5INDwaWwJ02hg3YW+HCaKgs2Va2p/O
+mstgLjgFIojVD+4GrhHkIhE4MD7O+yEaFe0wEdgwpAYCrDaOGgT7D02g+6nWLOo0pZAZ7tOCGfh7
+CGHlAL6585bySXfSbeBMJ2XxYQ7oE92qbm4SbAlz2cAdWxmeOmm4zHuWSeghXujJXiRuJYjauXH3
+U/Rv9i8NuVvAx7HwaaJCNuWj2vEAEoue1oe6pA==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

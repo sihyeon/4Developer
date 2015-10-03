@@ -1,7 +1,6 @@
 #delete
-res/wgt/js/4Dpay.js
 #add
 #modify
 res/wgt/author-signature.xml
-res/wgt/res/xml/accessoryservices.xml
+res/wgt/js/main.js
 res/wgt/signature1.xml

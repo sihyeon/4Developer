@@ -2,13 +2,16 @@
 var SAAgent = null;
 var SASocket = null;
 var CHANNELID = 104;
-var ProviderAppName = "4DPAY";
+var tag = "SAP tag";
+var ProviderAppName = "SimpleSAPProvider";
+var Cardlist = 0; //card 목록 저장
+var CardBarcode = ""; // card 바코드 
+
 
 function createHTML(log_string)
 {
-	var content = document.getElementById("toast-content");
-	content.textContent = log_string;
-	tau.openPopup("#toast");
+	var log = document.getElementById('result');
+	log.innerHTML = log.innerHTML+"<br> : " +log_string;
 }
 
 function onerror(err) {
@@ -104,10 +107,3 @@ window.onload = function () {
             tizen.application.getCurrentApplication().exit();
     });
 };
-
-(function(tau) {
-	var toastPopup = document.getElementById('toast');
-	toastPopup.addEventListener('popupshow', function(ev){
-		setTimeout(function(){tau.closePopup();}, 3000);
-	}, false);
-})(window.tau);
