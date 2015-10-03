@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
  * @version 2015-09-08.
+ * The upper class about mysql - make database
  */
 public class DBManager extends SQLiteOpenHelper {
     public static String DATABASENAME;

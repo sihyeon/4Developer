@@ -16,6 +16,7 @@ import java.util.Map;
 
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
+ * Credit Table Manager
  */
 public class CreditCardTableManager {
     private static final String TABLENAME = "CREDIT";

@@ -1,5 +1,8 @@
 package com.project4D.fdpay.model;
 
+/**
+ * user information model
+ */
 public class User {
 	String ID;
 	char[] PW;

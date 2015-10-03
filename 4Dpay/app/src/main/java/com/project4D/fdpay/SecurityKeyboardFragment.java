@@ -21,6 +21,8 @@ import java.util.List;
 
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
+ * security keyboard.
+ * this fragment use dialog fragment, and use secureRandom for security
  **/
 public class SecurityKeyboardFragment extends DialogFragment {
     private List<Integer> numList = new ArrayList<>();

@@ -26,6 +26,7 @@ import java.util.List;
 
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
+ * Check that the user phone number is correct or not when sign up
  **/
 public class CertificationActivity extends Activity {
     private String securityNum;

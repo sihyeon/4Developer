@@ -18,7 +18,7 @@ import com.project4D.fdpay.manager.PointCardTableManager;
  *
  * @author Somin Lee(sayyo1120@gmail.com)
  * @version 8 (2015-08-08)
- * @see this is Abstraction fragment for CARDSECTION, ( I dont want to change more !! )
+ * this is Abstraction fragment for CARDSECTION, ( I dont want to change more !! )
  */
 
 public class PointCardFragment extends Fragment {

@@ -1,7 +1,8 @@
 package com.project4D.fdpay.model;
 
-import android.graphics.drawable.Drawable;
-
+/**
+ * This is card Model, controls image and name that shows in activity
+ */
 public class CardModel {
     private String text;
     private int imgId;

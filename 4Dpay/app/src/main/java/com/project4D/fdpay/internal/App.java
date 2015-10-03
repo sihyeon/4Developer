@@ -9,6 +9,7 @@ import com.project4D.fdpay.accessory.ContentsProvider;
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
  * @version 2015-09-30.
+ * Service starts when application starts
  */
 public class App extends Application {
     @Override

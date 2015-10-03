@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
+ * view util for activity and view
+ * (for short coding)
  **/
 public class ViewUtil {
 	public static Finder finder(Activity activity) {

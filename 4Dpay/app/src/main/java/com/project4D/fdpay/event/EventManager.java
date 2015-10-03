@@ -10,6 +10,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
  * @version 2015-09-13.
+ * This is Event Manager
+ * I made it because the fragments need to know which fragment gets info,
+ * notify event happened and send it to proper fragment
  */
 public class EventManager {
     private Map<String, List<UListener>> listeners = new HashMap<>();

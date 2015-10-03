@@ -18,6 +18,7 @@ import com.project4D.fdpay.manager.CreditCardTableManager;
 
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
+ * this is Abstraction fragment for CARDSECTION,
  **/
 public class CreditCardFragment extends Fragment {
     private CardListAdapter adapter;

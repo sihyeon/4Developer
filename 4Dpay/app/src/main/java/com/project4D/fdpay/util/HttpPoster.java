@@ -13,6 +13,7 @@ import com.project4D.fdpay.internal.Constant;
 
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
+ * this class use the HttpURLconnection for communicate server and android.
  */
 public class HttpPoster {
 	/**
@@ -27,6 +28,7 @@ public class HttpPoster {
 			public void run() {
 				try {
 					String requestContent = new Gson().toJson(obj);
+					//TODO check serverURL
 					HttpURLConnection con = (HttpURLConnection) new URL(Constant.serverURL).openConnection();
 					setupHeader(con);
 					writeRequestContent(requestContent, con);

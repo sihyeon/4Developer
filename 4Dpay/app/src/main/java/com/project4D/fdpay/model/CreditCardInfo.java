@@ -6,6 +6,7 @@ import android.os.Parcelable;
 /**
  * @Author Somin Lee (sayyo1120@gmail.com)
  * @version 2015-08-24.
+ * The card information model
  */
 public class CreditCardInfo {
     String cardNum;

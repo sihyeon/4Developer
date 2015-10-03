@@ -7,6 +7,10 @@ import android.view.ContextThemeWrapper;
 
 import com.project4D.fdpay.R;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ * renual alert dialog
+ */
 public class AlertDialogHelper {
 	private final AlertDialog.Builder builder;
 	private final Activity activity;

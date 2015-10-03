@@ -23,6 +23,8 @@ import java.io.IOException;
 /**
  * @author Somin Lee(sayyo1120@gmail.com)
  * @version 2015-09-28.
+ * @see this service use the samsung accessory sdk
+ *       to communicate between gear and android
  */
 public class ContentsProvider extends SAAgent {
     private CreditCardTableManager cm = new CreditCardTableManager(this);
@@ -57,6 +59,11 @@ public class ContentsProvider extends SAAgent {
              */
             stopSelf();
         }
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int i, int i1) {
+        return super.onStartCommand(intent, i, i1);
     }
 
     @Override

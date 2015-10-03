@@ -3,6 +3,7 @@ package com.project4D.fdpay.model;
 /**
  * @Author Somin Lee (sayyo1120@gmail.com)
  * @version 2015-09-07.
+ * Point card information model
  */
 public class PointCardInfo {
     String cardName;

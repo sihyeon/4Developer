@@ -1,6 +1,9 @@
 package com.project4D.fdpay.internal;
 
-
+/**
+ *  constants String
+ *  I use it because miss type can appear.
+ */
 public class Constant {
 	//TODO WRITE THE SERVER URL LATER
 	public static final String serverURL = "http://220.88.82.130:8080/serverTest.php";

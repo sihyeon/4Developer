@@ -20,6 +20,7 @@ import org.json.JSONException;
 
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
+ * sign in activity, this use json object when communicate with server
  **/
 public class SignInActivity extends Activity {
     @Override
