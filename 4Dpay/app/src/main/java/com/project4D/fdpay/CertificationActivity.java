@@ -24,6 +24,9 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ **/
 public class CertificationActivity extends Activity {
     private String securityNum;
 

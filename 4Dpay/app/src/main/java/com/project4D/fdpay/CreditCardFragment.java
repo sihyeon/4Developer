@@ -16,6 +16,9 @@ import com.project4D.fdpay.event.SimpleUAdapter;
 import com.project4D.fdpay.event.UListener;
 import com.project4D.fdpay.manager.CreditCardTableManager;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ **/
 public class CreditCardFragment extends Fragment {
     private CardListAdapter adapter;
     private CreditCardTableManager db;

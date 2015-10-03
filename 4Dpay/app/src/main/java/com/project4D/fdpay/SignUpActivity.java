@@ -15,6 +15,9 @@ import com.project4D.fdpay.util.HttpPosterCallBack;
 import com.project4D.fdpay.util.ViewUtil;
 import com.project4D.fdpay.util.ViewUtil.Finder;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ **/
 public class SignUpActivity extends Activity {
 
     @Override

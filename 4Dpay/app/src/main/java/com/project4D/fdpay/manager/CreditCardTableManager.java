@@ -15,9 +15,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Author Somin Lee (sayyo1120@gmail.com)
+ * @author Somin Lee (sayyo1120@gmail.com)
  */
-
 public class CreditCardTableManager {
     private static final String TABLENAME = "CREDIT";
     private DBManager dbManager;

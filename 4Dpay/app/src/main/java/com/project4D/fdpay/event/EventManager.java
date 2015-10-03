@@ -8,7 +8,8 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * Created by Administrator on 2015-09-13.
+ * @author Somin Lee (sayyo1120@gmail.com)
+ * @version 2015-09-13.
  */
 public class EventManager {
     private Map<String, List<UListener>> listeners = new HashMap<>();

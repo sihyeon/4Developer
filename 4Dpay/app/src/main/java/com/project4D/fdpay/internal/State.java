@@ -1,5 +1,8 @@
 package com.project4D.fdpay.internal;
 
+/**
+ * @author Somin Lee (sayyo1120@gmail.com)
+ **/
 public class State {
 	public State(){
 	}

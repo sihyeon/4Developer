@@ -23,24 +23,19 @@ import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
-import com.project4D.fdpay.manager.DBManager;
 
 
 /**
- * 1. extends AppCompatAcitivity
- * 2. getSupportActionBar().setDisplayHomeAsUpEnabled(true);
- * getSupportActionBar().setHomeButtonEnabled(false);
- * 3. onOptionsItemSelected(MenuItem item)
- *
  * @author Somin Lee(sayyo1120@gmail.com)
  * @version 10.1.1 (2015-09-19)
- * @see this Activity is the main Activity - card in this app,
+ * @see this Activity is the main Activity - card and house holder attatch in this activity,
  */
 
 public class MainActivity extends AppCompatActivity {
     public Drawer drawer;
     public static Context mainActivityContext;
     public HouseHolderStatus houseHolderStatus = new HouseHolderStatus();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

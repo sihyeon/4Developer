@@ -3,7 +3,8 @@ package com.project4D.fdpay.event;
 import android.os.Bundle;
 
 /**
- * Created by Administrator on 2015-09-14.
+ * @author Somin Lee (sayyo1120@gmail.com)
+ * @version 2015-09-14.
  */
 public abstract class SimpleUAdapter<Success> implements UListener<Success, Void> {
     @Override
