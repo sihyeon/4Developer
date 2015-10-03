@@ -27,6 +27,7 @@ import java.util.List;
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
  * Check that the user phone number is correct or not when sign up
+ * count of certification number is must be more then 5 letters
  **/
 public class CertificationActivity extends Activity {
     private String securityNum;
