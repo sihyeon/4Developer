@@ -20,6 +20,7 @@ import com.project4D.fdpay.util.ViewUtil;
 
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
+ * show credit card infomation
  **/
 public class ShowCardInfoActivity extends ActionBarActivity {
 

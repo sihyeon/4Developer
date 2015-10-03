@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.project4D.fdpay.HouseHolderStatus;
+import com.project4D.fdpay.internal.HouseHolderStatus;
 import com.project4D.fdpay.R;
 
 import java.util.ArrayList;
@@ -15,6 +15,8 @@ import java.util.ArrayList;
 /**
  * Created by Jaeung on 2015-09-05.
  */
+
+//쓰기탭의 카테고리 리스트의 작은 부분의 어댑터
 public class DialogSmallListAdapter extends BaseAdapter {
     private ArrayList<SmallListItem> smallListItems;
     HouseHolderStatus houseHolderStatus;

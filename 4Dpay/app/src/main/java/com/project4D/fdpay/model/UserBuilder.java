@@ -1,5 +1,8 @@
 package com.project4D.fdpay.model;
 
+/**
+ * user generator (builder pattern) for chaining
+ */
 public class UserBuilder {
 	private final User u;
 

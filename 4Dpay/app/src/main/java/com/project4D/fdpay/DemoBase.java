@@ -9,6 +9,8 @@ import android.app.Fragment;
  * 
  * @author Philipp Jahoda
  */
+
+//카테고리 프래그먼트의 데이터의 예제이다.
 public abstract class DemoBase extends Fragment {
 
     protected String[] mMonths = new String[] {

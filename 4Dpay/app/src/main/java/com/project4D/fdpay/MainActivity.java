@@ -23,6 +23,11 @@ import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.project4D.fdpay.internal.HouseHolderStatus;
+import com.project4D.fdpay.model.CreditCardInfo;
+import com.project4D.fdpay.util.AlertDialogHelper;
+import com.project4D.fdpay.util.HttpPoster;
+import com.project4D.fdpay.util.HttpPosterCallBack;
 
 
 /**
@@ -46,6 +51,31 @@ public class MainActivity extends AppCompatActivity {
         drawer = new Drawer(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);
+////////////////////////////////////////TEST CODE/////////////////////////////////////
+        CreditCardInfo ci = new CreditCardInfo();
+        ci.setCardName("TESTER");
+        ci.setCardNum("123456789");
+        ci.setCardValid(1234);
+        ci.setCvc(000);
+        ci.setPassword(0101);
+        HttpPoster.executePOST(ci, new HttpPosterCallBack() {
+            @Override
+            public void onSuccess(String response) {
+                new AlertDialogHelper(MainActivity.this)
+                        .setMessage("성공")
+                        .setPositiveButton("확인", null)
+                        .build();
+            }
+
+            @Override
+            public void onError(Throwable error) {
+                new AlertDialogHelper(MainActivity.this)
+                        .setMessage("실패")
+                        .setPositiveButton("확인", null)
+                        .build();
+            }
+        });
+        /////////////////////////////////////////////////////////////////////////////
     }
 
     public void transactFragment(Fragment fragment, String tag) {

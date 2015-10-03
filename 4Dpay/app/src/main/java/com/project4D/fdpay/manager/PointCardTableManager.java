@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
+ * Point card Table Manager
  */
 public class PointCardTableManager {
     private static final String TABLENAME = "POINT";

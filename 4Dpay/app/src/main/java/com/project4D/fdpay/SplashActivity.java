@@ -16,6 +16,7 @@ import com.project4D.fdpay.util.AlertDialogHelper;
 
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
+ * this activity shows when application starts
  **/
 public class SplashActivity extends Activity {
 	@Override

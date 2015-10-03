@@ -19,6 +19,8 @@ import java.util.List;
 /**
  * @author Somin Lee (sayyo1120@gmail,com)
  * @version 2015-08-14.
+ * this is Card List Adatper.
+ * In this class, cardlist be costomized.
  */
 public class CardListAdapter extends BaseAdapter {
     protected final List<CardModel> cardList = new ArrayList<>();

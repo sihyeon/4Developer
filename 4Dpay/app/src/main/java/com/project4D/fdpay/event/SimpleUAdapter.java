@@ -5,6 +5,7 @@ import android.os.Bundle;
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
  * @version 2015-09-14.
+ * Abstract class ( frame )
  */
 public abstract class SimpleUAdapter<Success> implements UListener<Success, Void> {
     @Override

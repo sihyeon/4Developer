@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.project4D.fdpay.CalendarFragment;
-import com.project4D.fdpay.HouseHolderStatus;
+import com.project4D.fdpay.internal.HouseHolderStatus;
 import com.project4D.fdpay.MainActivity;
 import com.project4D.fdpay.R;
 
@@ -17,6 +17,8 @@ import java.util.ArrayList;
 /**
  * Created by Jaeung on 2015-07-28.
  */
+
+//연별보기에서의 리스트
 public class YearsListAdapter extends BaseAdapter {
     private ArrayList<AdapterLayout> adapterLayout;
     private HouseHolderStatus houseHolderStatus;
@@ -45,7 +47,7 @@ public class YearsListAdapter extends BaseAdapter {
         return position;
     }
 
-    // 출력 될 아이템 관리
+    // 출력 될 아이템 관리 12개밖에 되지않아 convertView 쓰지 않음.
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         final Context context = parent.getContext();

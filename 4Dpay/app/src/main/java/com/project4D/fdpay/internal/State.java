@@ -2,6 +2,7 @@ package com.project4D.fdpay.internal;
 
 /**
  * @author Somin Lee (sayyo1120@gmail.com)
+ * to know login stat or not
  **/
 public class State {
 	public State(){
