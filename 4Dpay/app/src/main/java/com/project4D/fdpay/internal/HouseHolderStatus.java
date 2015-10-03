@@ -1,4 +1,4 @@
-package com.project4D.fdpay;
+package com.project4D.fdpay.internal;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -6,6 +6,8 @@ import java.util.Calendar;
 /**
  * Created by Jaeung on 2015-08-18.
  */
+
+//적은 양의 데이터를 넘기기 위한 클래스
 public class HouseHolderStatus {
     //DATE
     //데이트 형식을 설정

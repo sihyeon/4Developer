@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.project4D.fdpay.adapter.DialogBigListAdapter;
 import com.project4D.fdpay.adapter.DialogSmallListAdapter;
+import com.project4D.fdpay.internal.HouseHolderStatus;
 
 /**
  * Created by Jaeung on 2015-09-03.

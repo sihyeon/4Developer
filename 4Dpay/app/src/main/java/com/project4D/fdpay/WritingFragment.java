@@ -13,11 +13,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.project4D.fdpay.internal.HouseHolderStatus;
+
 /**
  * Created by Jaeung on 2015-08-04.
  */
 
-
+//
 
 public class WritingFragment extends Fragment implements View.OnClickListener {
     private HouseHolderStatus houseHolderStatus;
@@ -93,6 +95,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
         }
     };
 
+    //data를 변경하는 함수
     private void updateWringDate() {
         writingDate.setText(writingYear + "." + writingMonth + "." + writingDay);
     }
@@ -145,11 +148,12 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
                 categorizationView.getText().toString();
                 memoEdit.getText().toString();
                 break;
+            //날짜 옆의 달력을 눌렀을 경우
             case R.id.writingDateSelector:
                 datePickerDialog = new DatePickerDialog(WritingFragment.this.getActivity(), R.style.DialogTheme ,mDateSetListener, writingYear, writingMonth - 1, writingDay);
                 datePickerDialog.show();
                 break;
-
+            //카테고리를 눌렀을 경우
             case R.id.categorizationResult:
                 categorizationDialog = new CategorizationDialog(WritingFragment.this.getActivity());
                 categorizationDialog.setOnDismissListener(onDismissListener);

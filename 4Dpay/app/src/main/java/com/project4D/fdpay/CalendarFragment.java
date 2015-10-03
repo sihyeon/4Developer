@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.project4D.fdpay.adapter.CalendarListAdapter;
+import com.project4D.fdpay.internal.HouseHolderStatus;
 
 import java.util.Calendar;
 import java.util.Random;
@@ -19,6 +20,8 @@ import java.util.Random;
 /**
  * Created by Jaeung on 2015-08-05.
  */
+
+//월별보기
 public class CalendarFragment extends Fragment implements View.OnClickListener {
     private HouseHolderStatus houseHolderStatus;
     private CalendarView calendar;

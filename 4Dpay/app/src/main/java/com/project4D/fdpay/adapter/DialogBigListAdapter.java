@@ -15,6 +15,8 @@ import java.util.ArrayList;
 /**
  * Created by Jaeung on 2015-09-03.
  */
+
+//쓰기 탭에서 카테고리 리스트의 큰 부분의 어댑터
 public class DialogBigListAdapter extends BaseAdapter {
     private ArrayList<BigListItem> bigListItems;
 

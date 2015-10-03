@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.project4D.fdpay.HouseHolderStatus;
+import com.project4D.fdpay.internal.HouseHolderStatus;
 import com.project4D.fdpay.MainActivity;
 import com.project4D.fdpay.R;
 import com.project4D.fdpay.WritingFragment;
@@ -18,6 +18,8 @@ import java.util.ArrayList;
 /**
  * Created by Jaeung on 2015-07-28.
  */
+
+//월별보기의 밑에 있는 리스트의 어댑터
 public class CalendarListAdapter extends BaseAdapter{
     private HouseHolderStatus houseHolderStatus;
     private ArrayList<CalendarItem> calendarItemList;
@@ -50,7 +52,7 @@ public class CalendarListAdapter extends BaseAdapter{
     public View getView(final int position, View convertView, ViewGroup parent) {
         DecimalFormat df = new DecimalFormat("###,###.####");
 
-
+        //가계부의 데이터가 하루하루에 100개가 넘어갈 것이라 생각하지 않아 converView 사용 안함
         final Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View item = inflater.inflate(R.layout.adpater_calendar_list, parent, false);

@@ -11,10 +11,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.project4D.fdpay.adapter.YearsListAdapter;
+import com.project4D.fdpay.internal.HouseHolderStatus;
 
 /**
  * Created by Jaeung on 2015-07-28.
  */
+
+//년별보기
 public class YearsFragment extends Fragment implements OnClickListener {
     private ListView mListView = null;
     private YearsListAdapter yearsListAdapter = null;

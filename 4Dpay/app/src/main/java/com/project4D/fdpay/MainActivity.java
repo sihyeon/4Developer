@@ -23,6 +23,7 @@ import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.project4D.fdpay.internal.HouseHolderStatus;
 import com.project4D.fdpay.model.CreditCardInfo;
 import com.project4D.fdpay.util.AlertDialogHelper;
 import com.project4D.fdpay.util.HttpPoster;

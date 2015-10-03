@@ -23,10 +23,11 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.PercentFormatter;
+import com.project4D.fdpay.internal.HouseHolderStatus;
 
 import java.util.ArrayList;
 
-//test
+//DemoBase에 있는 데이터를 기초로 원형 그래프를 만듦
 public class CategorizationFragment extends DemoBase implements OnSeekBarChangeListener,
         OnChartValueSelectedListener, View.OnClickListener{
 
